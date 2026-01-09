@@ -241,14 +241,15 @@ export default function GameBoard({ locale }: { locale: string }) {
             )}
 
             {/* Board Cards with Position Buttons */}
-            <div className="flex gap-4 items-center justify-center flex-wrap">
+            <div className="flex flex-col md:flex-row gap-4 items-center justify-center md:flex-wrap">
                 {gameState === 'playing' && currentCard && (
                     <div
                         data-drop-zone="0"
+                        onClick={() => checkPosition(0)}
                         onDragOver={(e) => handleDragOver(e, 0)}
                         onDragLeave={handleDragLeave}
                         onDrop={(e) => handleDrop(e, 0)}
-                        className={`flex flex-col items-center justify-center w-32 h-48 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === 0
+                        className={`flex flex-col items-center justify-center w-48 h-64 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === 0
                             ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
                             : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
                             }`}
@@ -268,7 +269,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                 )}
 
                 {boardCards.map((card, index) => (
-                    <div key={card.id} className="flex gap-4 items-center">
+                    <div key={card.id} className="flex flex-col md:flex-row gap-4 items-center">
                         <CardBothSides
                             date={card.date}
                             event={card.event[lang]}
@@ -280,10 +281,11 @@ export default function GameBoard({ locale }: { locale: string }) {
                         {gameState === 'playing' && currentCard && (
                             <div
                                 data-drop-zone={index + 1}
+                                onClick={() => checkPosition(index + 1)}
                                 onDragOver={(e) => handleDragOver(e, index + 1)}
                                 onDragLeave={handleDragLeave}
                                 onDrop={(e) => handleDrop(e, index + 1)}
-                                className={`flex flex-col items-center justify-center w-32 h-48 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
+                                className={`flex flex-col items-center justify-center w-48 h-64 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
                                     ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
                                     : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
                                     }`}
