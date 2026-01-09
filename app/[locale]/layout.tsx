@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { messages } from "@/config/text";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,20 +12,25 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+export async function generateMetadata(
+  { params }: { params: { locale: string } }
+): Promise<Metadata> {
+  const locale = (params?.locale ?? 'es') as keyof typeof messages;
+  const t = messages[locale] || messages.en;
+  return {
+    title: "JW Hitster",
+    description: t.description,
+  };
+}
 
-export const metadata: Metadata = {
-  title: "JW Hitster",
-  description: "Juego Bíblico basado en Hitster",
-};
-
-export default async function RootLayout({
+export default function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }>) {
-  const { locale } = await params;
+  const locale = params?.locale ?? 'es';
 
   return (
     <html lang={locale}>
