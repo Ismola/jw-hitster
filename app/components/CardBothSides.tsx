@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 interface CardBothSidesProps {
     date: string;
     event: string;
@@ -9,6 +11,8 @@ interface CardBothSidesProps {
 }
 
 export default function CardBothSides({ date, event, bibleReference, bcText, adText }: CardBothSidesProps) {
+    const [isFlipped, setIsFlipped] = useState(false);
+
     // Format date with BC/AD
     const formatDate = (dateStr: string) => {
         const year = parseInt(dateStr);
@@ -20,16 +24,41 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
     };
 
     return (
-        <div className="w-48 h-64 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg shadow-lg flex flex-col p-4 text-white relative overflow-hidden">
-            {/* Date Badge */}
-            <div className="absolute top-0 left-0 right-0 bg-blue-600 py-2 px-4 text-center">
-                <div className="text-2xl font-bold">{formatDate(date)}</div>
-            </div>
+        <div
+            className="w-48 h-64 perspective-1000"
+            onMouseEnter={() => setIsFlipped(true)}
+            onMouseLeave={() => setIsFlipped(false)}
+        >
+            <div
+                className={`relative w-full h-full transition-transform duration-500 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''
+                    }`}
+                style={{
+                    transformStyle: 'preserve-3d',
+                    transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                }}
+            >
+                {/* Front - Date Only */}
+                <div
+                    className="absolute w-full h-full backface-hidden bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg shadow-lg flex items-center justify-center p-4"
+                    style={{ backfaceVisibility: 'hidden' }}
+                >
+                    <div className="text-white text-center">
+                        <div className="text-5xl font-bold">{formatDate(date)}</div>
+                    </div>
+                </div>
 
-            {/* Event Content */}
-            <div className="flex-1 flex flex-col items-center justify-center text-center mt-10">
-                <div className="text-sm font-bold mb-2">{event}</div>
-                <div className="text-xs opacity-75">{bibleReference}</div>
+                {/* Back - Event Details */}
+                <div
+                    className="absolute w-full h-full backface-hidden bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg shadow-lg flex flex-col items-center justify-center p-4 text-white"
+                    style={{
+                        backfaceVisibility: 'hidden',
+                        transform: 'rotateY(180deg)'
+                    }}
+                >
+                    <div className="text-sm font-bold mb-3 text-center">{event}</div>
+                    <div className="text-xs opacity-75 text-center">{bibleReference}</div>
+                    <div className="absolute top-2 right-2 text-xs opacity-50">{formatDate(date)}</div>
+                </div>
             </div>
         </div>
     );
