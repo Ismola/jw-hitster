@@ -13,13 +13,6 @@ services:
     restart: unless-stopped
     networks:
       - jw-network
-    # Para desarrollo, descomenta lo siguiente:
-    # volumes:
-    #   - .:/app
-    #   - /app/node_modules
-    # environment:
-    #   - NODE_ENV=development
-    # command: npm run dev
 
   nginx:
     build:
