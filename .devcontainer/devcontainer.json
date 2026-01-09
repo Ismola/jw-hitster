@@ -32,7 +32,8 @@
 		"vscode": {
 			"extensions": [
 				"ismola.ismola-extension-pack",
-				"lauren.react-pack"
+				"lauren.react-pack",
+				"github.vscode-github-actions"
 			]
 		}
 	}
