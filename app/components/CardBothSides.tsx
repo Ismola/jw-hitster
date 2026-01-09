@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface CardBothSidesProps {
     date: string;
@@ -12,6 +12,12 @@ interface CardBothSidesProps {
 
 export default function CardBothSides({ date, event, bibleReference, bcText, adText }: CardBothSidesProps) {
     const [isFlipped, setIsFlipped] = useState(false);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+    useEffect(() => {
+        // Detectar si es un dispositivo táctil
+        setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    }, []);
 
     // Format date with BC/AD
     const formatDate = (dateStr: string) => {
@@ -23,11 +29,30 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
         }
     };
 
+    const handleInteraction = () => {
+        if (isTouchDevice) {
+            setIsFlipped(!isFlipped);
+        }
+    };
+
+    const handleMouseEnter = () => {
+        if (!isTouchDevice) {
+            setIsFlipped(true);
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (!isTouchDevice) {
+            setIsFlipped(false);
+        }
+    };
+
     return (
         <div
-            className="w-36 h-48 md:w-48 md:h-64 perspective-1000"
-            onMouseEnter={() => setIsFlipped(true)}
-            onMouseLeave={() => setIsFlipped(false)}
+            className="w-36 h-48 md:w-48 md:h-64 perspective-1000 cursor-pointer"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onClick={handleInteraction}
         >
             <div
                 className={`relative w-full h-full transition-transform duration-500 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''
