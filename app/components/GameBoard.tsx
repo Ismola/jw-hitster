@@ -183,7 +183,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                 </h2>
                 <button
                     onClick={startGame}
-                    className="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
+                    className="px-8 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition"
                 >
                     {t.start}
                 </button>
@@ -328,7 +328,7 @@ export default function GameBoard({ locale }: { locale: string }) {
             {gameState === 'gameOver' && (
                 <button
                     onClick={startGame}
-                    className="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
+                    className="px-8 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition"
                 >
                     {t.playAgain}
                 </button>

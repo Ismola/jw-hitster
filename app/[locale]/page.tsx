@@ -19,7 +19,7 @@ export default function Home() {
         <p className="text-lg text-zinc-600 dark:text-zinc-400">{t.welcome}</p>
         <LanguageSwitcher />
         <ThemeSwitcher />
-        <Link href={`/${locale}/${t["slug.game"]}`} className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+        <Link href={`/${locale}/${t["slug.game"]}`} className="rounded bg-amber-600 px-4 py-2 text-white hover:bg-amber-700"
         >
           {t.startGame}
         </Link>
