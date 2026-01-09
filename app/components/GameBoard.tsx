@@ -31,6 +31,8 @@ export default function GameBoard({ locale }: { locale: string }) {
     const [shuffledDeck, setShuffledDeck] = useState<BoardCard[]>([]);
     const [deckIndex, setDeckIndex] = useState(0);
     const [draggedOver, setDraggedOver] = useState<number | null>(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [dragPosition, setDragPosition] = useState<{ x: number; y: number } | null>(null);
     const [touchStartPos, setTouchStartPos] = useState<{ x: number; y: number } | null>(null);
 
     const lang = (locale === 'es' || locale === 'en' ? locale : 'en') as keyof typeof messages;
@@ -122,23 +124,51 @@ export default function GameBoard({ locale }: { locale: string }) {
     };
 
     const handleTouchStart = (e: React.TouchEvent) => {
+        e.preventDefault(); // Prevent scrolling while dragging
         const touch = e.touches[0];
         setTouchStartPos({ x: touch.clientX, y: touch.clientY });
+        setDragPosition({ x: touch.clientX, y: touch.clientY });
+        setIsDragging(true);
     };
 
-    const handleTouchEnd = (e: React.TouchEvent, position: number) => {
-        if (!touchStartPos) return;
+    const handleTouchMove = (e: React.TouchEvent) => {
+        if (!isDragging) return;
+        e.preventDefault(); // Prevent scrolling while dragging
+        const touch = e.touches[0];
+        setDragPosition({ x: touch.clientX, y: touch.clientY });
+
+        // Detect which drop zone is under the touch
+        const element = document.elementFromPoint(touch.clientX, touch.clientY);
+        const dropZone = element?.closest('[data-drop-zone]');
+        if (dropZone) {
+            const position = parseInt(dropZone.getAttribute('data-drop-zone') || '-1');
+            if (position !== -1) {
+                setDraggedOver(position);
+            }
+        } else {
+            setDraggedOver(null);
+        }
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        if (!touchStartPos || !isDragging) return;
+        e.preventDefault(); // Prevent any default behavior
 
         const touch = e.changedTouches[0];
-        const deltaX = Math.abs(touch.clientX - touchStartPos.x);
-        const deltaY = Math.abs(touch.clientY - touchStartPos.y);
+        const element = document.elementFromPoint(touch.clientX, touch.clientY);
+        const dropZone = element?.closest('[data-drop-zone]');
 
-        // If the touch didn't move much, consider it a tap
-        if (deltaX < 10 && deltaY < 10) {
-            checkPosition(position);
+        if (dropZone) {
+            const position = parseInt(dropZone.getAttribute('data-drop-zone') || '-1');
+            if (position !== -1) {
+                checkPosition(position);
+            }
         }
 
+        setIsDragging(false);
+        setDragPosition(null);
         setTouchStartPos(null);
+        setDraggedOver(null);
     };
 
     if (gameState === 'start') {
@@ -170,15 +200,42 @@ export default function GameBoard({ locale }: { locale: string }) {
                     <div className="text-lg font-semibold">
                         {t.placeCard}:
                     </div>
-                    <div
-                        draggable
-                        onDragStart={handleDragStart}
-                        className="cursor-move touch-none"
-                    >
-                        <CardDataOnly
-                            event={currentCard.event[lang]}
-                            bibleReference={currentCard.bible_reference[lang]}
-                        />
+                    <div className="relative">
+                        {/* Placeholder to keep space when dragging */}
+                        {isDragging && (
+                            <div className="w-48 h-64 opacity-30">
+                                <CardDataOnly
+                                    event={currentCard.event[lang]}
+                                    bibleReference={currentCard.bible_reference[lang]}
+                                />
+                            </div>
+                        )}
+                        {/* Actual draggable card */}
+                        <div
+                            draggable
+                            onDragStart={handleDragStart}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            className="cursor-move touch-none select-none"
+                            style={
+                                isDragging && dragPosition
+                                    ? {
+                                        position: 'fixed',
+                                        left: dragPosition.x - 96,
+                                        top: dragPosition.y - 128,
+                                        zIndex: 1000,
+                                        opacity: 0.9,
+                                        pointerEvents: 'none',
+                                    }
+                                    : undefined
+                            }
+                        >
+                            <CardDataOnly
+                                event={currentCard.event[lang]}
+                                bibleReference={currentCard.bible_reference[lang]}
+                            />
+                        </div>
                     </div>
                 </div>
             )}
@@ -187,13 +244,13 @@ export default function GameBoard({ locale }: { locale: string }) {
             <div className="flex gap-4 items-center justify-center flex-wrap">
                 {gameState === 'playing' && currentCard && (
                     <div
+                        data-drop-zone="0"
                         onDragOver={(e) => handleDragOver(e, 0)}
                         onDragLeave={handleDragLeave}
                         onDrop={(e) => handleDrop(e, 0)}
-                        onTouchEnd={(e) => handleTouchEnd(e, 0)}
                         className={`flex flex-col items-center justify-center w-32 h-48 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === 0
-                                ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
-                                : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                            ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
+                            : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
                             }`}
                     >
                         <svg
@@ -216,17 +273,19 @@ export default function GameBoard({ locale }: { locale: string }) {
                             date={card.date}
                             event={card.event[lang]}
                             bibleReference={card.bible_reference[lang]}
+                            bcText={t.bc}
+                            adText={t.ad}
                         />
 
                         {gameState === 'playing' && currentCard && (
                             <div
+                                data-drop-zone={index + 1}
                                 onDragOver={(e) => handleDragOver(e, index + 1)}
                                 onDragLeave={handleDragLeave}
                                 onDrop={(e) => handleDrop(e, index + 1)}
-                                onTouchEnd={(e) => handleTouchEnd(e, index + 1)}
                                 className={`flex flex-col items-center justify-center w-32 h-48 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
-                                        ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
-                                        : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                                    ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
+                                    : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
                                     }`}
                             >
                                 <svg

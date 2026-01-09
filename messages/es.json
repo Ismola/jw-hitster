@@ -15,5 +15,7 @@
     "score": "Puntos",
     "placeCard": "Coloca esta tarjeta",
     "placeHere": "Colocar aquí",
-    "playAgain": "Jugar de nuevo"
+    "playAgain": "Jugar de nuevo",
+    "bc": "a.C.",
+    "ad": "d.C."
 }
