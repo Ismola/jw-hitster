@@ -30,6 +30,8 @@ export default function GameBoard({ locale }: { locale: string }) {
     const [message, setMessage] = useState('');
     const [shuffledDeck, setShuffledDeck] = useState<BoardCard[]>([]);
     const [deckIndex, setDeckIndex] = useState(0);
+    const [draggedOver, setDraggedOver] = useState<number | null>(null);
+    const [touchStartPos, setTouchStartPos] = useState<{ x: number; y: number } | null>(null);
 
     const lang = (locale === 'es' || locale === 'en' ? locale : 'en') as keyof typeof messages;
     const t = messages[lang];
@@ -99,6 +101,46 @@ export default function GameBoard({ locale }: { locale: string }) {
         }
     };
 
+    const handleDragStart = (e: React.DragEvent) => {
+        e.dataTransfer.effectAllowed = 'move';
+    };
+
+    const handleDragOver = (e: React.DragEvent, position: number) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        setDraggedOver(position);
+    };
+
+    const handleDragLeave = () => {
+        setDraggedOver(null);
+    };
+
+    const handleDrop = (e: React.DragEvent, position: number) => {
+        e.preventDefault();
+        setDraggedOver(null);
+        checkPosition(position);
+    };
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        const touch = e.touches[0];
+        setTouchStartPos({ x: touch.clientX, y: touch.clientY });
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent, position: number) => {
+        if (!touchStartPos) return;
+
+        const touch = e.changedTouches[0];
+        const deltaX = Math.abs(touch.clientX - touchStartPos.x);
+        const deltaY = Math.abs(touch.clientY - touchStartPos.y);
+
+        // If the touch didn't move much, consider it a tap
+        if (deltaX < 10 && deltaY < 10) {
+            checkPosition(position);
+        }
+
+        setTouchStartPos(null);
+    };
+
     if (gameState === 'start') {
         return (
             <div className="flex flex-col items-center gap-6">
@@ -128,23 +170,44 @@ export default function GameBoard({ locale }: { locale: string }) {
                     <div className="text-lg font-semibold">
                         {t.placeCard}:
                     </div>
-                    <CardDataOnly
-                        event={currentCard.event[lang]}
-                        bibleReference={currentCard.bible_reference[lang]}
-                    />
+                    <div
+                        draggable
+                        onDragStart={handleDragStart}
+                        className="cursor-move touch-none"
+                    >
+                        <CardDataOnly
+                            event={currentCard.event[lang]}
+                            bibleReference={currentCard.bible_reference[lang]}
+                        />
+                    </div>
                 </div>
             )}
 
             {/* Board Cards with Position Buttons */}
             <div className="flex gap-4 items-center justify-center flex-wrap">
                 {gameState === 'playing' && currentCard && (
-                    <button
-                        onClick={() => checkPosition(0)}
-                        className="w-12 h-12 bg-green-600 text-white rounded-full font-bold hover:bg-green-700 transition flex items-center justify-center text-2xl"
-                        title={t.placeHere}
+                    <div
+                        onDragOver={(e) => handleDragOver(e, 0)}
+                        onDragLeave={handleDragLeave}
+                        onDrop={(e) => handleDrop(e, 0)}
+                        onTouchEnd={(e) => handleTouchEnd(e, 0)}
+                        className={`flex flex-col items-center justify-center w-32 h-48 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === 0
+                                ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
+                                : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                            }`}
                     >
-                        +
-                    </button>
+                        <svg
+                            className="w-16 h-16 text-gray-400 dark:text-gray-600 mb-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" />
+                        </svg>
+                        <span className="text-xs text-center text-gray-600 dark:text-gray-400 px-2">
+                            {t.placeHere}
+                        </span>
+                    </div>
                 )}
 
                 {boardCards.map((card, index) => (
@@ -156,13 +219,28 @@ export default function GameBoard({ locale }: { locale: string }) {
                         />
 
                         {gameState === 'playing' && currentCard && (
-                            <button
-                                onClick={() => checkPosition(index + 1)}
-                                className="w-12 h-12 bg-green-600 text-white rounded-full font-bold hover:bg-green-700 transition flex items-center justify-center text-2xl"
-                                title={t.placeHere}
+                            <div
+                                onDragOver={(e) => handleDragOver(e, index + 1)}
+                                onDragLeave={handleDragLeave}
+                                onDrop={(e) => handleDrop(e, index + 1)}
+                                onTouchEnd={(e) => handleTouchEnd(e, index + 1)}
+                                className={`flex flex-col items-center justify-center w-32 h-48 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
+                                        ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
+                                        : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                                    }`}
                             >
-                                +
-                            </button>
+                                <svg
+                                    className="w-16 h-16 text-gray-400 dark:text-gray-600 mb-2"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" />
+                                </svg>
+                                <span className="text-xs text-center text-gray-600 dark:text-gray-400 px-2">
+                                    {t.placeHere}
+                                </span>
+                            </div>
                         )}
                     </div>
                 ))}
