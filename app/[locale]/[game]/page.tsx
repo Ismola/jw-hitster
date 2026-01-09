@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import { messages } from '@/config/text';
 import Header from '@/app/components/Header';
+import GameBoard from '@/app/components/GameBoard';
 
 interface GamePageProps {
     params: {
@@ -21,8 +22,9 @@ export default function GamePage({ params }: GamePageProps) {
             <Header />
 
             <div className="flex flex-1 items-center justify-center">
-                <div className="flex flex-col items-center gap-8 px-4">
+                <div className="flex flex-col items-center gap-8 px-4 pb-8 w-full">
                     <h1 className="text-4xl font-bold">{t.game}</h1>
+                    <GameBoard locale={locale} />
                 </div>
             </div>
         </div>

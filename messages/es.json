@@ -7,5 +7,13 @@
     "english": "English",
     "startGame": "Iniciar Juego",
     "slug.game": "juego",
-    "game": "Juego"
+    "game": "Juego",
+    "correct": "¡Correcto!",
+    "won": "¡Has ganado!",
+    "lose": "¡Has perdido!",
+    "start": "Iniciar",
+    "score": "Puntos",
+    "placeCard": "Coloca esta tarjeta",
+    "placeHere": "Colocar aquí",
+    "playAgain": "Jugar de nuevo"
 }

@@ -7,5 +7,13 @@
     "english": "English",
     "startGame": "Start Game",
     "slug.game": "game",
-    "game": "Game"
+    "game": "Game",
+    "correct": "Correct!",
+    "won": "You won!",
+    "lose": "You lost!",
+    "start": "Start",
+    "score": "Score",
+    "placeCard": "Place this card",
+    "placeHere": "Place here",
+    "playAgain": "Play Again"
 }
