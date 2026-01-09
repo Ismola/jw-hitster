@@ -130,10 +130,12 @@ Este proyecto es de código abierto y está disponible bajo la licencia MIT.
 
 ## 📋 TODOs
 
-<!-- Añade aquí las tareas pendientes y mejoras futuras -->
 
 * TODO Añadir muuuuuchas mñas tarjetas a info.json
-* TODO Terminar de cambiar los textos para que siempre se cogan de los archivos json
+* TODO Terminar de cambiar los textos para que siempre se cogan de los archivos json y no a mano en el componente
 * TODO Mejorar diseño
 * TODO Añadir animaciones
-* Cuando se termina una aprtida el cartel de has ganado o perdido desaparece
+* TODO Cuando se termina una partida el cartel de has ganado o perdido desaparece
+* TODO Añadir instrucciones
+* TODO Mejorar drag and drop en versión móvil
+* TODO añadir un "compartir resultado" al final de la partida que genere una imagen con el resultado y la fecha
