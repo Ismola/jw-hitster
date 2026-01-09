@@ -1,9 +1,11 @@
 {
-    "home": {
-        "title": "Hipster",
-        "welcome": "Bienvenido"
-    },
+    "title": "Hipster",
+    "welcome": "Bienvenido",
+    "description": "Juego Bíblico basado en Hitster",
     "language": "Idioma",
     "spanish": "Español",
-    "english": "English"
+    "english": "English",
+    "startGame": "Iniciar Juego",
+    "slug.game": "juego",
+    "game":"Juego"
 }

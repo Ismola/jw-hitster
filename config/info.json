@@ -38,5 +38,25 @@
                 "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
             ]
         }
+    },
+    {
+        "date": "-2018",
+        "event": {
+            "es": "Nacimiento de Abraham",
+            "en": "Birth of Abraham"
+        },
+        "bible_reference": {
+            "es": "Génesis 11:26",
+            "en": "Genesis 11:26"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
+            ]
+        }
     }
+
 ]

@@ -16,7 +16,10 @@ export default function Home() {
         <h1 className="text-4xl font-bold">{t.title}</h1>
         <p className="text-lg text-zinc-600 dark:text-zinc-400">{t.welcome}</p>
         <LanguageSwitcher />
-        
+        <a href={`/${locale}/${t["slug.game"]}`} className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+        >
+          {t.startGame}
+        </a>
       </div>
     </div>
   );

@@ -13,9 +13,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 export async function generateMetadata(
-  { params }: { params: { locale: string } }
+  { params }: { params: Promise<{ locale: string }> }
 ): Promise<Metadata> {
-  const locale = (params?.locale ?? 'es') as keyof typeof messages;
+  const { locale: rawLocale } = await params;
+  const locale = (rawLocale ?? 'es') as keyof typeof messages;
   const t = messages[locale] || messages.en;
   return {
     title: "JW Hitster",
@@ -23,14 +24,15 @@ export async function generateMetadata(
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>) {
-  const locale = params?.locale ?? 'es';
+  const { locale: rawLocale } = await params;
+  const locale = rawLocale ?? 'es';
 
   return (
     <html lang={locale}>

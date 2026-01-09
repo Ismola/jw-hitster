@@ -1,27 +1,11 @@
 
-interface MessageContent {
-    [key: string]: string; // allow extra translation entries without changing the interface
-}
 
-export const messages: Record<string, MessageContent> = {
-    es: {
+import es from '@/messages/es.json';
+import en from '@/messages/en.json';
 
-        title: "Hipster",
-        welcome: "Bienvenido",
-        description: "Juego Bíblico basado en Hitster",
+export type MessageContent = Record<string, string>;
 
-        language: "Idioma",
-        spanish: "Español",
-        english: "English",
-    },
-    en: {
-
-        title: "Hipster",
-        welcome: "Welcome",
-        description: "Bible-based Game inspired by Hitster",
-
-        language: "Language",
-        spanish: "Español",
-        english: "English",
-    },
-};
+export const messages = {
+    es: es as MessageContent,
+    en: en as MessageContent,
+} as const;
