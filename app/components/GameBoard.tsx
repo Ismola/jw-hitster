@@ -222,11 +222,12 @@ export default function GameBoard({ locale }: { locale: string }) {
 
             {/* Current Card to Place */}
             {gameState === 'playing' && currentCard && (
-                <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-row md:flex-col  md:items-center items-start gap-4 sticky top-0 z-10 bg-white/30  dark:bg-gray-900/20 backdrop-blur-sm  w-full py-4 md:static md:bg-transparent md:dark:bg-transparent md:py-0">
+                    {/* TODO cambiar texto */}
                     <div className="text-lg font-semibold">
                         {t.placeCard}:
                     </div>
-                    <div className="relative">
+                    <div className="relative ">
                         {/* Placeholder to keep space when dragging */}
                         {isDragging && (
                             <div className="w-36 h-48 md:w-32 md:h-44 opacity-30">

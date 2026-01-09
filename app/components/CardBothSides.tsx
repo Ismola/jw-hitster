@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 
 interface CardBothSidesProps {
@@ -63,7 +63,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
             >
                 {/* Front - Date Only */}
                 <div
-                    className="absolute w-full h-full backface-hidden bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg shadow-lg flex items-center justify-center p-4"
+                    className="absolute w-full h-full backface-hidden bg-linear-to-br from-blue-600 to-blue-800 rounded-lg shadow-lg flex items-center justify-center p-4"
                     style={{ backfaceVisibility: 'hidden' }}
                 >
                     <div className="text-white text-center">
@@ -73,7 +73,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
 
                 {/* Back - Event Details */}
                 <div
-                    className="absolute w-full h-full backface-hidden bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg shadow-lg flex flex-col items-center justify-center p-4 text-white"
+                    className="absolute w-full h-full backface-hidden bg-linear-to-br from-purple-600 to-purple-800 rounded-lg shadow-lg flex flex-col items-center justify-center p-4 text-white"
                     style={{
                         backfaceVisibility: 'hidden',
                         transform: 'rotateY(180deg)'
