@@ -1,10 +1,8 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import Link from 'next/link';
-
 import { messages } from '@/config/text';
-import LanguageSwitcher from '@/app/components/LanguageSwitcher';
+import Header from '@/app/components/Header';
 
 interface GamePageProps {
     params: {
@@ -20,12 +18,7 @@ export default function GamePage({ params }: GamePageProps) {
 
     return (
         <div className="flex min-h-screen flex-col bg-zinc-50 font-sans dark:bg-black">
-            <div className="flex items-center justify-between p-4">
-                <Link href={`/${locale}`} className="text-blue-600 hover:text-blue-700">
-                    ← Volver
-                </Link>
-                <LanguageSwitcher />
-            </div>
+            <Header />
 
             <div className="flex flex-1 items-center justify-center">
                 <div className="flex flex-col items-center gap-8 px-4">

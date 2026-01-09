@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { messages } from "@/config/text";
@@ -21,6 +22,10 @@ export async function generateMetadata(
   return {
     title: "JW Hitster",
     description: t.description,
+    other: {
+      language: locale,
+    },
+    creator: "Ismola",
   };
 }
 
@@ -35,10 +40,18 @@ export default async function RootLayout({
   const locale = rawLocale ?? 'es';
 
   return (
-    <html lang={locale}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang={locale} suppressHydrationWarning>
+      <head>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`(() => { try {
+            var t = localStorage.getItem('theme');
+            var m = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var isDark = t === 'dark' || (!t || t === 'system') && m;
+            document.documentElement.classList.toggle('dark', isDark);
+          } catch (e) {} })();`}
+        </Script>
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
