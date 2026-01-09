@@ -1,0 +1,42 @@
+[
+    {
+        "date": "-4026",
+        "event": {
+            "es": "Nacimiento de Adán",
+            "en": "Birth of Adam"
+        },
+        "bible_reference": {
+            "es": "Génesis 5:1-5",
+            "en": "Genesis 5:1-5"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/lecciones-historias-biblia/1/dios-crea-adan-eva/",
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/bible-stories-lessons/1/god-made-adam-and-eve/",
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
+            ]
+        }
+    },
+    {
+        "date": "-2970",
+        "event": {
+            "es": "Nacimiento de Noé",
+            "en": "Birth of Noah"
+        },
+        "bible_reference": {
+            "es": "Génesis 5:28-29",
+            "en": "Genesis 5:28-29"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
+            ]
+        }
+    }
+]
