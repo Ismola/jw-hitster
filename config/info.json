@@ -57,5 +57,47 @@
                 "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
             ]
         }
+    },
+    {
+        "date": "-1919",
+        "event": {
+            "es": "Destrucción de Sodoma y Gomorra",
+            "en": "Destruction of Sodom and Gomorrah"
+        },
+        "bible_reference": {
+            "es": "Génesis 19:24",
+            "en": "Genesis 19:24"
+        },
+        "bibliografy": {
+            "es": [
+                "https://wol.jw.org/es/wol/d/r4/lp-s/1951246",
+                "https://www.jw.org/es/biblioteca/libros/lecciones-historias-biblia/3/acuerdate-esposa-lot/"
+            ],
+            "en": [
+                "https://wol.jw.org/en/wol/d/r1/lp-e/1951246",
+                "https://www.jw.org/en/library/books/bible-stories-lessons/3/remember-lots-wife/"
+            ]
+        }
+    },
+    {
+        "date": "-1918",
+        "event": {
+            "es": "Nacimiento de Isaac",
+            "en": "Birth of Isaac"
+        },
+        "bible_reference": {
+            "es": "Génesis 21:2",
+            "en": "Genesis 21:2"
+        },
+        "bibliografy": {
+            "es": [
+                "https://wol.jw.org/es/wol/d/r4/lp-s/1951246",
+                "https://www.jw.org/es/biblioteca/libros/lecciones-historias-biblia/3/isaac-ismael/"
+            ],
+            "en": [
+                "https://wol.jw.org/en/wol/d/r1/lp-e/1951246",
+                "https://www.jw.org/en/library/books/bible-stories-lessons/3/isaac-and-ishmael/"
+            ]
+        }
     }
 ]
