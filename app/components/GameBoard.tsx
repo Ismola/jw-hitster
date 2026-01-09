@@ -203,7 +203,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                     <div className="relative">
                         {/* Placeholder to keep space when dragging */}
                         {isDragging && (
-                            <div className="w-48 h-64 opacity-30">
+                            <div className="w-36 h-48 md:w-48 md:h-64 opacity-30">
                                 <CardDataOnly
                                     event={currentCard.event[lang]}
                                     bibleReference={currentCard.bible_reference[lang]}
@@ -249,7 +249,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                         onDragOver={(e) => handleDragOver(e, 0)}
                         onDragLeave={handleDragLeave}
                         onDrop={(e) => handleDrop(e, 0)}
-                        className={`flex flex-col items-center justify-center w-48 h-64 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === 0
+                        className={`flex flex-col items-center justify-center w-36 h-48 md:w-48 md:h-64 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === 0
                             ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
                             : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
                             }`}
@@ -285,7 +285,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                                 onDragOver={(e) => handleDragOver(e, index + 1)}
                                 onDragLeave={handleDragLeave}
                                 onDrop={(e) => handleDrop(e, index + 1)}
-                                className={`flex flex-col items-center justify-center w-48 h-64 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
+                                className={`flex flex-col items-center justify-center w-36 h-48 md:w-48 md:h-64 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
                                     ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
                                     : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
                                     }`}

@@ -25,7 +25,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
 
     return (
         <div
-            className="w-48 h-64 perspective-1000"
+            className="w-36 h-48 md:w-48 md:h-64 perspective-1000"
             onMouseEnter={() => setIsFlipped(true)}
             onMouseLeave={() => setIsFlipped(false)}
         >
@@ -43,7 +43,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
                     style={{ backfaceVisibility: 'hidden' }}
                 >
                     <div className="text-white text-center">
-                        <div className="text-5xl font-bold">{formatDate(date)}</div>
+                        <div className="text-3xl md:text-5xl font-bold">{formatDate(date)}</div>
                     </div>
                 </div>
 
@@ -55,9 +55,9 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
                         transform: 'rotateY(180deg)'
                     }}
                 >
-                    <div className="text-sm font-bold mb-3 text-center">{event}</div>
-                    <div className="text-xs opacity-75 text-center">{bibleReference}</div>
-                    <div className="absolute top-2 right-2 text-xs opacity-50">{formatDate(date)}</div>
+                    <div className="text-xs md:text-sm font-bold mb-3 text-center">{event}</div>
+                    <div className="text-[10px] md:text-xs opacity-75 text-center">{bibleReference}</div>
+                    <div className="absolute top-2 right-2 text-[10px] md:text-xs opacity-50">{formatDate(date)}</div>
                 </div>
             </div>
         </div>
