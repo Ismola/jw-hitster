@@ -33,7 +33,10 @@ services:
     restart: unless-stopped
     networks:
       - jw-network
+      - cloudflare_default
 
 networks:
   jw-network:
     driver: bridge
+  cloudflare_default:
+    external: true
