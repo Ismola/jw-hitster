@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 type Theme = "light" | "dark" | "system";
 
@@ -19,30 +19,55 @@ function applyTheme(theme: Theme) {
 }
 
 export default function ThemeSwitcher() {
+    const [mounted, setMounted] = useState(false);
     const [theme, setTheme] = useState<Theme>(() => {
         try {
-            if (typeof window === "undefined") return "system";
-            const stored = localStorage.getItem("theme") as Theme | null;
-            return stored ?? "system";
+            if (typeof window !== "undefined") {
+                const stored = localStorage.getItem("theme") as Theme | null;
+                return stored || "system";
+            }
         } catch {
-            return "system";
+            // ignore storage errors
         }
+        return "system";
     });
+    const [systemDark, setSystemDark] = useState(() => systemPrefersDark());
 
-    // Sync DOM class with selected theme; listen to system changes when in 'system'
+    // Calculate isDark based on theme and systemDark state
+    const isDark = useMemo(() => {
+        if (theme === "dark") return true;
+        if (theme === "light") return false;
+        return systemDark;
+    }, [theme, systemDark]);
+
+    // Handle initial mount and theme loading
     useEffect(() => {
-        applyTheme(theme);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setMounted(true);
+    }, []);
 
-        if (theme !== "system") return;
+    // Apply theme when it changes
+    useEffect(() => {
+        if (!mounted) return;
+        applyTheme(theme);
+    }, [theme, mounted]);
+
+    // Listen to system theme changes when in system mode
+    useEffect(() => {
+        if (!mounted || theme !== "system") return;
+
         const mql = window.matchMedia("(prefers-color-scheme: dark)");
-        const handler = (_e?: MediaQueryListEvent) => applyTheme("system");
+        const handler = () => {
+            setSystemDark(systemPrefersDark());
+            applyTheme("system");
+        };
 
         if ("addEventListener" in mql) {
             mql.addEventListener("change", handler);
         } else {
             const legacy = mql as MediaQueryList & {
-                addListener?: (listener: (this: MediaQueryList, ev: MediaQueryListEvent) => void) => void;
-                removeListener?: (listener: (this: MediaQueryList, ev: MediaQueryListEvent) => void) => void;
+                addListener?: (listener: (this: MediaQueryList) => void) => void;
+                removeListener?: (listener: (this: MediaQueryList) => void) => void;
             };
             legacy.addListener?.(handler);
         }
@@ -52,17 +77,16 @@ export default function ThemeSwitcher() {
                 mql.removeEventListener("change", handler);
             } else {
                 const legacy = mql as MediaQueryList & {
-                    addListener?: (listener: (this: MediaQueryList, ev: MediaQueryListEvent) => void) => void;
-                    removeListener?: (listener: (this: MediaQueryList, ev: MediaQueryListEvent) => void) => void;
+                    addListener?: (listener: (this: MediaQueryList) => void) => void;
+                    removeListener?: (listener: (this: MediaQueryList) => void) => void;
                 };
                 legacy.removeListener?.(handler);
             }
         };
-    }, [theme]);
+    }, [theme, mounted]);
 
     const switchTo = (next: Theme) => {
         setTheme(next);
-        applyTheme(next);
         try {
             localStorage.setItem("theme", next);
         } catch {
@@ -70,7 +94,15 @@ export default function ThemeSwitcher() {
         }
     };
 
-    const isDark = theme === "dark" || (theme === "system" && systemPrefersDark());
+    // Don't render theme-dependent UI until mounted to avoid hydration mismatch
+    if (!mounted) {
+        return (
+            <div className="flex items-center gap-2">
+                <div className="relative inline-flex items-center justify-center w-14 h-8 rounded-full bg-zinc-300 dark:bg-zinc-600 opacity-50" />
+                <div className="rounded-full p-2 w-9 h-9 bg-zinc-200 dark:bg-zinc-700 opacity-50" />
+            </div>
+        );
+    }
 
     const handleSystemToggle = () => {
         if (theme === "system") {
