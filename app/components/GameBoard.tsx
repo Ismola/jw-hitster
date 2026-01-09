@@ -34,13 +34,23 @@ export default function GameBoard({ locale }: { locale: string }) {
     const lang = (locale === 'es' || locale === 'en' ? locale : 'en') as keyof typeof messages;
     const t = messages[lang];
 
+    // Fisher-Yates shuffle algorithm for better randomization
+    const shuffleArray = <T,>(array: T[]): T[] => {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    };
+
     const startGame = () => {
         // Create a shuffled deck with unique IDs
         const deck = (gameData as GameItem[]).map((item, index) => ({
             id: index,
             ...item,
         }));
-        const shuffled = [...deck].sort(() => Math.random() - 0.5);
+        const shuffled = shuffleArray(deck);
 
         setShuffledDeck(shuffled);
         setBoardCards([shuffled[0]]);
