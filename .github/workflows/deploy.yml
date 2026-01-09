@@ -16,5 +16,5 @@ jobs:
     steps:
       - name: Trigger deployment webhook
         run: |
-          curl -X POST https://v3.ismola.dev/api/stacks/webhooks/5d878da0-80f2-44b9-9f50-a199d4bbc579
+          curl -X POST "${{ secrets.DEPLOY_WEBHOOK_URL }}"
           echo "✓ Deployment webhook triggered successfully"
