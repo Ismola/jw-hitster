@@ -16,6 +16,10 @@ interface GameItem {
         es: string;
         en: string;
     };
+    bibliografy?: {
+        es: string[];
+        en: string[];
+    };
 }
 
 interface BoardCard extends GameItem {
@@ -68,7 +72,7 @@ export default function GameBoard({ locale }: { locale: string }) {
     const checkPosition = (position: number) => {
         if (!currentCard) return;
 
-        const currentDate = parseInt(currentCard.date);
+
         const newBoard = [...boardCards];
 
         // Insert at the specified position
@@ -276,6 +280,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                             bibleReference={card.bible_reference[lang]}
                             bcText={t.bc}
                             adText={t.ad}
+                            bibliography={card.bibliografy?.[lang]}
                         />
 
                         {gameState === 'playing' && currentCard && (
