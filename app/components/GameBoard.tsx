@@ -192,11 +192,33 @@ export default function GameBoard({ locale }: { locale: string }) {
     }
 
     return (
-        <div className="flex flex-col items-center gap-8 w-full max-w-6xl mx-auto">
+        <div className="flex flex-col items-center gap-8 w-full  mx-auto">
             {/* Score */}
             <div className="text-2xl font-bold">
                 {t.score}: {score}
             </div>
+
+            {/* Message */}
+            {message && (
+                <div
+                    className={`text-xl font-bold p-4 rounded-lg ${gameState === 'gameOver'
+                        ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100'
+                        : 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100'
+                        }`}
+                >
+                    {message}
+                </div>
+            )}
+
+            {/* Game Over Button */}
+            {gameState === 'gameOver' && (
+                <button
+                    onClick={startGame}
+                    className="px-8 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition"
+                >
+                    {t.playAgain}
+                </button>
+            )}
 
             {/* Current Card to Place */}
             {gameState === 'playing' && currentCard && (
@@ -207,7 +229,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                     <div className="relative">
                         {/* Placeholder to keep space when dragging */}
                         {isDragging && (
-                            <div className="w-36 h-48 md:w-48 md:h-64 opacity-30">
+                            <div className="w-36 h-48 md:w-32 md:h-44 opacity-30">
                                 <CardDataOnly
                                     event={currentCard.event[lang]}
                                     bibleReference={currentCard.bible_reference[lang]}
@@ -245,94 +267,78 @@ export default function GameBoard({ locale }: { locale: string }) {
             )}
 
             {/* Board Cards with Position Buttons */}
-            <div className="flex flex-col md:flex-row gap-4 items-center justify-center md:flex-wrap">
-                {gameState === 'playing' && currentCard && (
-                    <div
-                        data-drop-zone="0"
-                        onClick={() => checkPosition(0)}
-                        onDragOver={(e) => handleDragOver(e, 0)}
-                        onDragLeave={handleDragLeave}
-                        onDrop={(e) => handleDrop(e, 0)}
-                        className={`flex flex-col items-center justify-center w-36 h-48 md:w-48 md:h-64 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === 0
-                            ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
-                            : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
-                            }`}
-                    >
-                        <svg
-                            className="w-16 h-16 text-gray-400 dark:text-gray-600 mb-2"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+            <div className="w-full overflow-x-auto pb-4 ">
+                <div className="flex flex-col md:flex-row gap-4 items-center justify-start md:justify-center min-w-max px-4">
+                    {gameState === 'playing' && currentCard && (
+                        <div
+                            data-drop-zone="0"
+                            onClick={() => checkPosition(0)}
+                            onDragOver={(e) => handleDragOver(e, 0)}
+                            onDragLeave={handleDragLeave}
+                            onDrop={(e) => handleDrop(e, 0)}
+                            className={`shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === 0
+                                ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
+                                : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                                }`}
                         >
-                            <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" />
-                        </svg>
-                        <span className="text-xs text-center text-gray-600 dark:text-gray-400 px-2">
-                            {t.placeHere}
-                        </span>
-                    </div>
-                )}
-
-                {boardCards.map((card, index) => (
-                    <div key={card.id} className="flex flex-col md:flex-row gap-4 items-center">
-                        <CardBothSides
-                            date={card.date}
-                            event={card.event[lang]}
-                            bibleReference={card.bible_reference[lang]}
-                            bcText={t.bc}
-                            adText={t.ad}
-                            bibliography={card.bibliografy?.[lang]}
-                        />
-
-                        {gameState === 'playing' && currentCard && (
-                            <div
-                                data-drop-zone={index + 1}
-                                onClick={() => checkPosition(index + 1)}
-                                onDragOver={(e) => handleDragOver(e, index + 1)}
-                                onDragLeave={handleDragLeave}
-                                onDrop={(e) => handleDrop(e, index + 1)}
-                                className={`flex flex-col items-center justify-center w-36 h-48 md:w-48 md:h-64 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
-                                    ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
-                                    : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
-                                    }`}
+                            <svg
+                                className="w-10 h-10 md:w-10 md:h-10 text-gray-400 dark:text-gray-600 mb-2"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
                             >
-                                <svg
-                                    className="w-16 h-16 text-gray-400 dark:text-gray-600 mb-2"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" />
-                                </svg>
-                                <span className="text-xs text-center text-gray-600 dark:text-gray-400 px-2">
-                                    {t.placeHere}
-                                </span>
+                                <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" />
+                            </svg>
+                            <span className="text-xs text-center text-gray-600 dark:text-gray-400 px-2">
+                                {t.placeHere}
+                            </span>
+                        </div>
+                    )}
+
+                    {boardCards.map((card, index) => (
+                        <div key={card.id} className="flex flex-col md:flex-row gap-4 items-center shrink-0">
+                            <div className="shrink-0">
+                                <CardBothSides
+                                    date={card.date}
+                                    event={card.event[lang]}
+                                    bibleReference={card.bible_reference[lang]}
+                                    bcText={t.bc}
+                                    adText={t.ad}
+                                    bibliography={card.bibliografy?.[lang]}
+                                />
                             </div>
-                        )}
-                    </div>
-                ))}
-            </div>
 
-            {/* Message */}
-            {message && (
-                <div
-                    className={`text-xl font-bold p-4 rounded-lg ${gameState === 'gameOver'
-                        ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100'
-                        : 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100'
-                        }`}
-                >
-                    {message}
+                            {gameState === 'playing' && currentCard && (
+                                <div
+                                    data-drop-zone={index + 1}
+                                    onClick={() => checkPosition(index + 1)}
+                                    onDragOver={(e) => handleDragOver(e, index + 1)}
+                                    onDragLeave={handleDragLeave}
+                                    onDrop={(e) => handleDrop(e, index + 1)}
+                                    className={`shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
+                                        ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
+                                        : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                                        }`}
+                                >
+                                    <svg
+                                        className="w-10 h-10 md:w-10 md:h-10 text-gray-400 dark:text-gray-600 mb-2"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" />
+                                    </svg>
+                                    <span className="text-xs text-center text-gray-600 dark:text-gray-400 px-2">
+                                        {t.placeHere}
+                                    </span>
+                                </div>
+                            )}
+                        </div>
+                    ))}
                 </div>
-            )}
 
-            {/* Game Over Button */}
-            {gameState === 'gameOver' && (
-                <button
-                    onClick={startGame}
-                    className="px-8 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition"
-                >
-                    {t.playAgain}
-                </button>
-            )}
+
+            </div>
         </div>
     );
 }
