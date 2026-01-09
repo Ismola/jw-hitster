@@ -33,7 +33,8 @@
 			"extensions": [
 				"ismola.ismola-extension-pack",
 				"lauren.react-pack",
-				"github.vscode-github-actions"
+				"github.vscode-github-actions",
+				"bradlc.vscode-tailwindcss"
 			]
 		}
 	}
