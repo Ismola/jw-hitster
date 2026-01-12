@@ -119,10 +119,22 @@ Los colores se definen en `tailwind.config.ts` y usan CSS variables para soporte
 Textos:
 > #e9e5ff
 
+Fondos:
+  Primary (color oscuro):
+  > #11224E
+  Secondary (color claro):
+  > bg-zinc-100
+
 #### Light
 
 Textos:
 > #11224E
+
+Fondos:
+  Primary (color claro):
+  > #e9e5ff
+  Secondary (color oscuro):
+  > #bg-zinc-700
 
 ### Traducciones
 
