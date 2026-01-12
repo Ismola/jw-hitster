@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { messages } from "@/config/text";
 import Background from "../components/Background";
+import { ThemeProvider } from "@/app/components/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,10 +54,12 @@ export default async function RootLayout({
         </Script>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Background />
-        <main className="absolute w-full top-0">
-          {children}
-        </main>
+        <ThemeProvider>
+          <Background />
+          <main className="absolute w-full top-0">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
