@@ -340,6 +340,31 @@ export default function GameBoard({ locale }: { locale: string }) {
 
 
             </div>
+
+            {/* Instructions */}
+            {/* TODO */}
+            <div className='flex flex-row w-[75%] h-full '>
+
+                {/* Arrow indicator - light mode */}
+                <div
+                    className='w-full h-20 bg-center bg-no-repeat bg-contain  dark:hidden'
+                    style={{ backgroundImage: "url('/components/left-arrow-light.svg')" }}
+                />
+                <div
+                    className='w-full h-20 bg-center bg-no-repeat bg-contain  dark:hidden'
+                    style={{ backgroundImage: "url('/components/right-arrow-light.svg')" }}
+                />
+
+                {/* Arrow indicator - dark mode */}
+                <div
+                    className='hidden dark:block w-full h-20 bg-center bg-no-repeat bg-contain '
+                    style={{ backgroundImage: "url('/components/left-arrow-dark.svg')" }}
+                />
+                <div
+                    className='hidden dark:block w-full h-20 bg-center bg-no-repeat bg-contain '
+                    style={{ backgroundImage: "url('/components/right-arrow-dark.svg')" }}
+                />
+            </div>
         </div>
     );
 }
