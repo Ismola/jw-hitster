@@ -7,6 +7,7 @@ import { messages } from '@/config/text';
 import Link from 'next/link';
 import TextPressure from '../components/ReactBits/TextPressure';
 import { useTheme } from '../components/ThemeProvider';
+import { useResponsiveFontSize } from '../hooks/useResponsiveFontSize';
 
 
 export default function Home() {
@@ -14,12 +15,13 @@ export default function Home() {
   const locale = (pathname.split('/')[1] || 'es') as keyof typeof messages;
   const t = messages[locale] || messages.en;
   const { isDark } = useTheme();
+  const minFontSize = useResponsiveFontSize(60, 300, 375, 1080);
   return (
-    <div className="flex min-h-screen items-center justify-center ">
-      <div className="flex flex-col items-center gap-8">
+    <div className="flex min-h-screen items-center justify-center overflow-hidden">
+      <div className="flex flex-col items-center gap-8 ">
 
 
-        <div className='w-full h-full relative'>
+        <div className='w-full h-full relative '>
           <TextPressure
             text={t.title}
             flex={true}
@@ -30,14 +32,15 @@ export default function Home() {
             italic={true}
             textColor={isDark ? "#e9e5ff" : "#11224E"}
             strokeColor="#ff0000"
-            minFontSize={300}
+            minFontSize={minFontSize}
             className='duration-[2000ms]'
           />
         </div>
 
-        <p className="text-lg text-[var(--text-light)] dark:text-[var(--text-dark)]">{t.welcome}</p>
+        <p className="text-lg text-(--text-light) dark:text-(--text-dark)">{t.welcome}</p>
         <LanguageSwitcher />
         <ThemeSwitcher />
+        
         <Link href={`/${locale}/${t["slug.game"]}`} className="rounded bg-amber-600 px-4 py-2 text-white hover:bg-amber-700"
         >
           {t.startGame}
