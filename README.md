@@ -114,6 +114,16 @@ El proyecto se despliega automáticamente en GitHub Pages mediante GitHub Action
 
 Los colores se definen en `tailwind.config.ts` y usan CSS variables para soporte de tema oscuro automático.
 
+#### Dark
+
+Textos:
+> #e9e5ff
+
+#### Light
+
+Textos:
+> #11224E
+
 ### Traducciones
 
 Añade o modifica traducciones en `messages/es.json` y `messages/en.json`.
@@ -130,12 +140,11 @@ Este proyecto es de código abierto y está disponible bajo la licencia MIT.
 
 ## 📋 TODOs
 
-
-* TODO Añadir muuuuuchas mñas tarjetas a info.json
-* TODO Terminar de cambiar los textos para que siempre se cogan de los archivos json y no a mano en el componente
-* TODO Mejorar diseño
-* TODO Añadir animaciones
-* TODO Cuando se termina una partida el cartel de has ganado o perdido desaparece
-* TODO Añadir instrucciones
-* TODO Mejorar drag and drop en versión móvil
-* TODO añadir un "compartir resultado" al final de la partida que genere una imagen con el resultado y la fecha
+- TODO Añadir muuuuuchas mñas tarjetas a info.json
+- TODO Terminar de cambiar los textos para que siempre se cogan de los archivos json y no a mano en el componente
+- TODO Mejorar diseño
+- TODO Añadir animaciones
+- TODO Cuando se termina una partida el cartel de has ganado o perdido desaparece
+- TODO Añadir instrucciones
+- TODO Mejorar drag and drop en versión móvil
+- TODO añadir un "compartir resultado" al final de la partida que genere una imagen con el resultado y la fecha
