@@ -25,8 +25,10 @@ export default function LanguageSwitcher() {
             <button
                 onClick={() => switchLanguage('es')}
                 className={` px-3 py-1 rounded transition ${locale === 'es'
-                    ? 'bg-zinc-900 text-white dark:bg-white dark:text-black'
-                    : 'cursor-pointer bg-zinc-200 text-black dark:bg-zinc-700 dark:text-white hover:bg-zinc-300 dark:hover:bg-zinc-600'
+                    // Seccionado
+                    ? 'bg-[var(--text-light)] text-white dark:bg-[var(--text-dark)] dark:text-black '
+                    // Sin seleccionar
+                    : 'cursor-pointer bg-zinc-100 text-[var(--text-light)] dark:bg-zinc-700 dark:text-[var(--text-dark)] hover:bg-zinc-300 dark:hover:bg-zinc-600  '
                     }`}
                 disabled={isPending}
             >
@@ -35,8 +37,10 @@ export default function LanguageSwitcher() {
             <button
                 onClick={() => switchLanguage('en')}
                 className={` px-3 py-1 rounded transition ${locale === 'en'
-                    ? 'bg-zinc-900 text-white dark:bg-white dark:text-black'
-                    : 'cursor-pointer bg-zinc-200 text-black dark:bg-zinc-700 dark:text-white hover:bg-zinc-300 dark:hover:bg-zinc-600'
+                    // Seccionado
+                    ? 'bg-[var(--text-light)] text-white dark:bg-[var(--text-dark)] dark:text-black '
+                    // Sin seleccionar
+                    : 'cursor-pointer bg-zinc-100 text-[var(--text-light)] dark:bg-zinc-700 dark:text-[var(--text-dark)] hover:bg-zinc-300 dark:hover:bg-zinc-600  '
                     }`}
                 disabled={isPending}
             >

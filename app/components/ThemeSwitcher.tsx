@@ -120,8 +120,8 @@ export default function ThemeSwitcher() {
                 onClick={() => switchTo(isDark ? "light" : "dark")}
                 disabled={theme === "system"}
                 className={`relative inline-flex items-center justify-center w-14 h-8 rounded-full transition-colors ${theme === "system"
-                    ? "bg-zinc-200 dark:bg-zinc-700 opacity-50 cursor-not-allowed"
-                    : "cursor-pointer bg-zinc-300 dark:bg-zinc-600 hover:bg-zinc-400 dark:hover:bg-zinc-500"
+                    ? "bg-(--text-dark) dark:bg-(--text-light) opacity-50 cursor-not-allowed"
+                    : "cursor-pointer bg-zinc-100 dark:bg-zinc-700 hover:bg-zinc-200 dark:hover:bg-zinc-600"
                     }`}
                 aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
             >
@@ -153,8 +153,8 @@ export default function ThemeSwitcher() {
             <button
                 onClick={handleSystemToggle}
                 className={`cursor-pointer rounded-full p-2 transition-colors ${theme === "system"
-                    ? "bg-zinc-900 text-white dark:bg-white dark:text-black"
-                    : "bg-zinc-200 text-zinc-700 dark:bg-zinc-700 dark:text-zinc-300 hover:bg-zinc-300 dark:hover:bg-zinc-600"
+                    ? "bg-(--text-light) text-white dark:bg-(--text-dark) dark:text-black"
+                    : "bg-zinc-100 text-zinc-700 dark:bg-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-600"
                     }`}
                 aria-label="Use system theme"
                 aria-pressed={theme === "system"}
