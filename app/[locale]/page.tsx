@@ -17,7 +17,7 @@ export default function Home() {
   const { isDark } = useTheme();
   const minFontSize = useResponsiveFontSize(60, 300, 375, 1080);
   return (
-    <div className="flex min-h-screen items-center justify-center overflow-hidden">
+    <div className="flex min-h-screen items-center justify-center overflow-hidden flex-col">
       <div className="flex flex-col items-center gap-8 ">
 
 
@@ -41,11 +41,11 @@ export default function Home() {
         <LanguageSwitcher />
         <ThemeSwitcher />
         
-        <Link href={`/${locale}/${t["slug.game"]}`} className="rounded bg-amber-600 px-4 py-2 text-white hover:bg-amber-700"
+      </div>
+        <Link href={`/${locale}/${t["slug.game"]}`} className="rounded bg-(--text-light) dark:bg-(--text-dark) px-4 py-2 text-white  w-[75%] mt-4 h-24 flex items-center justify-center text-2xl font-semibold text-(--text-dark) dark:text-(--text-light)"
         >
           {t.startGame}
         </Link>
-      </div>
     </div>
   );
 }
