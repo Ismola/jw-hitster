@@ -11,7 +11,8 @@ import { useResponsiveFontSize } from '../hooks/useResponsiveFontSize';
 import CircularText from '../components/ReactBits/CircularText';
 import CountUp from '../components/ReactBits/CountUp';
 import AnimatedContent from '../components/ReactBits/AnimatedContent';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import BlurText from '../components/ReactBits/BlurText';
 
 
 export default function Home() {
@@ -22,6 +23,26 @@ export default function Home() {
   const minFontSize = useResponsiveFontSize(60, 300, 375, 1080);
   const [showCounter, setShowCounter] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
+  const [showBlurText, setShowBlurText] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!showCounter) {
+      const timer = setTimeout(() => {
+        setShowBlurText(true);
+      }, 500); // Segundos de retraso antes de mostrar el texto borroso después del contador
+      return () => clearTimeout(timer);
+    }
+  }, [showCounter]);
+
+  const handleAnimationComplete = () => {
+    // console.log('Animation completed!');
+  };
   return (
     <>
       <div className="flex min-h-screen items-center justify-center overflow-hidden flex-col">
@@ -47,13 +68,14 @@ export default function Home() {
                 width={true}
                 weight={true}
                 italic={true}
-                textColor={isDark ? "#e9e5ff" : "#11224E"}
+                textColor={mounted ? (isDark ? "#e9e5ff" : "#11224E") : "#11224E"}
                 strokeColor="#ff0000"
                 minFontSize={minFontSize}
                 className='duration-[2000ms]'
               />
             </AnimatedContent>
           </div>
+
           <AnimatedContent
             distance={150}
             direction="vertical"
@@ -64,10 +86,27 @@ export default function Home() {
             animateOpacity
             scale={1.1}
             threshold={0.1}
-            delay={6}
+            delay={0}
           >
-            <p className="text-lg text-(--text-light) dark:text-(--text-dark)">{t.welcome}</p>
+            {showBlurText ? (
+              <BlurText
+                text={t.welcome}
+                threshold={1}
+                delay={100}
+                animateBy="letters"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className="text-2xl mb-8 text-(--text-light) dark:text-(--text-dark)"
+              />
+            )
+              :
+              <div className="text-2xl mb-8 text-(--text-light) dark:text-(--text-dark)">{/* Espacio reservado para el texto borroso */}
+
+                ********
+              </div>
+            }
           </AnimatedContent>
+
           <AnimatedContent
             distance={150}
             direction="vertical"
