@@ -8,6 +8,7 @@ import Link from 'next/link';
 import TextPressure from '../components/ReactBits/TextPressure';
 import { useTheme } from '../components/ThemeProvider';
 import { useResponsiveFontSize } from '../hooks/useResponsiveFontSize';
+import CircularText from '../components/ReactBits/CircularText';
 
 
 export default function Home() {
@@ -40,12 +41,17 @@ export default function Home() {
         <p className="text-lg text-(--text-light) dark:text-(--text-dark)">{t.welcome}</p>
         <LanguageSwitcher />
         <ThemeSwitcher />
-        
+
       </div>
-        <Link href={`/${locale}/${t["slug.game"]}`} className="rounded bg-(--text-light) dark:bg-(--text-dark) px-4 py-2 text-white  w-[75%] mt-4 h-24 flex items-center justify-center text-2xl font-semibold text-(--text-dark) dark:text-(--text-light)"
-        >
-          {t.startGame}
-        </Link>
+
+      <Link href={`/${locale}/${t["slug.game"]}`} className="mt-20  w-full h-80">
+        <CircularText
+          text={t.startGame}
+          onHover="goBonkers"
+          spinDuration={40}
+          className="text-(--text-light) dark:text-(--text-dark) h-full"
+        />
+      </Link>
     </div>
   );
 }
