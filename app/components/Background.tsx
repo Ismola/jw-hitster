@@ -31,7 +31,7 @@ export default function Backgtound() {
     }, [isDark]);
 
     return (
-        <div className="w-screen h-[110vh] md:h-screen relative ">
+        <div className="w-screen h-[120vh] md:h-screen relative ">
             <LiquidChrome
                 baseColor={baseColor}
                 speed={0.3}

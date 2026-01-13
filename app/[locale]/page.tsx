@@ -165,7 +165,7 @@ export default function Home() {
       </div>
       {/* Contador */}
       {showCounter && (
-        <div className={`text-(--text-light) dark:text-(--text-dark) absolute top-0 h-[110vh] md:h-screen min-w-screen backdrop-blur shadow bg-(--text-light)/10 dark:bg-(--text-dark)/10 flex items-center justify-center transition-opacity duration-1000 ${fadeOut ? 'opacity-0' : 'opacity-100'}`}>
+        <div className={`text-(--text-light) dark:text-(--text-dark) absolute top-0 h-[120vh] md:h-screen min-w-screen backdrop-blur shadow bg-(--text-light)/10 dark:bg-(--text-dark)/10 flex items-center justify-center transition-opacity duration-1000 ${fadeOut ? 'opacity-0' : 'opacity-100'}`}>
           <CountUp
             from={0}
             to={100}
