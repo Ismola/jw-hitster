@@ -157,7 +157,7 @@ export default function Home() {
             <CircularText
               text={t.startGame}
               onHover="slowDown"
-              spinDuration={40}
+              spinDuration={30}
               className=" h-full"
             />
           </Link>
