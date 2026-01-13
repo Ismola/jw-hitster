@@ -26,7 +26,7 @@ export default function Header() {
                 </div>
             </Link>
             <ThemeSwitcher />
-            <LanguageSwitcher />
+            {/* <LanguageSwitcher /> */}
         </div>
     )
 }
