@@ -13,9 +13,9 @@ export default function Backgtound() {
         <div className="w-screen h-screen relative ">
             <LiquidChrome
                 baseColor={baseColor}
-                speed={0.05}
+                speed={0.3}
                 amplitude={0.3}
-                interactive={true}
+                interactive={false}
             />
         </div>
     );

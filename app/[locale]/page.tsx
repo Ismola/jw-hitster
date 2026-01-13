@@ -20,8 +20,6 @@ export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center overflow-hidden flex-col">
       <div className="flex flex-col items-center gap-8 ">
-
-
         <div className='w-full h-full relative '>
           <TextPressure
             text={t.title}
@@ -44,12 +42,16 @@ export default function Home() {
 
       </div>
 
-      <Link href={`/${locale}/${t["slug.game"]}`} className="mt-20  w-full h-80">
+      <Link href={`/${locale}/${t["slug.game"]}`} className="mt-20 h-80 w-80 backdrop-blur shadow bg-(--text-light)/10 dark:bg-(--text-dark)/10 
+      rounded-full
+      text-(--text-light) dark:text-(--text-dark)
+       flex items-center justify-center ">
+        {/* {t.startGame} */}
         <CircularText
           text={t.startGame}
-          onHover="goBonkers"
+          onHover="slowDown"
           spinDuration={40}
-          className="text-(--text-light) dark:text-(--text-dark) h-full"
+          className=" h-full"
         />
       </Link>
     </div>
