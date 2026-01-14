@@ -35,7 +35,7 @@ export function LayoutClient({
         <ThemeProvider>
             <Background />
             <BlurTextProvider showBlurText={showBlurText}>
-                <main className="relative w-full top-0 h-[120vh] md:h-screen overflow-hidden  ">
+                <main className="relative w-full top-0 h-[120vh] md:h-screen overflow-hidden">
                     {children}
                 </main>
             </BlurTextProvider>

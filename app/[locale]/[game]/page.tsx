@@ -18,7 +18,7 @@ export default function GamePage({ }: GamePageProps) {
     const t = messages[locale] || messages.en;
 
     return (
-        <div className="flex min-h-screen flex-col  font-sans">
+        <div className="flex  h-full flex-col  font-sans">
             <Header />
 
             <div className="flex flex-1 items-center justify-center">

@@ -67,6 +67,12 @@ export default function GameBoard({ locale }: { locale: string }) {
         setGameState('playing');
         setScore(0);
         setMessage('');
+
+        // Reset drag states
+        setIsDragging(false);
+        setDragPosition(null);
+        setDraggedOver(null);
+        setTouchStartPos(null);
     };
 
     const checkPosition = (position: number) => {
@@ -109,6 +115,25 @@ export default function GameBoard({ locale }: { locale: string }) {
 
     const handleDragStart = (e: React.DragEvent) => {
         e.dataTransfer.effectAllowed = 'move';
+        // Crear una imagen transparente para ocultar la imagen fantasma del navegador
+        const img = new Image();
+        img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+        e.dataTransfer.setDragImage(img, 0, 0);
+
+        setIsDragging(true);
+        setDragPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    const handleDrag = (e: React.DragEvent) => {
+        if (e.clientX !== 0 || e.clientY !== 0) {
+            setDragPosition({ x: e.clientX, y: e.clientY });
+        }
+    };
+
+    const handleDragEnd = () => {
+        setIsDragging(false);
+        setDragPosition(null);
+        setDraggedOver(null);
     };
 
     const handleDragOver = (e: React.DragEvent, position: number) => {
@@ -183,7 +208,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                 </h2>
                 <button
                     onClick={startGame}
-                    className="px-8 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition"
+                    className="cursor-pointer px-8 py-3 bg-(--text-light) dark:bg-(--text-dark) text-(--text-dark) dark:text-(--text-light) rounded-lg font-semibold "
                 >
                     {t.start}
                 </button>
@@ -192,7 +217,7 @@ export default function GameBoard({ locale }: { locale: string }) {
     }
 
     return (
-        <div className="flex flex-col items-center gap-8 w-full  mx-auto">
+        <div className="flex flex-col items-center gap-8 w-full  mx-auto overflow-scroll">
             {/* Score */}
             <div className="text-2xl font-bold">
                 {t.score}: {score}
@@ -222,48 +247,53 @@ export default function GameBoard({ locale }: { locale: string }) {
 
             {/* Current Card to Place */}
             {gameState === 'playing' && currentCard && (
-                <div className="flex flex-row md:flex-col  md:items-center items-start gap-4 sticky top-0 z-10 bg-white/30  dark:bg-gray-900/20 backdrop-blur-sm  w-full py-4 md:static md:bg-transparent md:dark:bg-transparent md:py-0">
+                <div className="flex flex-row md:flex-col  md:items-center items-start gap-4 sticky top-0 z-10  backdrop-blur-s  w-full py-4 md:static md:bg-transparent md:dark:bg-transparent md:py-0">
                     {/* TODO cambiar texto de instruccion */}
                     <div className="text-lg font-semibold">
                         {t.placeCard}:
                     </div>
-                    <div className="relative ">
-                        {/* Placeholder to keep space when dragging */}
-                        {isDragging && (
-                            <div className="w-36 h-48 md:w-32 md:h-44 opacity-30">
-                                <CardDataOnly
-                                    event={currentCard.event[lang]}
-                                    bibleReference={currentCard.bible_reference[lang]}
-                                />
-                            </div>
-                        )}
-                        {/* Actual draggable card */}
+                    <div className="relative">
+                        {/* Draggable card */}
                         <div
                             draggable
                             onDragStart={handleDragStart}
+                            onDrag={handleDrag}
+                            onDragEnd={handleDragEnd}
                             onTouchStart={handleTouchStart}
                             onTouchMove={handleTouchMove}
                             onTouchEnd={handleTouchEnd}
                             className="cursor-move touch-none select-none"
-                            style={
-                                isDragging && dragPosition
-                                    ? {
-                                        position: 'fixed',
-                                        left: dragPosition.x - 96,
-                                        top: dragPosition.y - 128,
-                                        zIndex: 1000,
-                                        opacity: 0.9,
-                                        pointerEvents: 'none',
-                                    }
-                                    : undefined
-                            }
+                            style={{
+                                opacity: isDragging && dragPosition ? 0 : 1,
+                                transition: 'none'
+                            }}
                         >
                             <CardDataOnly
                                 event={currentCard.event[lang]}
                                 bibleReference={currentCard.bible_reference[lang]}
+                                isDragging={isDragging}
                             />
                         </div>
                     </div>
+                </div>
+            )}
+
+            {/* Carta flotante mientras arrastra */}
+            {gameState === 'playing' && isDragging && dragPosition && currentCard && (
+                <div
+                    className="pointer-events-none"
+                    style={{
+                        position: 'fixed',
+                        left: dragPosition.x - 72,
+                        top: dragPosition.y - 96,
+                        zIndex: 1000,
+                    }}
+                >
+                    <CardDataOnly
+                        event={currentCard.event[lang]}
+                        bibleReference={currentCard.bible_reference[lang]}
+                        isAnimating={true}
+                    />
                 </div>
             )}
 
@@ -341,30 +371,7 @@ export default function GameBoard({ locale }: { locale: string }) {
 
             </div>
 
-            {/* Instructions */}
-            {/* TODO */}
-            <div className='flex flex-row w-[75%] h-full '>
 
-                {/* Arrow indicator - light mode */}
-                <div
-                    className='w-full h-20 bg-center bg-no-repeat bg-contain  dark:hidden'
-                    style={{ backgroundImage: "url('/components/left-arrow-light.svg')" }}
-                />
-                <div
-                    className='w-full h-20 bg-center bg-no-repeat bg-contain  dark:hidden'
-                    style={{ backgroundImage: "url('/components/right-arrow-light.svg')" }}
-                />
-
-                {/* Arrow indicator - dark mode */}
-                <div
-                    className='hidden dark:block w-full h-20 bg-center bg-no-repeat bg-contain '
-                    style={{ backgroundImage: "url('/components/left-arrow-dark.svg')" }}
-                />
-                <div
-                    className='hidden dark:block w-full h-20 bg-center bg-no-repeat bg-contain '
-                    style={{ backgroundImage: "url('/components/right-arrow-dark.svg')" }}
-                />
-            </div>
         </div>
     );
 }

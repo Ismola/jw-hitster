@@ -149,3 +149,62 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Animación 3D ondulante para tarjetas */
+@keyframes float-3d {
+
+  0% {
+    transform: translateY(-10px) translateX(0px) rotateX(8deg) rotateY(-8deg) rotateZ(2deg) scale(1.05);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+  }
+
+  12.5% {
+    transform: translateY(-15px) translateX(3px) rotateX(-5deg) rotateY(12deg) rotateZ(-3deg) scale(1.06);
+    box-shadow: 0 35px 70px -18px rgba(0, 0, 0, 0.7);
+  }
+
+  25% {
+    transform: translateY(-12px) translateX(5px) rotateX(10deg) rotateY(-10deg) rotateZ(4deg) scale(1.08);
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.75);
+  }
+
+  37.5% {
+    transform: translateY(-18px) translateX(2px) rotateX(-8deg) rotateY(15deg) rotateZ(-2deg) scale(1.07);
+    box-shadow: 0 38px 75px -19px rgba(0, 0, 0, 0.72);
+  }
+
+  50% {
+    transform: translateY(-14px) translateX(-2px) rotateX(12deg) rotateY(-12deg) rotateZ(3deg) scale(1.09);
+    box-shadow: 0 42px 85px -22px rgba(0, 0, 0, 0.8);
+  }
+
+  62.5% {
+    transform: translateY(-20px) translateX(-4px) rotateX(-10deg) rotateY(10deg) rotateZ(-4deg) scale(1.08);
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.75);
+  }
+
+  75% {
+    transform: translateY(-16px) translateX(-3px) rotateX(9deg) rotateY(-15deg) rotateZ(2deg) scale(1.07);
+    box-shadow: 0 36px 72px -18px rgba(0, 0, 0, 0.7);
+  }
+
+  87.5% {
+    transform: translateY(-13px) translateX(2px) rotateX(-6deg) rotateY(9deg) rotateZ(-3deg) scale(1.06);
+    box-shadow: 0 33px 65px -16px rgba(0, 0, 0, 0.65);
+  }
+
+  100% {
+    transform: translateY(-10px) translateX(0px) rotateX(8deg) rotateY(-8deg) rotateZ(2deg) scale(1.05);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.card-hover-float:hover {
+  animation: float-3d 7s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.card-dragging-float {
+  animation: float-3d 7s ease-in-out infinite !important;
+  transform-style: preserve-3d;
+}
