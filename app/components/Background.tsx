@@ -20,7 +20,7 @@ export default function Backgtound() {
             const timeout = setTimeout(() => {
                 setBaseColor(targetColor);
                 isFirstLoadRef.current = false;
-            }, 1000);
+            }, 3000);
 
             return () => clearTimeout(timeout);
         } else {

@@ -22,7 +22,7 @@ export default function GamePage({ }: GamePageProps) {
             <Header />
 
             <div className="flex flex-1 items-center justify-center">
-                <div className="flex flex-col items-center gap-8  pb-8 w-full">
+                <div className="flex flex-col items-center gap-8  pb-8 w-full ">
                     <h1 className="text-4xl font-bold">{t.game}</h1>
                     <GameBoard locale={locale} />
                     

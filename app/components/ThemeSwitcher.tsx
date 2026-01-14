@@ -15,7 +15,17 @@ function systemPrefersDark(): boolean {
 function applyTheme(theme: Theme) {
     const root = document.documentElement;
     const isDark = theme === "dark" || (theme === "system" && systemPrefersDark());
+
+    // Add transition class temporarily
+    root.classList.add("theme-transition");
+
+    // Apply theme change
     root.classList.toggle("dark", isDark);
+
+    // Remove transition class after animation completes
+    setTimeout(() => {
+        root.classList.remove("theme-transition");
+    }, 300);
 }
 
 export default function ThemeSwitcher() {

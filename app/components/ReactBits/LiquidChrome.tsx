@@ -23,7 +23,7 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
     const programRef = useRef<Program | null>(null);
     const previousColorRef = useRef<[number, number, number]>(baseColor);
     const colorTransitionStartRef = useRef<number>(0);
-    const colorTransitionDurationRef = useRef<number>(2000);
+    const colorTransitionDurationRef = useRef<number>(4000);
 
     useEffect(() => {
         if (!containerRef.current) return;
