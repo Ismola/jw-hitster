@@ -9,10 +9,10 @@ import TextPressure from '../components/ReactBits/TextPressure';
 import { useTheme } from '../components/ThemeProvider';
 import { useResponsiveFontSize } from '../hooks/useResponsiveFontSize';
 import CircularText from '../components/ReactBits/CircularText';
-import CountUp from '../components/ReactBits/CountUp';
 import AnimatedContent from '../components/ReactBits/AnimatedContent';
 import { useState, useEffect } from 'react';
 import BlurText from '../components/ReactBits/BlurText';
+import { useBlurText } from './BlurTextContext';
 
 
 export default function Home() {
@@ -20,25 +20,14 @@ export default function Home() {
   const locale = (pathname.split('/')[1] || 'es') as keyof typeof messages;
   const t = messages[locale] || messages.en;
   const { isDark } = useTheme();
+  const { showBlurText } = useBlurText();
   const minFontSize = useResponsiveFontSize(60, 300, 375, 1080);
-  const [showCounter, setShowCounter] = useState(true);
-  const [fadeOut, setFadeOut] = useState(false);
-  const [showBlurText, setShowBlurText] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
-
-  useEffect(() => {
-    if (!showCounter) {
-      const timer = setTimeout(() => {
-        setShowBlurText(true);
-      }, 500); // Segundos de retraso antes de mostrar el texto borroso después del contador
-      return () => clearTimeout(timer);
-    }
-  }, [showCounter]);
 
   const handleAnimationComplete = () => {
     // console.log('Animation completed!');
@@ -163,23 +152,6 @@ export default function Home() {
           </Link>
         </AnimatedContent>
       </div>
-      {/* Contador */}
-      {showCounter && (
-        <div className={`text-(--text-light) dark:text-(--text-dark) absolute top-0 h-[120vh] md:h-screen min-w-screen backdrop-blur shadow bg-(--text-light)/10 dark:bg-(--text-dark)/10 flex items-center justify-center transition-opacity duration-1000 ${fadeOut ? 'opacity-0' : 'opacity-100'}`}>
-          <CountUp
-            from={0}
-            to={100}
-            separator=","
-            direction="up"
-            duration={2}
-            className="count-up-text text-9xl"
-            onEnd={() => {
-              setFadeOut(true);
-              setTimeout(() => setShowCounter(false), 500);
-            }}
-          />
-        </div>
-      )}
     </>
   );
 }
