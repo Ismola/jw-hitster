@@ -236,7 +236,7 @@ export default function GameBoard({ locale }: { locale: string }) {
     }
 
     return (
-        <div className="flex flex-col items-end md:items-center  md:gap-12 gap-8 w-full h-full">
+        <div className="flex flex-col  items-end md:items-center  md:gap-12 gap-8 w-full">
 
             {/* Score */}
             <div className="text-2xl font-bold flex justify-center items-center w-full">
@@ -245,7 +245,7 @@ export default function GameBoard({ locale }: { locale: string }) {
 
             {/* Message */}
             <div className="sticky top-4 z-40 w-full flex justify-center">
-                <div className="relative w-full max-w-3xl min-h-[72px]">
+                <div className="relative w-full max-w-3xl min-h-18">
                     {message ? (
                         <AnimatedContent
                             key={message.id}
@@ -265,7 +265,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                             <span aria-live="polite">{message.text}</span>
                         </AnimatedContent>
                     ) : (
-                        <div className="h-[72px]" aria-hidden="true" />
+                        <div className="h-18" aria-hidden="true" />
                     )}
                 </div>
             </div>
@@ -275,20 +275,23 @@ export default function GameBoard({ locale }: { locale: string }) {
             {gameState === 'gameOver' && (
                 <div className="flex justify-center w-full">
 
-                <button
-                    onClick={startGame}
-                    className="px-8 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition"
-                >
-                    {t.playAgain}
-                </button>
+                    <button
+                        onClick={startGame}
+                        className="px-8 py-3  rounded-lg font-semibold cursor-pointer 
+                        text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-zinc-200 dark:hover:bg-zinc-600
+                         
+                        hover:bg-gray-700 dark:hover:bg-gray-200 transition"
+                    >
+                        {t.playAgain}
+                    </button>
                 </div>
             )}
-      
+
             {/* Current Card to Place */}
             {gameState === 'playing' && currentCard && (
-                <div className="w-fit h-0 wrap-break-word sticky right-5 top-70 md:top-0 z-50 md:relative flex items-center flex-col">
+                <div className="w-fit h-0 md:h-auto wrap-break-word sticky right-5 top-70 md:top-0 z-50 md:relative flex items-center flex-col">
                     {/* TODO cambiar texto de instruccion */}
-                    <div className="text-lg font-semibold">
+                    <div className="text-lg font-semibold mb-6">
                         {t.placeCard}:
                     </div>
                     <div className="relative">
@@ -337,8 +340,8 @@ export default function GameBoard({ locale }: { locale: string }) {
             )}
 
             {/* Board Cards with Position Buttons */}
-            <div className="w-full pb-4 ">
-                <div className="flex flex-col md:flex-row gap-4 items-left justify-start md:justify-center min-w-max px-4">
+            <div className="w-full pb-4 flex justify-start md:justify-center">
+                <div className="flex flex-col md:flex-row gap-4 items-left justify-start  md:justify-center md:max-w-max overflow-x-auto overflow-y-auto scrollbar-minimal px-4">
                     {gameState === 'playing' && currentCard && (
                         <div
                             data-drop-zone="0"
@@ -346,9 +349,11 @@ export default function GameBoard({ locale }: { locale: string }) {
                             onDragOver={(e) => handleDragOver(e, 0)}
                             onDragLeave={handleDragLeave}
                             onDrop={(e) => handleDrop(e, 0)}
-                            className={`shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === 0
-                                ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
-                                : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                            className={`
+                                
+                                shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === 0
+                                    ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
+                                    : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
                                 }`}
                         >
                             <svg
@@ -366,7 +371,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                     )}
 
                     {boardCards.map((card, index) => (
-                        <div key={card.id} className="flex flex-col md:flex-row gap-4 items-start shrink-0">
+                        <div key={card.id} className="flex   flex-col md:flex-row gap-4 items-start shrink-0">
                             <div className="shrink-0">
                                 <CardBothSides
                                     date={card.date}

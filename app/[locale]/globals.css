@@ -208,3 +208,41 @@ body {
   animation: float-3d 7s ease-in-out infinite !important;
   transform-style: preserve-3d;
 }
+
+/* Scrollbar minimalista */
+.scrollbar-minimal::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+.scrollbar-minimal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-minimal::-webkit-scrollbar-thumb {
+  background: rgba(107, 114, 128, 0.4);
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+
+.scrollbar-minimal::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.7);
+}
+
+.dark .scrollbar-minimal::-webkit-scrollbar-thumb {
+  background: rgba(209, 213, 219, 0.3);
+}
+
+.dark .scrollbar-minimal::-webkit-scrollbar-thumb:hover {
+  background: rgba(209, 213, 219, 0.6);
+}
+
+/* Firefox scrollbar */
+.scrollbar-minimal {
+  scrollbar-color: rgba(107, 114, 128, 0.4) transparent;
+  scrollbar-width: thin;
+}
+
+.dark .scrollbar-minimal {
+  scrollbar-color: rgba(209, 213, 219, 0.3) transparent;
+}

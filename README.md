@@ -137,7 +137,7 @@ Fondos:
   > #bg-zinc-700
 
 Traslúcido:
->backdrop-blur-xl  bg-(--text-light)/10 >dark:bg-(--text-dark)/10
+>text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 >hover:bg-zinc-200 dark:hover:bg-zinc-600
 
 ### Traducciones
 
