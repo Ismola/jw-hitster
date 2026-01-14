@@ -142,7 +142,7 @@ body {
 
   html.theme-transition,
   html.theme-transition * {
-    transition: background-color 1s ease 1.5s, color 1s ease 1.5s, border-color 1s ease 1.5s !important;
+    transition: background-color 1s ease 1.5s, color 1s ease 1.5s, border-color 1s ease 1.5s, fill 1s ease 1.5s !important;
   }
 
   body {

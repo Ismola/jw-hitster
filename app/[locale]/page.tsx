@@ -34,9 +34,9 @@ export default function Home() {
   };
   return (
     <>
-      <div className="flex  h-full   overflow-y-auto  items-center justify-around sm:justify-between  flex-col gap-4 ">
+      <div className="flex  h-full   overflow-y-auto overflow-x-hidden items-center justify-around sm:justify-between  flex-col gap-4 ">
         <div className="flex flex-col  items-center gap-8 z-10  ">
-          <div className='w-full h-full relative '>
+          <div className='w-full h-full relative   '>
             <AnimatedContent
               distance={150}
               direction="vertical"
@@ -97,35 +97,13 @@ export default function Home() {
             }
           </AnimatedContent>
 
-          <AnimatedContent
-            distance={150}
-            direction="vertical"
-            reverse={false}
-            duration={1.2}
-            ease="power3.out"
-            initialOpacity={0}
-            animateOpacity
-            scale={1.1}
-            threshold={0.1}
-            delay={1.5}
-          >
-            <LanguageSwitcher />
-          </AnimatedContent>
 
-          <AnimatedContent
-            distance={150}
-            direction="vertical"
-            reverse={false}
-            duration={.5}
-            ease="power3.out"
-            initialOpacity={0}
-            animateOpacity
-            scale={1.1}
-            threshold={0.1}
-            delay={1}
-          >
-            <ThemeSwitcher />
-          </AnimatedContent>
+          <LanguageSwitcher />
+
+
+
+          <ThemeSwitcher />
+
         </div>
         <div className="w-full sm:h-96 h-72 min-h-100 overflow-visible sm:overflow-hidden relative ">
           <div className='absolute h-full  w-full flex justify-center bottom-0  left-1/2 transform -translate-x-1/2  '>

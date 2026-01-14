@@ -4,6 +4,7 @@ import { useTransition } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { translatePath } from '@/config/routes';
 import type { Locale } from '@/i18n.config';
+import AnimatedContent from './ReactBits/AnimatedContent';
 
 export default function LanguageSwitcher() {
     const router = useRouter();
@@ -22,30 +23,56 @@ export default function LanguageSwitcher() {
 
     return (
         <div className="flex gap-2">
-            <button
-                onClick={() => switchLanguage('es')}
-                className={` px-3 py-1 rounded transition ${locale === 'es'
-                    // Seccionado
-                    ? 'bg-[var(--text-light)] text-white dark:bg-[var(--text-dark)] dark:text-black '
-                    // Sin seleccionar
-                    : 'cursor-pointer bg-zinc-100 text-[var(--text-light)] dark:bg-zinc-700 dark:text-[var(--text-dark)] hover:bg-zinc-300 dark:hover:bg-zinc-600  '
-                    }`}
-                disabled={isPending}
+            <AnimatedContent
+                distance={150}
+                direction="vertical"
+                reverse={false}
+                duration={.5}
+                ease="power3.out"
+                initialOpacity={0}
+                animateOpacity
+                scale={1.1}
+                threshold={0.1}
+                delay={1.5}
             >
-                Español
-            </button>
-            <button
-                onClick={() => switchLanguage('en')}
-                className={` px-3 py-1 rounded transition ${locale === 'en'
-                    // Seccionado
-                    ? 'bg-[var(--text-light)] text-white dark:bg-[var(--text-dark)] dark:text-black '
-                    // Sin seleccionar
-                    : 'cursor-pointer bg-zinc-100 text-[var(--text-light)] dark:bg-zinc-700 dark:text-[var(--text-dark)] hover:bg-zinc-300 dark:hover:bg-zinc-600  '
-                    }`}
-                disabled={isPending}
+                <button
+                    onClick={() => switchLanguage('es')}
+                    className={` px-3 py-1 rounded transition ${locale === 'es'
+                        // Seccionado
+                        ? 'bg-[var(--text-light)] text-white dark:bg-[var(--text-dark)] dark:text-black '
+                        // Sin seleccionar
+                        : 'cursor-pointer bg-zinc-100 text-(--text-light) dark:bg-zinc-700 dark:text-(--text-dark) hover:bg-zinc-300 dark:hover:bg-zinc-600  '
+                        }`}
+                    disabled={isPending}
+                >
+                    Español
+                </button>
+            </AnimatedContent>
+            <AnimatedContent
+                distance={150}
+                direction="vertical"
+                reverse={false}
+                duration={.5}
+                ease="power3.out"
+                initialOpacity={0}
+                animateOpacity
+                scale={1.1}
+                threshold={0.1}
+                delay={1.25}
             >
-                English
-            </button>
+                <button
+                    onClick={() => switchLanguage('en')}
+                    className={` px-3 py-1 rounded transition ${locale === 'en'
+                        // Seccionado
+                        ? 'bg-(--text-light) text-white dark:bg-(--text-dark) dark:text-black '
+                        // Sin seleccionar
+                        : 'cursor-pointer bg-zinc-100 text-(--text-light) dark:bg-zinc-700 dark:text-(--text-dark) hover:bg-zinc-300 dark:hover:bg-zinc-600  '
+                        }`}
+                    disabled={isPending}
+                >
+                    English
+                </button>
+            </AnimatedContent>
         </div>
     );
 }
