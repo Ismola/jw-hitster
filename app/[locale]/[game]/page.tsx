@@ -25,7 +25,7 @@ export default function GamePage({ }: GamePageProps) {
         <>
             <Header />
 
-            <div className="flex flex-col h-full items-center justify-start pt-8 ">
+            <div className="flex flex-col h-full items-start md:items-center justify-start pt-8 ">
                 <AnimatedContent
                     distance={200}
                     direction="vertical"
@@ -37,6 +37,7 @@ export default function GamePage({ }: GamePageProps) {
                     scale={1.1}
                     threshold={0.1}
                     delay={1}
+                    className='w-full  text-center'
                 >
                     <ShinyText
                         text={t.title}
@@ -62,6 +63,7 @@ export default function GamePage({ }: GamePageProps) {
                     scale={1.1}
                     threshold={0.1}
                     delay={1.3}
+                    className='w-full'
                 >
                     <GameBoard locale={locale} />
                 </AnimatedContent>
