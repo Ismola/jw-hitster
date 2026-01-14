@@ -18,16 +18,14 @@ export default function GamePage({ }: GamePageProps) {
     const t = messages[locale] || messages.en;
 
     return (
-        <div className="flex  h-full flex-col  font-sans">
+        <>
             <Header />
 
-            <div className="flex flex-1 items-center justify-center">
-                <div className="flex flex-col items-center gap-8  pb-8 w-full ">
+            <div className="flex flex-col h-full items-center justify-start ">
                     <h1 className="text-4xl font-bold">{t.game}</h1>
                     <GameBoard locale={locale} />
                     
-                </div>
             </div>
-        </div>
+        </>
     );
 }

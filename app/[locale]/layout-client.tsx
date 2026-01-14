@@ -35,8 +35,10 @@ export function LayoutClient({
         <ThemeProvider>
             <Background />
             <BlurTextProvider showBlurText={showBlurText}>
-                <main className="relative w-full top-0 h-[120vh] md:h-screen overflow-hidden">
+                <main className="relative w-full top-0 h-[120vh] md:h-screen overflow-auto">
+                        
                     {children}
+                    
                 </main>
             </BlurTextProvider>
             <Counter show={showCounter} fadeOut={fadeOut} onEnd={handleCounterEnd} />

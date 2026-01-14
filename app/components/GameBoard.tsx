@@ -236,7 +236,7 @@ export default function GameBoard({ locale }: { locale: string }) {
     }
 
     return (
-        <div className="flex flex-col items-end md:items-center md:gap-12 gap-8 w-full max-h-screen overflow-y-auto">
+        <div className="flex flex-col items-end md:items-center  md:gap-12 gap-8 w-full h-full">
 
             {/* Score */}
             <div className="text-2xl font-bold flex justify-center items-center w-full">
@@ -283,10 +283,10 @@ export default function GameBoard({ locale }: { locale: string }) {
                 </button>
                 </div>
             )}
-
+      
             {/* Current Card to Place */}
             {gameState === 'playing' && currentCard && (
-                <div className="w-fit wrap-break-word sticky right-5 top-20 md:top-0 z-50 md:relative flex items-center flex-col">
+                <div className="w-fit h-0 wrap-break-word sticky right-5 top-70 md:top-0 z-50 md:relative flex items-center flex-col">
                     {/* TODO cambiar texto de instruccion */}
                     <div className="text-lg font-semibold">
                         {t.placeCard}:
@@ -337,7 +337,7 @@ export default function GameBoard({ locale }: { locale: string }) {
             )}
 
             {/* Board Cards with Position Buttons */}
-            <div className="w-full pb-4">
+            <div className="w-full pb-4 ">
                 <div className="flex flex-col md:flex-row gap-4 items-left justify-start md:justify-center min-w-max px-4">
                     {gameState === 'playing' && currentCard && (
                         <div
