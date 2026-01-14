@@ -5,19 +5,20 @@ interface CircularTextProps {
     spinDuration?: number;
     onHover?: 'slowDown' | 'speedUp' | 'pause' | 'goBonkers';
     className?: string;
+    direction?: 'clockwise' | 'counterclockwise';
 }
 
-const getRotationTransition = (duration: number, from: number, loop: boolean = true) => ({
+const getRotationTransition = (duration: number, from: number, loop: boolean = true, direction: 'clockwise' | 'counterclockwise' = 'clockwise') => ({
     from,
-    to: from + 360,
+    to: direction === 'clockwise' ? from + 360 : from - 360,
     ease: 'linear' as const,
     duration,
     type: 'tween' as const,
     repeat: loop ? Infinity : 0
 });
 
-const getTransition = (duration: number, from: number) => ({
-    rotate: getRotationTransition(duration, from),
+const getTransition = (duration: number, from: number, direction: 'clockwise' | 'counterclockwise' = 'clockwise') => ({
+    rotate: getRotationTransition(duration, from, true, direction),
     scale: {
         type: 'spring' as const,
         damping: 20,
@@ -29,7 +30,8 @@ const CircularText: React.FC<CircularTextProps> = ({
     text,
     spinDuration = 20,
     onHover = 'speedUp',
-    className = ''
+    className = '',
+    direction = 'clockwise'
 }) => {
     const letters = Array.from(text);
     const controls = useAnimation();
@@ -38,11 +40,11 @@ const CircularText: React.FC<CircularTextProps> = ({
     useEffect(() => {
         const start = rotation.get();
         controls.start({
-            rotate: start + 360,
+            rotate: direction === 'clockwise' ? start + 360 : start - 360,
             scale: 1,
-            transition: getTransition(spinDuration, start)
+            transition: getTransition(spinDuration, start, direction)
         });
-    }, [spinDuration, text, onHover, controls]);
+    }, [spinDuration, text, onHover, controls, direction]);
 
     const handleHoverStart = () => {
         const start = rotation.get();
@@ -54,10 +56,10 @@ const CircularText: React.FC<CircularTextProps> = ({
 
         switch (onHover) {
             case 'slowDown':
-                transitionConfig = getTransition(spinDuration * 2, start);
+                transitionConfig = getTransition(spinDuration * 2, start, direction);
                 break;
             case 'speedUp':
-                transitionConfig = getTransition(spinDuration / 4, start);
+                transitionConfig = getTransition(spinDuration / 4, start, direction);
                 break;
             case 'pause':
                 transitionConfig = {
@@ -66,15 +68,15 @@ const CircularText: React.FC<CircularTextProps> = ({
                 };
                 break;
             case 'goBonkers':
-                transitionConfig = getTransition(spinDuration / 20, start);
+                transitionConfig = getTransition(spinDuration / 20, start, direction);
                 scaleVal = 0.8;
                 break;
             default:
-                transitionConfig = getTransition(spinDuration, start);
+                transitionConfig = getTransition(spinDuration, start, direction);
         }
 
         controls.start({
-            rotate: start + 360,
+            rotate: direction === 'clockwise' ? start + 360 : start - 360,
             scale: scaleVal,
             transition: transitionConfig
         });
@@ -83,9 +85,9 @@ const CircularText: React.FC<CircularTextProps> = ({
     const handleHoverEnd = () => {
         const start = rotation.get();
         controls.start({
-            rotate: start + 360,
+            rotate: direction === 'clockwise' ? start + 360 : start - 360,
             scale: 1,
-            transition: getTransition(spinDuration, start)
+            transition: getTransition(spinDuration, start, direction)
         });
     };
 

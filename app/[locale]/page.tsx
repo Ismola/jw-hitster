@@ -34,7 +34,7 @@ export default function Home() {
   };
   return (
     <>
-      <div className="flex  h-full     items-center justify-around sm:justify-between  flex-col gap-4 ">
+      <div className="flex  h-full   overflow-y-auto  items-center justify-around sm:justify-between  flex-col gap-4 ">
         <div className="flex flex-col  items-center gap-8 z-10  ">
           <div className='w-full h-full relative '>
             <AnimatedContent
@@ -145,7 +145,9 @@ export default function Home() {
               sm:h-200 sm:w-200 h-170 w-170
 
               xl:w-250 xl:h-250
-              
+              hover:bg-transparent
+              transition-all duration-[500ms] ease-out
+              hover:backdrop-blur-none
               rounded-full
               text-(--text-light) dark:text-(--text-dark)
               flex items-center justify-center
@@ -155,9 +157,10 @@ export default function Home() {
                 {/* {t.startGame} */}
                 <CircularText
                   text={t.startGame}
-                  onHover="speedUp"
+                  onHover="goBonkers"
                   spinDuration={30}
                   className="w-full h-full "
+                  direction='counterclockwise'
                 />
               </Link>
             </AnimatedContent>
