@@ -136,6 +136,9 @@ Fondos:
   Secondary (color oscuro):
   > #bg-zinc-700
 
+Traslúcido:
+>backdrop-blur-xl  bg-(--text-light)/10 >dark:bg-(--text-dark)/10
+
 ### Traducciones
 
 Añade o modifica traducciones en `messages/es.json` y `messages/en.json`.

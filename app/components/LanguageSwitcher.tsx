@@ -41,7 +41,7 @@ export default function LanguageSwitcher() {
                         // Seccionado
                         ? 'bg-[var(--text-light)] text-white dark:bg-[var(--text-dark)] dark:text-black '
                         // Sin seleccionar
-                        : 'cursor-pointer bg-zinc-100 text-(--text-light) dark:bg-zinc-700 dark:text-(--text-dark) hover:bg-zinc-300 dark:hover:bg-zinc-600  '
+                        : 'cursor-pointer backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10  text-(--text-light) dark:text-(--text-dark) hover:bg-zinc-300 dark:hover:bg-zinc-600  '
                         }`}
                     disabled={isPending}
                 >
@@ -66,7 +66,7 @@ export default function LanguageSwitcher() {
                         // Seccionado
                         ? 'bg-(--text-light) text-white dark:bg-(--text-dark) dark:text-black '
                         // Sin seleccionar
-                        : 'cursor-pointer bg-zinc-100 text-(--text-light) dark:bg-zinc-700 dark:text-(--text-dark) hover:bg-zinc-300 dark:hover:bg-zinc-600  '
+                        : 'cursor-pointer backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10  text-(--text-light) dark:text-(--text-dark) hover:bg-zinc-300 dark:hover:bg-zinc-600  '
                         }`}
                     disabled={isPending}
                 >

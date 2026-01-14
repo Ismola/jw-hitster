@@ -144,19 +144,21 @@ export default function ThemeSwitcher() {
                 <button
                     onClick={() => switchTo(isDark ? "light" : "dark")}
                     disabled={theme === "system"}
-                    className={`relative flex items-center justify-center  h-9 rounded-full transition-colors ${theme === "system"
-                        ? "bg-(--text-dark) dark:bg-zinc-700 w-9 opacity-60 cursor-not-allowed"
-                        : "cursor-pointer bg-zinc-100 dark:bg-zinc-700 w-14 hover:bg-zinc-200 dark:hover:bg-zinc-600"
+                    className={`relative flex items-center justify-center  h-9 rounded-full transition-colors  ${theme === "system"
+                        ? "w-9 backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10  text-(--text-light) dark:text-(--text-dark) cursor-not-allowed "
+                        : "cursor-pointer  w-14 hover:bg-(--text-dark) hover:text-(--text-light) dark:hover:bg-(--text-light) dark:hover:text-(--text-dark)  bg-(--text-light) dark:bg-(--text-dark) text-(--text-dark)  dark:text-(--text-light)"
                         }`}
                     aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
                 >
                     <span
-                        className={`absolute ${theme != 'system' && "left-1"}  transition-transform duration-300 ${isDark && theme !== "system" ? "translate-x-6" : "translate-x-0"
+                        className={`
+                            absolute ${theme != 'system' && "left-1"}  transition-transform duration-300 ${isDark && theme !== "system" ? "translate-x-6  " : "translate-x-0"
                             }`}
                     >
                         {isDark ? (
+                            // SOLecito
                             <svg
-                                className="w-6 h-6 text-yellow-400"
+                                className={`w-6 h-6  `}
                                 fill="currentColor"
                                 viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +167,7 @@ export default function ThemeSwitcher() {
                             </svg>
                         ) : (
                             <svg
-                                className="w-6 h-6 text-(--text-light)"
+                                className={`w-6 h-6 `}
                                 fill="currentColor"
                                 viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -192,8 +194,8 @@ export default function ThemeSwitcher() {
                 <button
                     onClick={handleSystemToggle}
                     className={`cursor-pointer rounded-full p-2 transition-colors ${theme === "system"
-                        ? "bg-(--text-light) text-white dark:bg-(--text-dark) dark:text-black"
-                        : "bg-zinc-100 text-zinc-700 dark:bg-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-600"
+                        ? "bg-(--text-light) text-(--text-dark) dark:bg-(--text-dark) dark:text-(--text-light)  "
+                        : "text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-zinc-200 dark:hover:bg-zinc-600"
                         }`}
                     aria-label="Use system theme"
                     aria-pressed={theme === "system"}

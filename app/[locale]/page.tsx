@@ -122,22 +122,22 @@ export default function Home() {
               <Link href={`/${locale}/${t["slug.game"]}`} className="relative 
               sm:h-200 sm:w-200 h-170 w-170
 
-              xl:w-250 xl:h-250
-              hover:bg-transparent
-              hover:transition-all hover:duration-500 hover:ease-out
 
-              
-              hover:backdrop-blur-none
+              shadow-2xl
+
+              xl:w-250 xl:h-250
+
+
               rounded-full
-              text-(--text-light) dark:text-(--text-dark)
               flex items-center justify-center
-              backdrop-blur shadow bg-(--text-light)/10 dark:bg-(--text-dark)/10 
+              text-(--text-light) dark:text-(--text-dark)
+              backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 
        
        ">
                 {/* {t.startGame} */}
                 <CircularText
                   text={t.startGame}
-                  onHover="goBonkers"
+                  onHover="slowDown"
                   spinDuration={30}
                   className="w-full h-full "
                   direction='counterclockwise'
