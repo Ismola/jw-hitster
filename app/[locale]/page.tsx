@@ -34,8 +34,8 @@ export default function Home() {
   };
   return (
     <>
-      <div className="flex min-h-screen items-center justify-around sm:justify-between  flex-col ">
-        <div className="flex flex-col items-center gap-8 z-10 ">
+      <div className="flex  h-full     items-center justify-around sm:justify-between  flex-col gap-4 ">
+        <div className="flex flex-col  items-center gap-8 z-10  ">
           <div className='w-full h-full relative '>
             <AnimatedContent
               distance={150}
@@ -127,7 +127,7 @@ export default function Home() {
             <ThemeSwitcher />
           </AnimatedContent>
         </div>
-        <div className="w-full sm:h-96 h-72  relative">
+        <div className="w-full sm:h-96 h-72 min-h-100 overflow-visible sm:overflow-hidden relative ">
           <div className='absolute h-full  w-full flex justify-center bottom-0  left-1/2 transform -translate-x-1/2  '>
             <AnimatedContent
               distance={150}
