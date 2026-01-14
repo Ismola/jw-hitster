@@ -82,8 +82,9 @@ export default function Home() {
                 text={t.welcome}
                 threshold={1}
                 delay={200}
+                stepDuration={.5}
                 animateBy="letters"
-                direction="top"
+                direction="bottom"
                 onAnimationComplete={handleAnimationComplete}
                 className="text-2xl mb-8 text-(--text-light) dark:text-(--text-dark)"
               />
