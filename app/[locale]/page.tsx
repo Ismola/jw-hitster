@@ -34,7 +34,7 @@ export default function Home() {
   };
   return (
     <>
-      <div className="flex min-h-screen items-center justify-around sm:justify-between  gap-7 flex-col ">
+      <div className="flex min-h-screen items-center justify-around sm:justify-between  flex-col ">
         <div className="flex flex-col items-center gap-8 z-10 ">
           <div className='w-full h-full relative '>
             <AnimatedContent
