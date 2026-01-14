@@ -139,19 +139,19 @@ export default function ThemeSwitcher() {
                 threshold={0.1}
                 delay={.5}
                 className="flex justify-center items-center"
-                
+
             >
                 <button
                     onClick={() => switchTo(isDark ? "light" : "dark")}
                     disabled={theme === "system"}
-                    className={`relative inline-flex items-center justify-center w-14 h-8 rounded-full transition-colors ${theme === "system"
-                        ? "bg-(--text-dark) dark:bg-zinc-700 opacity-20 cursor-not-allowed"
-                        : "cursor-pointer bg-zinc-100 dark:bg-zinc-700 hover:bg-zinc-200 dark:hover:bg-zinc-600"
+                    className={`relative flex items-center justify-center  h-9 rounded-full transition-colors ${theme === "system"
+                        ? "bg-(--text-dark) dark:bg-zinc-700 w-9 opacity-60 cursor-not-allowed"
+                        : "cursor-pointer bg-zinc-100 dark:bg-zinc-700 w-14 hover:bg-zinc-200 dark:hover:bg-zinc-600"
                         }`}
                     aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
                 >
                     <span
-                        className={`absolute left-1 transition-transform duration-300 ${isDark ? "translate-x-6" : "translate-x-0"
+                        className={`absolute ${theme != 'system' && "left-1"}  transition-transform duration-300 ${isDark && theme !== "system" ? "translate-x-6" : "translate-x-0"
                             }`}
                     >
                         {isDark ? (
@@ -165,7 +165,7 @@ export default function ThemeSwitcher() {
                             </svg>
                         ) : (
                             <svg
-                                className="w-6 h-6 text-(--text-dark)"
+                                className="w-6 h-6 text-(--text-light)"
                                 fill="currentColor"
                                 viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg"
