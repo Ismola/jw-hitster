@@ -236,15 +236,10 @@ export default function GameBoard({ locale }: { locale: string }) {
     }
 
     return (
-        <div className="flex flex-col  items-end md:items-center  md:gap-12 gap-8 w-full">
-
-            {/* Score */}
-            <div className="text-2xl font-bold flex justify-center items-center w-full">
-                {t.score}: {score}
-            </div>
+        <>
 
             {/* Message */}
-            <div className="sticky top-4 z-40 w-full flex justify-center">
+            <div className="absolute -bottom-30 z-40 w-full flex justify-center">
                 <div className="relative w-full max-w-3xl min-h-18">
                     {message ? (
                         <AnimatedContent
@@ -271,151 +266,162 @@ export default function GameBoard({ locale }: { locale: string }) {
             </div>
 
 
-            {/* Game Over Button */}
-            {gameState === 'gameOver' && (
-                <div className="flex justify-center w-full">
 
-                    <button
-                        onClick={startGame}
-                        className="px-8 py-3  rounded-lg font-semibold cursor-pointer 
+            <div className="flex flex-col  items-end md:items-center  md:gap-12 gap-8 w-full">
+
+                {/* Score */}
+                <div className="text-2xl font-bold flex justify-center items-center w-full">
+                    {t.score}: {score}
+                </div>
+
+
+
+                {/* Game Over Button */}
+                {gameState === 'gameOver' && (
+                    <div className="flex justify-center w-full">
+
+                        <button
+                            onClick={startGame}
+                            className="px-8 py-3  rounded-lg font-semibold cursor-pointer 
                         text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-zinc-200 dark:hover:bg-zinc-600
                          
                         hover:bg-gray-700 dark:hover:bg-gray-200 transition"
-                    >
-                        {t.playAgain}
-                    </button>
-                </div>
-            )}
-
-            {/* Current Card to Place */}
-            {gameState === 'playing' && currentCard && (
-                <div className="w-fit h-0 md:h-auto wrap-break-word sticky right-5 top-70 md:top-0 z-50 md:relative flex items-center flex-col">
-                    {/* TODO cambiar texto de instruccion */}
-                    <div className="text-lg font-semibold mb-6">
-                        {t.placeCard}:
-                    </div>
-                    <div className="relative">
-                        {/* Draggable card */}
-                        <div
-                            draggable
-                            onDragStart={handleDragStart}
-                            onDrag={handleDrag}
-                            onDragEnd={handleDragEnd}
-                            onTouchStart={handleTouchStart}
-                            onTouchMove={handleTouchMove}
-                            onTouchEnd={handleTouchEnd}
-                            className="cursor-move touch-none select-none"
-                            style={{
-                                opacity: isDragging && dragPosition ? 0 : 1,
-                                transition: 'none'
-                            }}
                         >
-                            <CardDataOnly
-                                event={currentCard.event[lang]}
-                                bibleReference={currentCard.bible_reference[lang]}
-                                isDragging={isDragging}
-                            />
+                            {t.playAgain}
+                        </button>
+                    </div>
+                )}
+
+                {/* Current Card to Place */}
+                {gameState === 'playing' && currentCard && (
+                    <div className="w-fit h-0 md:h-auto wrap-break-word sticky right-5 top-70 md:top-0 z-50 md:relative flex items-center flex-col">
+                        {/* TODO cambiar texto de instruccion */}
+                        <div className="text-lg font-semibold mb-6">
+                            {t.placeCard}:
                         </div>
-                    </div>
-                </div>
-            )}
-
-            {/* Carta flotante mientras arrastra */}
-            {gameState === 'playing' && isDragging && dragPosition && currentCard && (
-                <div
-                    className="pointer-events-none"
-                    style={{
-                        position: 'fixed',
-                        left: dragPosition.x - 72,
-                        top: dragPosition.y - 96,
-                        zIndex: 1000,
-                    }}
-                >
-                    <CardDataOnly
-                        event={currentCard.event[lang]}
-                        bibleReference={currentCard.bible_reference[lang]}
-                        isAnimating={true}
-                    />
-                </div>
-            )}
-
-            {/* Board Cards with Position Buttons */}
-            <div className="w-full pb-4 flex justify-start md:justify-center">
-                <div className="flex flex-col md:flex-row gap-4 items-left justify-start  md:justify-center md:max-w-max overflow-x-auto overflow-y-auto scrollbar-minimal px-4">
-                    {gameState === 'playing' && currentCard && (
-                        <div
-                            data-drop-zone="0"
-                            onClick={() => checkPosition(0)}
-                            onDragOver={(e) => handleDragOver(e, 0)}
-                            onDragLeave={handleDragLeave}
-                            onDrop={(e) => handleDrop(e, 0)}
-                            className={`
-                                
-                                shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === 0
-                                    ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
-                                    : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
-                                }`}
-                        >
-                            <svg
-                                className="w-10 h-10 md:w-10 md:h-10 text-gray-400 dark:text-gray-600 mb-2"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
+                        <div className="relative">
+                            {/* Draggable card */}
+                            <div
+                                draggable
+                                onDragStart={handleDragStart}
+                                onDrag={handleDrag}
+                                onDragEnd={handleDragEnd}
+                                onTouchStart={handleTouchStart}
+                                onTouchMove={handleTouchMove}
+                                onTouchEnd={handleTouchEnd}
+                                className="cursor-move touch-none select-none"
+                                style={{
+                                    opacity: isDragging && dragPosition ? 0 : 1,
+                                    transition: 'none'
+                                }}
                             >
-                                <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" />
-                            </svg>
-                            <span className="text-xs text-center text-gray-600 dark:text-gray-400 px-2">
-                                {t.placeHere}
-                            </span>
-                        </div>
-                    )}
-
-                    {boardCards.map((card, index) => (
-                        <div key={card.id} className="flex   flex-col md:flex-row gap-4 items-start shrink-0">
-                            <div className="shrink-0">
-                                <CardBothSides
-                                    date={card.date}
-                                    event={card.event[lang]}
-                                    bibleReference={card.bible_reference[lang]}
-                                    bcText={t.bc}
-                                    adText={t.ad}
-                                    bibliography={card.bibliografy?.[lang]}
+                                <CardDataOnly
+                                    event={currentCard.event[lang]}
+                                    bibleReference={currentCard.bible_reference[lang]}
+                                    isDragging={isDragging}
                                 />
                             </div>
-
-                            {gameState === 'playing' && currentCard && (
-                                <div
-                                    data-drop-zone={index + 1}
-                                    onClick={() => checkPosition(index + 1)}
-                                    onDragOver={(e) => handleDragOver(e, index + 1)}
-                                    onDragLeave={handleDragLeave}
-                                    onDrop={(e) => handleDrop(e, index + 1)}
-                                    className={`shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32 border-2 border-dashed rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
-                                        ? 'border-green-500 bg-green-50 dark:bg-green-900/20 scale-105'
-                                        : 'border-gray-400 dark:border-gray-600 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
-                                        }`}
-                                >
-                                    <svg
-                                        className="w-10 h-10 md:w-10 md:h-10 text-gray-400 dark:text-gray-600 mb-2"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" />
-                                    </svg>
-                                    <span className="text-xs text-center text-gray-600 dark:text-gray-400 px-2">
-                                        {t.placeHere}
-                                    </span>
-                                </div>
-                            )}
                         </div>
-                    ))}
+                    </div>
+                )}
+
+                {/* Carta flotante mientras arrastra */}
+                {gameState === 'playing' && isDragging && dragPosition && currentCard && (
+                    <div
+                        className="pointer-events-none"
+                        style={{
+                            position: 'fixed',
+                            left: dragPosition.x - 72,
+                            top: dragPosition.y - 96,
+                            zIndex: 1000,
+                        }}
+                    >
+                        <CardDataOnly
+                            event={currentCard.event[lang]}
+                            bibleReference={currentCard.bible_reference[lang]}
+                            isAnimating={true}
+                        />
+                    </div>
+                )}
+
+                {/* Board Cards with Position Buttons */}
+                <div className="w-full pb-4 flex justify-start md:justify-center">
+                    <div className="flex flex-col md:flex-row gap-4 items-left justify-start  md:justify-center md:max-w-max overflow-x-auto overflow-y-auto scrollbar-minimal px-4">
+                        {gameState === 'playing' && currentCard && (
+                            <div
+                                data-drop-zone="0"
+                                onClick={() => checkPosition(0)}
+                                onDragOver={(e) => handleDragOver(e, 0)}
+                                onDragLeave={handleDragLeave}
+                                onDrop={(e) => handleDrop(e, 0)}
+                                className={`
+                                backdrop-blur-xl
+                                shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32  rounded-lg transition-all cursor-pointer ${draggedOver === 0
+                                        ? ' bg-(--text-dark)/30 dark:bg-(--text-light)/50 scale-105'
+                                        : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                                    }`}
+                            >
+                                <svg
+                                    className="w-10 h-10 md:w-10 md:h-10  mb-2"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" />
+                                </svg>
+                                <span className="text-xs text-center  px-2">
+                                    {t.placeHere}
+                                </span>
+                            </div>
+                        )}
+
+                        {boardCards.map((card, index) => (
+                            <div key={card.id} className="flex   flex-col md:flex-row gap-4 items-start shrink-0">
+                                <div className="shrink-0">
+                                    <CardBothSides
+                                        date={card.date}
+                                        event={card.event[lang]}
+                                        bibleReference={card.bible_reference[lang]}
+                                        bcText={t.bc}
+                                        adText={t.ad}
+                                        bibliography={card.bibliografy?.[lang]}
+                                    />
+                                </div>
+
+                                {gameState === 'playing' && currentCard && (
+                                    <div
+                                        data-drop-zone={index + 1}
+                                        onClick={() => checkPosition(index + 1)}
+                                        onDragOver={(e) => handleDragOver(e, index + 1)}
+                                        onDragLeave={handleDragLeave}
+                                        onDrop={(e) => handleDrop(e, index + 1)}
+                                        className={`shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32  rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
+                                            ? 'bg-green-200/50 dark:bg-green-900/50 scale-105'
+                                            : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                                            }`}
+                                    >
+                                        <svg
+                                            className="w-10 h-10 md:w-10 md:h-10  mb-2"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" />
+                                        </svg>
+                                        <span className="text-xs text-center  px-2">
+                                            {t.placeHere}
+                                        </span>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+
+
                 </div>
 
 
             </div>
-
-
-        </div>
+        </>
     );
 }

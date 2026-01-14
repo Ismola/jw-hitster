@@ -63,17 +63,17 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
             >
                 {/* Front - Date Only */}
                 <div
-                    className="absolute w-full h-full backface-hidden bg-linear-to-br from-blue-600 to-blue-800 rounded-lg shadow-lg flex items-center justify-center p-4"
+                    className="absolute w-full h-full backface-hidden bg-(--text-dark) text-(--text-light) dark:bg-(--text-light) dark:text-(--text-dark) rounded-lg shadow-lg flex items-center justify-center p-4"
                     style={{ backfaceVisibility: 'hidden' }}
                 >
-                    <div className="text-white text-center">
+                    <div className=" text-center">
                         <div className="text-3xl md:text-5xl font-bold">{formatDate(date)}</div>
                     </div>
                 </div>
 
                 {/* Back - Event Details */}
                 <div
-                    className="absolute w-full h-full backface-hidden bg-linear-to-br from-purple-600 to-purple-800 rounded-lg shadow-lg flex flex-col items-center justify-center p-4 text-white"
+                    className="absolute w-full h-full backface-hidden bg-(--text-light) text-(--text-dark) dark:bg-(--text-dark) dark:text-(--text-light) rounded-lg shadow-lg flex flex-col items-center justify-center p-4"
                     style={{
                         backfaceVisibility: 'hidden',
                         transform: 'rotateY(180deg)'
