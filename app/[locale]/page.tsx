@@ -38,7 +38,7 @@ export default function Home() {
         <div className="flex flex-col  items-center gap-8 z-10  ">
           <div className='w-full h-full relative   '>
             <AnimatedContent
-              distance={150}
+              distance={0}
               direction="vertical"
               reverse={false}
               duration={1.2}
@@ -90,10 +90,23 @@ export default function Home() {
               />
             )
               :
-              <div className="text-2xl mb-8 text-(--text-light) dark:text-(--text-dark)">{/* Espacio reservado para el texto borroso */}
+              <AnimatedContent
+                distance={150}
+                direction="vertical"
+                reverse={false}
+                duration={1.2}
+                ease="power3.out"
+                initialOpacity={0}
+                animateOpacity
+                scale={1.1}
+                threshold={0.1}
+                delay={.3}
+              >
+                <div className="text-2xl mb-8 text-(--text-light) dark:text-(--text-dark)">{/* Espacio reservado para el texto borroso */}
 
-                ********
-              </div>
+                  ********
+                </div>
+              </AnimatedContent>
             }
           </AnimatedContent>
 
