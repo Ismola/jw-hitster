@@ -34,8 +34,8 @@ export default function Home() {
   };
   return (
     <>
-      <div className="flex min-h-screen items-center justify-center overflow-hidden flex-col">
-        <div className="flex flex-col items-center gap-8 ">
+      <div className="flex min-h-screen items-center justify-around sm:justify-between  gap-7 flex-col ">
+        <div className="flex flex-col items-center gap-8 z-10 ">
           <div className='w-full h-full relative '>
             <AnimatedContent
               distance={150}
@@ -81,7 +81,7 @@ export default function Home() {
               <BlurText
                 text={t.welcome}
                 threshold={1}
-                delay={100}
+                delay={200}
                 animateBy="letters"
                 direction="top"
                 onAnimationComplete={handleAnimationComplete}
@@ -126,32 +126,45 @@ export default function Home() {
             <ThemeSwitcher />
           </AnimatedContent>
         </div>
-        <AnimatedContent
-          distance={150}
-          direction="vertical"
-          reverse={false}
-          duration={.5}
-          ease="power3.out"
-          initialOpacity={0}
-          animateOpacity
-          scale={1.1}
-          threshold={0.1}
-          delay={.5}
-        >
-          <Link href={`/${locale}/${t["slug.game"]}`} className="mt-20 h-80 w-80 backdrop-blur shadow bg-(--text-light)/10 dark:bg-(--text-dark)/10 
-      rounded-full
-      text-(--text-light) dark:text-(--text-dark)
-       flex items-center justify-center ">
-            {/* {t.startGame} */}
-            <CircularText
-              text={t.startGame}
-              onHover="slowDown"
-              spinDuration={30}
-              className=" h-full"
-            />
-          </Link>
-        </AnimatedContent>
+        <div className="w-full sm:h-96 h-72  relative">
+          <div className='absolute h-full  w-full flex justify-center bottom-0  left-1/2 transform -translate-x-1/2  '>
+            <AnimatedContent
+              distance={150}
+              direction="vertical"
+              reverse={false}
+              duration={.5}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              scale={1.1}
+              threshold={0.1}
+              delay={.5}
+            >
+              <Link href={`/${locale}/${t["slug.game"]}`} className="relative 
+              sm:h-200 sm:w-200 h-170 w-170
+
+              xl:w-250 xl:h-250
+              
+              rounded-full
+              text-(--text-light) dark:text-(--text-dark)
+              flex items-center justify-center
+              backdrop-blur shadow bg-(--text-light)/10 dark:bg-(--text-dark)/10 
+       
+       ">
+                {/* {t.startGame} */}
+                <CircularText
+                  text={t.startGame}
+                  onHover="speedUp"
+                  spinDuration={30}
+                  className="w-full h-full "
+                />
+              </Link>
+            </AnimatedContent>
+          </div>
+        </div>
+
       </div>
+
     </>
   );
 }
