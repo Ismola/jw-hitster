@@ -130,7 +130,7 @@ export default function ThemeSwitcher() {
                 onClick={() => switchTo(isDark ? "light" : "dark")}
                 disabled={theme === "system"}
                 className={`relative inline-flex items-center justify-center w-14 h-8 rounded-full transition-colors ${theme === "system"
-                    ? "bg-(--text-dark) dark:bg-(--text-light) opacity-50 cursor-not-allowed"
+                    ? "bg-(--text-dark) dark:bg-zinc-700 opacity-20 cursor-not-allowed"
                     : "cursor-pointer bg-zinc-100 dark:bg-zinc-700 hover:bg-zinc-200 dark:hover:bg-zinc-600"
                     }`}
                 aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}

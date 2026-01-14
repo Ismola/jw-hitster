@@ -146,7 +146,9 @@ export default function Home() {
 
               xl:w-250 xl:h-250
               hover:bg-transparent
-              transition-all duration-[500ms] ease-out
+              hover:transition-all hover:duration-500 hover:ease-out
+
+              
               hover:backdrop-blur-none
               rounded-full
               text-(--text-light) dark:text-(--text-dark)
