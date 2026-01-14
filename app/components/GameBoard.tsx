@@ -5,6 +5,7 @@ import CardBothSides from './CardBothSides';
 import CardDataOnly from './CardDataOnly';
 import gameData from '@/config/info.json';
 import { messages } from '@/config/text';
+import AnimatedContent from './ReactBits/AnimatedContent';
 
 interface GameItem {
     date: string;
@@ -26,12 +27,20 @@ interface BoardCard extends GameItem {
     id: number;
 }
 
+type MessageTone = 'success' | 'error';
+
+interface ActiveMessage {
+    id: number;
+    text: string;
+    tone: MessageTone;
+}
+
 export default function GameBoard({ locale }: { locale: string }) {
     const [gameState, setGameState] = useState<'start' | 'playing' | 'gameOver'>('start');
     const [boardCards, setBoardCards] = useState<BoardCard[]>([]);
     const [currentCard, setCurrentCard] = useState<BoardCard | null>(null);
     const [score, setScore] = useState(0);
-    const [message, setMessage] = useState('');
+    const [message, setMessage] = useState<ActiveMessage | null>(null);
     const [shuffledDeck, setShuffledDeck] = useState<BoardCard[]>([]);
     const [deckIndex, setDeckIndex] = useState(0);
     const [draggedOver, setDraggedOver] = useState<number | null>(null);
@@ -41,6 +50,16 @@ export default function GameBoard({ locale }: { locale: string }) {
 
     const lang = (locale === 'es' || locale === 'en' ? locale : 'en') as keyof typeof messages;
     const t = messages[lang];
+
+    const showMessage = (text: string, tone: MessageTone) => {
+        setMessage({
+            id: Date.now(),
+            text,
+            tone
+        });
+    };
+
+    const clearMessage = () => setMessage(null);
 
     // Fisher-Yates shuffle algorithm for better randomization
     const shuffleArray = <T,>(array: T[]): T[] => {
@@ -66,7 +85,7 @@ export default function GameBoard({ locale }: { locale: string }) {
         setDeckIndex(2);
         setGameState('playing');
         setScore(0);
-        setMessage('');
+        clearMessage();
 
         // Reset drag states
         setIsDragging(false);
@@ -94,7 +113,7 @@ export default function GameBoard({ locale }: { locale: string }) {
         }
 
         if (isCorrect) {
-            setMessage(t.correct);
+            showMessage(t.correct, 'success');
             setScore(score + 1);
             setBoardCards(newBoard);
 
@@ -102,13 +121,13 @@ export default function GameBoard({ locale }: { locale: string }) {
             if (deckIndex < shuffledDeck.length) {
                 setCurrentCard(shuffledDeck[deckIndex]);
                 setDeckIndex(deckIndex + 1);
-                setTimeout(() => setMessage(''), 1500);
+                setTimeout(clearMessage, 1500);
             } else {
-                setMessage(t.won);
+                showMessage(t.won, 'success');
                 setGameState('gameOver');
             }
         } else {
-            setMessage(t.lose);
+            showMessage(t.lose, 'error');
             setGameState('gameOver');
         }
     };
@@ -217,37 +236,57 @@ export default function GameBoard({ locale }: { locale: string }) {
     }
 
     return (
-        <div className="flex flex-col items-center gap-8 w-full  mx-auto overflow-scroll">
+        <div className="flex flex-col items-end md:items-center md:gap-12 gap-8 w-full max-h-screen overflow-y-auto">
+
             {/* Score */}
-            <div className="text-2xl font-bold">
+            <div className="text-2xl font-bold flex justify-center items-center w-full">
                 {t.score}: {score}
             </div>
 
             {/* Message */}
-            {message && (
-                <div
-                    className={`text-xl font-bold p-4 rounded-lg ${gameState === 'gameOver'
-                        ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100'
-                        : 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100'
-                        }`}
-                >
-                    {message}
+            <div className="sticky top-4 z-40 w-full flex justify-center">
+                <div className="relative w-full max-w-3xl min-h-[72px]">
+                    {message ? (
+                        <AnimatedContent
+                            key={message.id}
+                            distance={64}
+                            direction="vertical"
+                            duration={0.6}
+                            ease="power3.out"
+                            initialOpacity={0}
+                            animateOpacity
+                            scale={1}
+                            threshold={0.05}
+                            className={`pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 inline-flex items-center justify-center text-lg font-semibold px-4 py-3 rounded-xl shadow-lg border ${message.tone === 'error'
+                                ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100 border-red-200 dark:border-red-800'
+                                : 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-50 border-green-200 dark:border-green-800'
+                                }`}
+                        >
+                            <span aria-live="polite">{message.text}</span>
+                        </AnimatedContent>
+                    ) : (
+                        <div className="h-[72px]" aria-hidden="true" />
+                    )}
                 </div>
-            )}
+            </div>
+
 
             {/* Game Over Button */}
             {gameState === 'gameOver' && (
+                <div className="flex justify-center w-full">
+
                 <button
                     onClick={startGame}
                     className="px-8 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition"
                 >
                     {t.playAgain}
                 </button>
+                </div>
             )}
 
             {/* Current Card to Place */}
             {gameState === 'playing' && currentCard && (
-                <div className="flex flex-row md:flex-col  md:items-center items-start gap-4 sticky top-0 z-10  backdrop-blur-s  w-full py-4 md:static md:bg-transparent md:dark:bg-transparent md:py-0">
+                <div className="w-fit wrap-break-word sticky right-5 top-20 md:top-0 z-50 md:relative flex items-center flex-col">
                     {/* TODO cambiar texto de instruccion */}
                     <div className="text-lg font-semibold">
                         {t.placeCard}:
@@ -298,8 +337,8 @@ export default function GameBoard({ locale }: { locale: string }) {
             )}
 
             {/* Board Cards with Position Buttons */}
-            <div className="w-full overflow-x-auto pb-4 ">
-                <div className="flex flex-col md:flex-row gap-4 items-center justify-start md:justify-center min-w-max px-4">
+            <div className="w-full pb-4">
+                <div className="flex flex-col md:flex-row gap-4 items-left justify-start md:justify-center min-w-max px-4">
                     {gameState === 'playing' && currentCard && (
                         <div
                             data-drop-zone="0"
@@ -327,7 +366,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                     )}
 
                     {boardCards.map((card, index) => (
-                        <div key={card.id} className="flex flex-col md:flex-row gap-4 items-center shrink-0">
+                        <div key={card.id} className="flex flex-col md:flex-row gap-4 items-start shrink-0">
                             <div className="shrink-0">
                                 <CardBothSides
                                     date={card.date}
