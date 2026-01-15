@@ -47,17 +47,18 @@ interface SavedGameState {
 
 export default function GameBoard({ locale }: { locale: string }) {
     const [savedGame, setSavedGame] = useLocalStorage<SavedGameState | null>('jw-hitster-game-state', null);
-    
-    // Initialize state from saved game or defaults
-    const [gameState, setGameState] = useState<'start' | 'playing' | 'gameOver'>(() => {
-        return savedGame?.gameState === 'playing' ? 'playing' : 'start';
-    });
-    const [boardCards, setBoardCards] = useState<BoardCard[]>(() => savedGame?.boardCards || []);
-    const [currentCard, setCurrentCard] = useState<BoardCard | null>(() => savedGame?.currentCard || null);
-    const [score, setScore] = useState(() => savedGame?.score || 0);
-    const [shuffledDeck, setShuffledDeck] = useState<BoardCard[]>(() => savedGame?.shuffledDeck || []);
-    const [deckIndex, setDeckIndex] = useState(() => savedGame?.deckIndex || 0);
-    
+
+    // Track if component is mounted (client-side)
+    const [isMounted, setIsMounted] = useState(false);
+
+    // Initialize with default values or saved values (after mount)
+    const [gameState, setGameState] = useState<'start' | 'playing' | 'gameOver'>('start');
+    const [boardCards, setBoardCards] = useState<BoardCard[]>([]);
+    const [currentCard, setCurrentCard] = useState<BoardCard | null>(null);
+    const [score, setScore] = useState(0);
+    const [shuffledDeck, setShuffledDeck] = useState<BoardCard[]>([]);
+    const [deckIndex, setDeckIndex] = useState(0);
+
     const [message, setMessage] = useState<ActiveMessage | null>(null);
     const [draggedOver, setDraggedOver] = useState<number | null>(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -67,8 +68,25 @@ export default function GameBoard({ locale }: { locale: string }) {
     const lang = (locale === 'es' || locale === 'en' ? locale : 'en') as keyof typeof messages;
     const t = messages[lang];
 
-    // Save game state whenever it changes (only when playing)
+    // Hydrate from localStorage on mount
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        setIsMounted(true);
+        if (savedGame?.gameState === 'playing') {
+            // Restore saved game state in one batch
+            setGameState(savedGame.gameState);
+            setBoardCards(savedGame.boardCards);
+            setCurrentCard(savedGame.currentCard);
+            setScore(savedGame.score);
+            setShuffledDeck(savedGame.shuffledDeck);
+            setDeckIndex(savedGame.deckIndex);
+        }
+    }, []); // Only run once on mount
+
+    // Save game state whenever it changes (only when playing and after mount)
+    useEffect(() => {
+        if (!isMounted) return;
+
         if (gameState === 'playing') {
             setSavedGame({
                 gameState,
@@ -82,7 +100,7 @@ export default function GameBoard({ locale }: { locale: string }) {
             // Clear saved game when game is over
             setSavedGame(null);
         }
-    }, [gameState, boardCards, currentCard, score, shuffledDeck, deckIndex, setSavedGame]);
+    }, [isMounted, gameState, boardCards, currentCard, score, shuffledDeck, deckIndex]);
 
     const showMessage = (text: string, tone: MessageTone) => {
         setMessage({
