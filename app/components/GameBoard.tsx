@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import CardBothSides from './CardBothSides';
 import CardDataOnly from './CardDataOnly';
 import gameData from '@/config/info.json';
 import { messages } from '@/config/text';
 import AnimatedContent from './ReactBits/AnimatedContent';
+import { useLocalStorage } from '@/app/hooks/useLocalStorage';
 
 interface GameItem {
     date: string;
@@ -35,14 +36,30 @@ interface ActiveMessage {
     tone: MessageTone;
 }
 
+interface SavedGameState {
+    gameState: 'start' | 'playing' | 'gameOver';
+    boardCards: BoardCard[];
+    currentCard: BoardCard | null;
+    score: number;
+    shuffledDeck: BoardCard[];
+    deckIndex: number;
+}
+
 export default function GameBoard({ locale }: { locale: string }) {
+    const [savedGame, setSavedGame] = useLocalStorage<SavedGameState | null>('jw-hitster-game-state', null);
+
+    // Track if component is mounted (client-side)
+    const [isMounted, setIsMounted] = useState(false);
+
+    // Initialize with default values or saved values (after mount)
     const [gameState, setGameState] = useState<'start' | 'playing' | 'gameOver'>('start');
     const [boardCards, setBoardCards] = useState<BoardCard[]>([]);
     const [currentCard, setCurrentCard] = useState<BoardCard | null>(null);
     const [score, setScore] = useState(0);
-    const [message, setMessage] = useState<ActiveMessage | null>(null);
     const [shuffledDeck, setShuffledDeck] = useState<BoardCard[]>([]);
     const [deckIndex, setDeckIndex] = useState(0);
+
+    const [message, setMessage] = useState<ActiveMessage | null>(null);
     const [draggedOver, setDraggedOver] = useState<number | null>(null);
     const [isDragging, setIsDragging] = useState(false);
     const [dragPosition, setDragPosition] = useState<{ x: number; y: number } | null>(null);
@@ -51,6 +68,40 @@ export default function GameBoard({ locale }: { locale: string }) {
 
     const lang = (locale === 'es' || locale === 'en' ? locale : 'en') as keyof typeof messages;
     const t = messages[lang];
+
+    // Hydrate from localStorage on mount
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        setIsMounted(true);
+        if (savedGame?.gameState === 'playing') {
+            // Restore saved game state in one batch
+            setGameState(savedGame.gameState);
+            setBoardCards(savedGame.boardCards);
+            setCurrentCard(savedGame.currentCard);
+            setScore(savedGame.score);
+            setShuffledDeck(savedGame.shuffledDeck);
+            setDeckIndex(savedGame.deckIndex);
+        }
+    }, []); // Only run once on mount
+
+    // Save game state whenever it changes (only when playing and after mount)
+    useEffect(() => {
+        if (!isMounted) return;
+
+        if (gameState === 'playing') {
+            setSavedGame({
+                gameState,
+                boardCards,
+                currentCard,
+                score,
+                shuffledDeck,
+                deckIndex,
+            });
+        } else if (gameState === 'gameOver') {
+            // Clear saved game when game is over
+            setSavedGame(null);
+        }
+    }, [isMounted, gameState, boardCards, currentCard, score, shuffledDeck, deckIndex]);
 
     const showMessage = (text: string, tone: MessageTone) => {
         setMessage({
