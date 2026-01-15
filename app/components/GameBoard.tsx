@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import CardBothSides from './CardBothSides';
 import CardDataOnly from './CardDataOnly';
 import gameData from '@/config/info.json';
@@ -61,6 +61,11 @@ export default function GameBoard({ locale }: { locale: string }) {
     };
 
     const clearMessage = () => setMessage(null);
+
+    // Callback for when card placement animation completes
+    const handleAnimationComplete = useCallback(() => {
+        setNewlyPlacedCardId(null);
+    }, []);
 
     // Fisher-Yates shuffle algorithm for better randomization
     const shuffleArray = <T,>(array: T[]): T[] => {
@@ -388,7 +393,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                                         adText={t.ad}
                                         bibliography={card.bibliografy?.[lang]}
                                         isNewlyPlaced={card.id === newlyPlacedCardId}
-                                        onAnimationComplete={() => setNewlyPlacedCardId(null)}
+                                        onAnimationComplete={handleAnimationComplete}
                                     />
                                 </div>
 

@@ -4,6 +4,24 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 
+// Animation configuration
+const ANIMATION_CONFIG = {
+    initial: {
+        scale: 0.3,
+        opacity: 0,
+        y: -50,
+        rotateX: -90
+    },
+    final: {
+        scale: 1,
+        opacity: 1,
+        y: 0,
+        rotateX: 0
+    },
+    duration: 0.6,
+    ease: 'back.out(1.7)'
+};
+
 interface CardBothSidesProps {
     date: string;
     event: string;
@@ -28,21 +46,13 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
             const card = cardRef.current;
             
             // Set initial state
-            gsap.set(card, {
-                scale: 0.3,
-                opacity: 0,
-                y: -50,
-                rotateX: -90
-            });
+            gsap.set(card, ANIMATION_CONFIG.initial);
 
             // Animate in
             gsap.to(card, {
-                scale: 1,
-                opacity: 1,
-                y: 0,
-                rotateX: 0,
-                duration: 0.6,
-                ease: 'back.out(1.7)',
+                ...ANIMATION_CONFIG.final,
+                duration: ANIMATION_CONFIG.duration,
+                ease: ANIMATION_CONFIG.ease,
                 onComplete: () => {
                     if (onAnimationComplete) {
                         onAnimationComplete();
