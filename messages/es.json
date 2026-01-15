@@ -18,6 +18,20 @@
     "playAgain": "Jugar de nuevo",
     "bc": "a.C.",
     "ad": "d.C.",
+    "instructions": {
+        "title": "Cómo Jugar",
+        
+        "step0": "1. Ordena los eventos bíblicos cronológicamente colocando cada carta en su posición correcta en la línea de tiempo.",        
+        "step1": "2. Se te mostrará una carta con un evento bíblico",
+        "step2": "3. Arrastra y suelta la carta en la posición correcta de la línea de tiempo",
+        "step3": "4. Si la colocas correctamente, ganarás un punto y continuarás",
+        "step4": "5. Si te equivocas, el juego terminará",
+        "tips": "Consejos",
+        "tip1": "Lee cuidadosamente la fecha y el evento de cada carta",
+        "tip2": "Recuerda que a.C. (antes de Cristo) va en orden descendente",
+        "tip3": "Las fechas d.C. (después de Cristo) van en orden ascendente",
+        "ready": "¿Listo para comenzar?"
+    },
     "credits": {
         "title": "Créditos",
         "developer": "Desarrollado por",
