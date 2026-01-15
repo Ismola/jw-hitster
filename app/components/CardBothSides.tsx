@@ -31,9 +31,10 @@ interface CardBothSidesProps {
     bibliography?: string[];
     isNewlyPlaced?: boolean;
     onAnimationComplete?: () => void;
+    isFailedCard?: boolean;
 }
 
-export default function CardBothSides({ date, event, bibleReference, bcText, adText, bibliography, isNewlyPlaced = false, onAnimationComplete }: CardBothSidesProps) {
+export default function CardBothSides({ date, event, bibleReference, bcText, adText, bibliography, isNewlyPlaced = false, onAnimationComplete, isFailedCard = false }: CardBothSidesProps) {
     const [isFlipped, setIsFlipped] = useState(false);
     const [isTouchDevice] = useState(() =>
         typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0)
@@ -72,6 +73,15 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
         }
     };
 
+    // Card styling based on failed state
+    const cardClassName = isFailedCard 
+        ? 'bg-red-600 text-white dark:bg-red-700 dark:text-white  ' 
+        : 'bg-(--text-dark) text-(--text-light) dark:bg-(--text-light) dark:text-(--text-dark)';
+
+    const cardBackClassName = isFailedCard 
+        ? 'bg-red-600 text-white dark:bg-red-700 dark:text-white ' 
+        : 'bg-(--text-light) text-(--text-dark) dark:bg-(--text-dark) dark:text-(--text-light)';
+
     const handleInteraction = () => {
         if (isTouchDevice) {
             setIsFlipped(!isFlipped);
@@ -108,7 +118,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
             >
                 {/* Front - Date Only */}
                 <div
-                    className="absolute w-full h-full backface-hidden bg-(--text-dark) text-(--text-light) dark:bg-(--text-light) dark:text-(--text-dark) rounded-lg shadow-lg flex items-center justify-center p-4"
+                    className={`absolute w-full h-full backface-hidden rounded-lg shadow-lg flex items-center justify-center p-4 ${cardClassName}`}
                     style={{ backfaceVisibility: 'hidden' }}
                 >
                     <div className=" text-center">
@@ -118,15 +128,15 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
 
                 {/* Back - Event Details */}
                 <div
-                    className="absolute w-full h-full backface-hidden bg-(--text-light) text-(--text-dark) dark:bg-(--text-dark) dark:text-(--text-light) rounded-lg shadow-lg flex flex-col items-center justify-center p-4"
+                    className={`absolute w-full h-full backface-hidden rounded-lg shadow-lg flex flex-col items-center justify-center p-4 ${cardBackClassName}`}
                     style={{
                         backfaceVisibility: 'hidden',
                         transform: 'rotateY(180deg)'
                     }}
                 >
                     <div className="text-xs md:text-sm font-bold mb-3 text-center">{event}</div>
-                    <div className="text-[10px] md:text-xs opacity-75 text-center">{bibleReference}</div>
-                    <div className="absolute top-2 right-2 text-[10px] md:text-xs opacity-50">{formatDate(date)}</div>
+                    <div className={`text-[10px] md:text-xs text-center ${isFailedCard ? 'opacity-90' : 'opacity-75'}`}>{bibleReference}</div>
+                    <div className={`absolute top-2 right-2 text-[10px] md:text-xs ${isFailedCard ? 'opacity-80' : 'opacity-50'}`}>{formatDate(date)}</div>
 
                     {/* Bibliography Links */}
                     {bibliography && bibliography.length > 0 && (
