@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import CardBothSides from './CardBothSides';
 import CardDataOnly from './CardDataOnly';
 import gameData from '@/config/info.json';
@@ -47,6 +47,7 @@ export default function GameBoard({ locale }: { locale: string }) {
     const [isDragging, setIsDragging] = useState(false);
     const [dragPosition, setDragPosition] = useState<{ x: number; y: number } | null>(null);
     const [touchStartPos, setTouchStartPos] = useState<{ x: number; y: number } | null>(null);
+    const [newlyPlacedCardId, setNewlyPlacedCardId] = useState<number | null>(null);
 
     const lang = (locale === 'es' || locale === 'en' ? locale : 'en') as keyof typeof messages;
     const t = messages[lang];
@@ -60,6 +61,11 @@ export default function GameBoard({ locale }: { locale: string }) {
     };
 
     const clearMessage = () => setMessage(null);
+
+    // Callback for when card placement animation completes
+    const handleAnimationComplete = useCallback(() => {
+        setNewlyPlacedCardId(null);
+    }, []);
 
     // Fisher-Yates shuffle algorithm for better randomization
     const shuffleArray = <T,>(array: T[]): T[] => {
@@ -116,6 +122,7 @@ export default function GameBoard({ locale }: { locale: string }) {
             showMessage(t.correct, 'success');
             setScore(score + 1);
             setBoardCards(newBoard);
+            setNewlyPlacedCardId(currentCard.id);
 
             // Get next card from the deck
             if (deckIndex < shuffledDeck.length) {
@@ -283,7 +290,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                         <button
                             onClick={startGame}
                             className="px-8 py-3  rounded-lg font-semibold cursor-pointer 
-                        text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-zinc-200 dark:hover:bg-zinc-600
+                        text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10
                          
                         hover:bg-gray-700 dark:hover:bg-gray-200 transition"
                         >
@@ -378,13 +385,15 @@ export default function GameBoard({ locale }: { locale: string }) {
                         {boardCards.map((card, index) => (
                             <div key={card.id} className="flex   flex-col md:flex-row gap-4 items-start shrink-0">
                                 <div className="shrink-0">
-                                    <CardBothSides
+                                     <CardBothSides
                                         date={card.date}
                                         event={card.event[lang]}
                                         bibleReference={card.bible_reference[lang]}
                                         bcText={t.bc}
                                         adText={t.ad}
                                         bibliography={card.bibliografy?.[lang]}
+                                        isNewlyPlaced={card.id === newlyPlacedCardId}
+                                        onAnimationComplete={handleAnimationComplete}
                                     />
                                 </div>
 
