@@ -5,6 +5,7 @@ import Counter from '../components/Counter';
 import Background from '../components/Background';
 import { ThemeProvider } from '@/app/components/ThemeProvider';
 import { BlurTextProvider } from './BlurTextContext';
+import { SuccessProvider } from './SuccessContext';
 
 export function LayoutClient({
     children,
@@ -33,15 +34,17 @@ export function LayoutClient({
 
     return (
         <ThemeProvider>
-            <Background />
-            <BlurTextProvider showBlurText={showBlurText}>
-                <main className="relative w-full top-0 h-[120vh] md:h-screen overflow-auto">
-                        
-                    {children}
-                    
-                </main>
-            </BlurTextProvider>
-            <Counter show={showCounter} fadeOut={fadeOut} onEnd={handleCounterEnd} />
+            <SuccessProvider>
+                <Background />
+                <BlurTextProvider showBlurText={showBlurText}>
+                    <main className="relative w-full top-0 h-[120vh] md:h-screen overflow-auto">
+
+                        {children}
+
+                    </main>
+                </BlurTextProvider>
+                <Counter show={showCounter} fadeOut={fadeOut} onEnd={handleCounterEnd} />
+            </SuccessProvider>
         </ThemeProvider>
     );
 }

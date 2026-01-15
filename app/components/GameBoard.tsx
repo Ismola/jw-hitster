@@ -8,6 +8,7 @@ import gameData from '@/config/info.json';
 import { messages } from '@/config/text';
 import AnimatedContent from './ReactBits/AnimatedContent';
 import { useLocalStorage } from '@/app/hooks/useLocalStorage';
+import { useSuccess } from '../[locale]/SuccessContext';
 
 interface GameItem {
     date: string;
@@ -48,6 +49,7 @@ interface SavedGameState {
 
 export default function GameBoard({ locale }: { locale: string }) {
     const [savedGame, setSavedGame] = useLocalStorage<SavedGameState | null>('jw-hitster-game-state', null);
+    const { triggerSuccess, triggerError } = useSuccess();
 
     // Track if component is mounted (client-side)
     const [isMounted, setIsMounted] = useState(false);
@@ -176,6 +178,7 @@ export default function GameBoard({ locale }: { locale: string }) {
 
         if (isCorrect) {
             showMessage(t.correct, 'success');
+            triggerSuccess(); // Activar el cambio de color verde
             setScore(score + 1);
             setBoardCards(newBoard);
             setNewlyPlacedCardId(currentCard.id);
@@ -191,6 +194,7 @@ export default function GameBoard({ locale }: { locale: string }) {
             }
         } else {
             showMessage(t.lose, 'error');
+            triggerError(); // Activar el cambio de color rojo
             setFailedCard(currentCard);
             setGameState('gameOver');
         }
@@ -390,7 +394,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                         animateOpacity
                         scale={.1}
                         threshold={0.1}
-                        
+
                     >
                         <div className="w-fit  h-0 md:h-auto wrap-break-word sticky right-5 md:right-0 top-70 md:top-0 z-50 md:relative flex items-center flex-col">
                             {/* TODO cambiar texto de instruccion */}
