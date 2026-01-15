@@ -254,21 +254,17 @@ export default function GameBoard({ locale }: { locale: string }) {
     };
 
     if (gameState === 'start') {
-        const hasSavedGame = savedGame && savedGame.gameState === 'playing';
-        
         return (
             <div className="flex flex-col items-center gap-6">
                 <h2 className="text-2xl font-bold">
                     {lang === 'es' ? 'Ordena los eventos por fecha' : 'Order the events by date'}
                 </h2>
-                <div className="flex flex-col gap-4">
-                    <button
-                        onClick={startGame}
-                        className="cursor-pointer px-8 py-3 bg-(--text-light) dark:bg-(--text-dark) text-(--text-dark) dark:text-(--text-light) rounded-lg font-semibold "
-                    >
-                        {hasSavedGame ? (lang === 'es' ? 'Nuevo Juego' : 'New Game') : t.start}
-                    </button>
-                </div>
+                <button
+                    onClick={startGame}
+                    className="cursor-pointer px-8 py-3 bg-(--text-light) dark:bg-(--text-dark) text-(--text-dark) dark:text-(--text-light) rounded-lg font-semibold "
+                >
+                    {t.start}
+                </button>
             </div>
         );
     }
