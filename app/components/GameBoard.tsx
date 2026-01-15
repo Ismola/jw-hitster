@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CardBothSides from './CardBothSides';
 import CardDataOnly from './CardDataOnly';
 import gameData from '@/config/info.json';
 import { messages } from '@/config/text';
 import AnimatedContent from './ReactBits/AnimatedContent';
+import { useLocalStorage } from '@/app/hooks/useLocalStorage';
 
 interface GameItem {
     date: string;
@@ -35,14 +36,29 @@ interface ActiveMessage {
     tone: MessageTone;
 }
 
+interface SavedGameState {
+    gameState: 'start' | 'playing' | 'gameOver';
+    boardCards: BoardCard[];
+    currentCard: BoardCard | null;
+    score: number;
+    shuffledDeck: BoardCard[];
+    deckIndex: number;
+}
+
 export default function GameBoard({ locale }: { locale: string }) {
-    const [gameState, setGameState] = useState<'start' | 'playing' | 'gameOver'>('start');
-    const [boardCards, setBoardCards] = useState<BoardCard[]>([]);
-    const [currentCard, setCurrentCard] = useState<BoardCard | null>(null);
-    const [score, setScore] = useState(0);
+    const [savedGame, setSavedGame] = useLocalStorage<SavedGameState | null>('jw-hitster-game-state', null);
+    
+    // Initialize state from saved game or defaults
+    const [gameState, setGameState] = useState<'start' | 'playing' | 'gameOver'>(() => {
+        return savedGame?.gameState === 'playing' ? 'playing' : 'start';
+    });
+    const [boardCards, setBoardCards] = useState<BoardCard[]>(() => savedGame?.boardCards || []);
+    const [currentCard, setCurrentCard] = useState<BoardCard | null>(() => savedGame?.currentCard || null);
+    const [score, setScore] = useState(() => savedGame?.score || 0);
+    const [shuffledDeck, setShuffledDeck] = useState<BoardCard[]>(() => savedGame?.shuffledDeck || []);
+    const [deckIndex, setDeckIndex] = useState(() => savedGame?.deckIndex || 0);
+    
     const [message, setMessage] = useState<ActiveMessage | null>(null);
-    const [shuffledDeck, setShuffledDeck] = useState<BoardCard[]>([]);
-    const [deckIndex, setDeckIndex] = useState(0);
     const [draggedOver, setDraggedOver] = useState<number | null>(null);
     const [isDragging, setIsDragging] = useState(false);
     const [dragPosition, setDragPosition] = useState<{ x: number; y: number } | null>(null);
@@ -50,6 +66,23 @@ export default function GameBoard({ locale }: { locale: string }) {
 
     const lang = (locale === 'es' || locale === 'en' ? locale : 'en') as keyof typeof messages;
     const t = messages[lang];
+
+    // Save game state whenever it changes (only when playing)
+    useEffect(() => {
+        if (gameState === 'playing') {
+            setSavedGame({
+                gameState,
+                boardCards,
+                currentCard,
+                score,
+                shuffledDeck,
+                deckIndex,
+            });
+        } else if (gameState === 'gameOver') {
+            // Clear saved game when game is over
+            setSavedGame(null);
+        }
+    }, [gameState, boardCards, currentCard, score, shuffledDeck, deckIndex, setSavedGame]);
 
     const showMessage = (text: string, tone: MessageTone) => {
         setMessage({
@@ -86,6 +119,7 @@ export default function GameBoard({ locale }: { locale: string }) {
         setGameState('playing');
         setScore(0);
         clearMessage();
+        setSavedGame(null); // Clear any saved game
 
         // Reset drag states
         setIsDragging(false);
@@ -220,17 +254,21 @@ export default function GameBoard({ locale }: { locale: string }) {
     };
 
     if (gameState === 'start') {
+        const hasSavedGame = savedGame && savedGame.gameState === 'playing';
+        
         return (
             <div className="flex flex-col items-center gap-6">
                 <h2 className="text-2xl font-bold">
                     {lang === 'es' ? 'Ordena los eventos por fecha' : 'Order the events by date'}
                 </h2>
-                <button
-                    onClick={startGame}
-                    className="cursor-pointer px-8 py-3 bg-(--text-light) dark:bg-(--text-dark) text-(--text-dark) dark:text-(--text-light) rounded-lg font-semibold "
-                >
-                    {t.start}
-                </button>
+                <div className="flex flex-col gap-4">
+                    <button
+                        onClick={startGame}
+                        className="cursor-pointer px-8 py-3 bg-(--text-light) dark:bg-(--text-dark) text-(--text-dark) dark:text-(--text-light) rounded-lg font-semibold "
+                    >
+                        {hasSavedGame ? (lang === 'es' ? 'Nuevo Juego' : 'New Game') : t.start}
+                    </button>
+                </div>
             </div>
         );
     }
