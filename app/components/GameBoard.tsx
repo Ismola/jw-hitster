@@ -75,6 +75,16 @@ export default function GameBoard({ locale }: { locale: string }) {
     const t = messages[lang];
     const MESSAGE_VISIBILITY_SECONDS = 2.5;
 
+    const showMessage = useCallback((text: string, tone: MessageTone) => {
+        setMessage({
+            id: Date.now(),
+            text,
+            tone
+        });
+    }, []);
+
+    const clearMessage = useCallback(() => setMessage(null), []);
+
     // Hydrate from localStorage on mount
     useEffect(() => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -95,29 +105,21 @@ export default function GameBoard({ locale }: { locale: string }) {
         if (!isMounted) return;
 
         if (gameState === 'playing') {
-            setSavedGame({
+            const newState = {
                 gameState,
                 boardCards,
                 currentCard,
                 score,
                 shuffledDeck,
                 deckIndex,
-            });
+            };
+            setSavedGame(newState);
         } else if (gameState === 'gameOver') {
             // Clear saved game when game is over
             setSavedGame(null);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isMounted, gameState, boardCards, currentCard, score, shuffledDeck, deckIndex]);
-
-    const showMessage = (text: string, tone: MessageTone) => {
-        setMessage({
-            id: Date.now(),
-            text,
-            tone
-        });
-    };
-
-    const clearMessage = () => setMessage(null);
 
     // Callback for when card placement animation completes
     const handleAnimationComplete = useCallback(() => {
@@ -316,7 +318,7 @@ export default function GameBoard({ locale }: { locale: string }) {
         <>
 
             {/* Message */}
-            <div className="pointer-events-none fixed inset-x-0 top-4 z-50 flex justify-center px-4">
+            <div className="pointer-events-none fixed inset-x-0 -top-40 z-[100] flex justify-center px-4">
                 {message && (
                     <AnimatedContent
                         key={message.id}
