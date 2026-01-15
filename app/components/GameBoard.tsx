@@ -47,6 +47,7 @@ export default function GameBoard({ locale }: { locale: string }) {
     const [isDragging, setIsDragging] = useState(false);
     const [dragPosition, setDragPosition] = useState<{ x: number; y: number } | null>(null);
     const [touchStartPos, setTouchStartPos] = useState<{ x: number; y: number } | null>(null);
+    const [newlyPlacedCardId, setNewlyPlacedCardId] = useState<number | null>(null);
 
     const lang = (locale === 'es' || locale === 'en' ? locale : 'en') as keyof typeof messages;
     const t = messages[lang];
@@ -116,6 +117,7 @@ export default function GameBoard({ locale }: { locale: string }) {
             showMessage(t.correct, 'success');
             setScore(score + 1);
             setBoardCards(newBoard);
+            setNewlyPlacedCardId(currentCard.id);
 
             // Get next card from the deck
             if (deckIndex < shuffledDeck.length) {
@@ -378,13 +380,15 @@ export default function GameBoard({ locale }: { locale: string }) {
                         {boardCards.map((card, index) => (
                             <div key={card.id} className="flex   flex-col md:flex-row gap-4 items-start shrink-0">
                                 <div className="shrink-0">
-                                    <CardBothSides
+                                     <CardBothSides
                                         date={card.date}
                                         event={card.event[lang]}
                                         bibleReference={card.bible_reference[lang]}
                                         bcText={t.bc}
                                         adText={t.ad}
                                         bibliography={card.bibliografy?.[lang]}
+                                        isNewlyPlaced={card.id === newlyPlacedCardId}
+                                        onAnimationComplete={() => setNewlyPlacedCardId(null)}
                                     />
                                 </div>
 

@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { gsap } from 'gsap';
 
 interface CardBothSidesProps {
     date: string;
@@ -10,13 +11,46 @@ interface CardBothSidesProps {
     bcText: string;
     adText: string;
     bibliography?: string[];
+    isNewlyPlaced?: boolean;
+    onAnimationComplete?: () => void;
 }
 
-export default function CardBothSides({ date, event, bibleReference, bcText, adText, bibliography }: CardBothSidesProps) {
+export default function CardBothSides({ date, event, bibleReference, bcText, adText, bibliography, isNewlyPlaced = false, onAnimationComplete }: CardBothSidesProps) {
     const [isFlipped, setIsFlipped] = useState(false);
     const [isTouchDevice] = useState(() =>
         typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0)
     );
+    const cardRef = useRef<HTMLDivElement>(null);
+
+    // Animate when card is newly placed
+    useEffect(() => {
+        if (isNewlyPlaced && cardRef.current) {
+            const card = cardRef.current;
+            
+            // Set initial state
+            gsap.set(card, {
+                scale: 0.3,
+                opacity: 0,
+                y: -50,
+                rotateX: -90
+            });
+
+            // Animate in
+            gsap.to(card, {
+                scale: 1,
+                opacity: 1,
+                y: 0,
+                rotateX: 0,
+                duration: 0.6,
+                ease: 'back.out(1.7)',
+                onComplete: () => {
+                    if (onAnimationComplete) {
+                        onAnimationComplete();
+                    }
+                }
+            });
+        }
+    }, [isNewlyPlaced, onAnimationComplete]);
 
     // Format date with BC/AD
     const formatDate = (dateStr: string) => {
@@ -48,6 +82,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
 
     return (
         <div
+            ref={cardRef}
             className="w-36 h-48 md:w-48 md:h-64 perspective-1000 cursor-pointer"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
