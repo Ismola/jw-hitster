@@ -73,6 +73,7 @@ export default function GameBoard({ locale }: { locale: string }) {
 
     const lang = (locale === 'es' || locale === 'en' ? locale : 'en') as keyof typeof messages;
     const t = messages[lang];
+    const MESSAGE_VISIBILITY_SECONDS = 2.5;
 
     // Hydrate from localStorage on mount
     useEffect(() => {
@@ -107,6 +108,13 @@ export default function GameBoard({ locale }: { locale: string }) {
             setSavedGame(null);
         }
     }, [isMounted, gameState, boardCards, currentCard, score, shuffledDeck, deckIndex]);
+
+    useEffect(() => {
+        if (!message) return;
+
+        const timer = setTimeout(() => setMessage(null), (MESSAGE_VISIBILITY_SECONDS + 0.5) * 1000);
+        return () => clearTimeout(timer);
+    }, [message, MESSAGE_VISIBILITY_SECONDS]);
 
     const showMessage = (text: string, tone: MessageTone) => {
         setMessage({
@@ -187,7 +195,6 @@ export default function GameBoard({ locale }: { locale: string }) {
             if (deckIndex < shuffledDeck.length) {
                 setCurrentCard(shuffledDeck[deckIndex]);
                 setDeckIndex(deckIndex + 1);
-                setTimeout(clearMessage, 1500);
             } else {
                 showMessage(t.won, 'success');
                 setGameState('gameOver');
@@ -316,30 +323,30 @@ export default function GameBoard({ locale }: { locale: string }) {
         <>
 
             {/* Message */}
-            <div className="absolute -bottom-30 z-40 w-full flex justify-center">
-                <div className="relative w-full max-w-3xl min-h-18">
-                    {message ? (
-                        <AnimatedContent
-                            key={message.id}
-                            distance={64}
-                            direction="vertical"
-                            duration={0.6}
-                            ease="power3.out"
-                            initialOpacity={0}
-                            animateOpacity
-                            scale={1}
-                            threshold={0.05}
-                            className={`pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 inline-flex items-center justify-center text-lg font-semibold px-4 py-3 rounded-xl shadow-lg border ${message.tone === 'error'
-                                ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100 border-red-200 dark:border-red-800'
-                                : 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-50 border-green-200 dark:border-green-800'
-                                }`}
-                        >
-                            <span aria-live="polite">{message.text}</span>
-                        </AnimatedContent>
-                    ) : (
-                        <div className="h-18" aria-hidden="true" />
-                    )}
-                </div>
+            <div className="pointer-events-none fixed inset-x-0 top-4 z-50 flex justify-center px-4">
+                {message && (
+                    <AnimatedContent
+                        key={message.id}
+                        distance={48}
+                        direction="vertical"
+                        reverse
+                        duration={0.5}
+                        ease="power3.out"
+                        initialOpacity={0}
+                        animateOpacity
+                        scale={1}
+                        threshold={0}
+                        disappearAfter={MESSAGE_VISIBILITY_SECONDS}
+                        disappearDuration={0.4}
+                        onDisappearanceComplete={clearMessage}
+                        className={`inline-flex items-center justify-center text-lg font-semibold px-4 py-3 rounded-xl shadow-lg border ${message.tone === 'error'
+                            ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100 border-red-200 dark:border-red-800'
+                            : 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-50 border-green-200 dark:border-green-800'
+                            }`}
+                    >
+                        <span aria-live="polite">{message.text}</span>
+                    </AnimatedContent>
+                )}
             </div>
 
 
