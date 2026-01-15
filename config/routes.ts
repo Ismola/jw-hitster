@@ -2,7 +2,8 @@ import { Locale, locales } from '@/i18n.config';
 import en from '@/messages/en.json';
 import es from '@/messages/es.json';
 
-type Messages = Record<string, string>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Messages = Record<string, any>;
 
 const messagesByLocale: Record<Locale, Messages> = {
     en: en as Messages,
