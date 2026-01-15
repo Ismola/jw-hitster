@@ -16,12 +16,12 @@ export default function Backgtound() {
     );
 
     const successColor: [number, number, number] = useMemo(() =>
-        isDark ? [0.1, 0.3, 0.1] : [0.4, 0.7, 0.4],
+        isDark ? [0, 0.3, 0] : [0.4, 0.7, 0.4],
         [isDark]
     );
 
     const errorColor: [number, number, number] = useMemo(() =>
-        isDark ? [0.3, 0.1, 0.1] : [0.7, 0.3, 0.3],
+        isDark ? [0.1, 0, 0] : [0.7, 0.5, 0.5],
         [isDark]
     );
 
