@@ -25,16 +25,16 @@ export default function GamePage({ }: GamePageProps) {
         <>
             <Header />
 
-            <div className="flex flex-col h-full items-start md:items-center justify-start pt-8 overflow-x-hidden">
+            <div className="flex flex-col h-full items-start md:items-center justify-start pt-8 ">
                 <AnimatedContent
-                    distance={200}
+                    distance={190}
                     direction="vertical"
                     reverse={false}
                     duration={1.2}
                     ease="power3.out"
                     initialOpacity={0}
                     animateOpacity
-                    scale={1.1}
+                    scale={.7}
                     threshold={0.1}
                     delay={1}
                     className='w-full  text-center'
@@ -53,14 +53,14 @@ export default function GamePage({ }: GamePageProps) {
                     />
                 </AnimatedContent>
                 <AnimatedContent
-                    distance={200}
+                    distance={190}
                     direction="vertical"
                     reverse={false}
                     duration={1.2}
                     ease="power3.out"
                     initialOpacity={0}
                     animateOpacity
-                    scale={1.1}
+                    scale={.7}
                     threshold={0.1}
                     delay={1.3}
                     className='w-full'
