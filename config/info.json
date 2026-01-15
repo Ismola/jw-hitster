@@ -2155,19 +2155,38 @@
     {
         "date": "50",
         "event": {
-            "es": "Pablo escribe 1 y 2 a los Tesalonicenses desde Corinto",
-            "en": "Paul writes 1 and 2 Thessalonians from Corinth"
+            "es": "Pablo escribe 1 a los Tesalonicenses desde Corinto",
+            "en": "Paul writes 1 Thessalonians from Corinth"
         },
         "bible_reference": {
-            "es": "Hechos 18:11, 12; 1 Tesalonicenses 1:1",
-            "en": "Acts 18:11, 12; 1 Thessalonians 1:1"
+            "es": "1 Tesalonicenses 1:1",
+            "en": "1 Thessalonians 1:1"
         },
         "bibliografy": {
             "es": [
-                "https://wol.jw.org/es/wol/d/r4/lp-s/1951246"
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
             ],
             "en": [
-                "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "51",
+        "event": {
+            "es": "Pablo escribe 2 a los Tesalonicenses desde Corinto",
+            "en": "Paul writes 2 Thessalonians from Corinth"
+        },
+        "bible_reference": {
+            "es": "2 Tesalonicenses 1:1",
+            "en": "2 Thessalonians 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
             ]
         }
     },
@@ -2421,8 +2440,8 @@
     {
         "date": "61",
         "event": {
-            "es": "Pablo escribe a Timoteo desde Macedonia",
-            "en": "Paul writes to Timothy from Macedonia"
+            "es": "Pablo escribe 1 Timoteo desde Macedonia",
+            "en": "Paul writes 1 Timothy from Macedonia"
         },
         "bible_reference": {
             "es": "1 Timoteo 1:3",
@@ -2430,10 +2449,10 @@
         },
         "bibliografy": {
             "es": [
-                "https://wol.jw.org/es/wol/d/r4/lp-s/1951246"
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
             ],
             "en": [
-                "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
             ]
         }
     },
