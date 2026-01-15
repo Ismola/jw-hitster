@@ -192,7 +192,7 @@ export default function Home() {
             {/* Botón cerrar */}
             <button
               onClick={handleModalToggle}
-              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full hover:bg-(--text-light)/20 dark:hover:bg-(--text-dark)/20 transition-all"
+              className="cursor-pointer absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full hover:bg-(--text-light)/20 dark:hover:bg-(--text-dark)/20 transition-all"
             >
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
