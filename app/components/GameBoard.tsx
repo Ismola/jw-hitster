@@ -352,7 +352,7 @@ export default function GameBoard({ locale }: { locale: string }) {
 
                 {/* Current Card to Place */}
                 {gameState === 'playing' && currentCard && (
-                    <div className="w-fit h-0 md:h-auto wrap-break-word sticky right-5 top-70 md:top-0 z-50 md:relative flex items-center flex-col">
+                    <div className="w-fit  h-0 md:h-auto wrap-break-word sticky right-5 md:right-0 top-70 md:top-0 z-50 md:relative flex items-center flex-col">
                         {/* TODO cambiar texto de instruccion */}
                         <div className="text-lg font-semibold mb-6">
                             {t.placeCard}:
@@ -436,7 +436,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                         {boardCards.map((card, index) => (
                             <div key={card.id} className="flex   flex-col md:flex-row gap-4 items-start shrink-0">
                                 <div className="shrink-0">
-                                     <CardBothSides
+                                    <CardBothSides
                                         date={card.date}
                                         event={card.event[lang]}
                                         bibleReference={card.bible_reference[lang]}
