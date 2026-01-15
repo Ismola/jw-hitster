@@ -1583,6 +1583,25 @@
         }
     },
     {
+        "date": "-632",
+        "event": {
+            "es": "Nahúm completa la escritura de Nahúm",
+            "en": "Nahum completes writing Nahum"
+        },
+        "bible_reference": {
+            "es": "Nahúm 1:1",
+            "en": "Nahum 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
         "date": "-628",
         "event": {
             "es": "Joacaz toma el lugar de Josías",
@@ -2136,19 +2155,38 @@
     {
         "date": "50",
         "event": {
-            "es": "Pablo escribe 1 y 2 a los Tesalonicenses desde Corinto",
-            "en": "Paul writes 1 and 2 Thessalonians from Corinth"
+            "es": "Pablo escribe 1 a los Tesalonicenses desde Corinto",
+            "en": "Paul writes 1 Thessalonians from Corinth"
         },
         "bible_reference": {
-            "es": "Hechos 18:11, 12; 1 Tesalonicenses 1:1",
-            "en": "Acts 18:11, 12; 1 Thessalonians 1:1"
+            "es": "1 Tesalonicenses 1:1",
+            "en": "1 Thessalonians 1:1"
         },
         "bibliografy": {
             "es": [
-                "https://wol.jw.org/es/wol/d/r4/lp-s/1951246"
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
             ],
             "en": [
-                "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "51",
+        "event": {
+            "es": "Pablo escribe 2 a los Tesalonicenses desde Corinto",
+            "en": "Paul writes 2 Thessalonians from Corinth"
+        },
+        "bible_reference": {
+            "es": "2 Tesalonicenses 1:1",
+            "en": "2 Thessalonians 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
             ]
         }
     },
@@ -2402,8 +2440,8 @@
     {
         "date": "61",
         "event": {
-            "es": "Pablo escribe a Timoteo desde Macedonia",
-            "en": "Paul writes to Timothy from Macedonia"
+            "es": "Pablo escribe 1 Timoteo desde Macedonia",
+            "en": "Paul writes 1 Timothy from Macedonia"
         },
         "bible_reference": {
             "es": "1 Timoteo 1:3",
@@ -2411,10 +2449,10 @@
         },
         "bibliografy": {
             "es": [
-                "https://wol.jw.org/es/wol/d/r4/lp-s/1951246"
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
             ],
             "en": [
-                "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
             ]
         }
     },
@@ -2643,6 +2681,728 @@
             ],
             "en": [
                 "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+            ]
+        }
+    },
+    {
+        "date": "-1513",
+        "event": {
+            "es": "Moisés completa la escritura de Génesis",
+            "en": "Moses completes writing Genesis"
+        },
+        "bible_reference": {
+            "es": "Génesis 1:1",
+            "en": "Genesis 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1512",
+        "event": {
+            "es": "Moisés completa la escritura de Éxodo",
+            "en": "Moses completes writing Exodus"
+        },
+        "bible_reference": {
+            "es": "Éxodo 1:1",
+            "en": "Exodus 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1512",
+        "event": {
+            "es": "Moisés completa la escritura de Levítico",
+            "en": "Moses completes writing Leviticus"
+        },
+        "bible_reference": {
+            "es": "Levítico 1:1",
+            "en": "Leviticus 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1473",
+        "event": {
+            "es": "Moisés completa la escritura de Números",
+            "en": "Moses completes writing Numbers"
+        },
+        "bible_reference": {
+            "es": "Números 1:1",
+            "en": "Numbers 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1473",
+        "event": {
+            "es": "Moisés completa la escritura de Deuteronomio",
+            "en": "Moses completes writing Deuteronomy"
+        },
+        "bible_reference": {
+            "es": "Deuteronomio 1:1",
+            "en": "Deuteronomy 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1473",
+        "event": {
+            "es": "Moisés completa la escritura de Job",
+            "en": "Moses completes writing Job"
+        },
+        "bible_reference": {
+            "es": "Job 1:1",
+            "en": "Job 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1450",
+        "event": {
+            "es": "Josué completa la escritura de Josué",
+            "en": "Joshua completes writing Joshua"
+        },
+        "bible_reference": {
+            "es": "Josué 1:1",
+            "en": "Joshua 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1100",
+        "event": {
+            "es": "Samuel completa la escritura de Jueces",
+            "en": "Samuel completes writing Judges"
+        },
+        "bible_reference": {
+            "es": "Jueces 1:1",
+            "en": "Judges 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1090",
+        "event": {
+            "es": "Samuel completa la escritura de Rut",
+            "en": "Samuel completes writing Ruth"
+        },
+        "bible_reference": {
+            "es": "Rut 1:1",
+            "en": "Ruth 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1078",
+        "event": {
+            "es": "Samuel, Gad y Natán completan la escritura de 1 Samuel",
+            "en": "Samuel, Gad and Nathan complete writing 1 Samuel"
+        },
+        "bible_reference": {
+            "es": "1 Samuel 1:1",
+            "en": "1 Samuel 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1040",
+        "event": {
+            "es": "Gad y Natán completan la escritura de 2 Samuel",
+            "en": "Gad and Nathan complete writing 2 Samuel"
+        },
+        "bible_reference": {
+            "es": "2 Samuel 1:1",
+            "en": "2 Samuel 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1020",
+        "event": {
+            "es": "Salomón completa la escritura del Cantar de los Cantares",
+            "en": "Solomon completes writing Song of Solomon"
+        },
+        "bible_reference": {
+            "es": "Cantar de los Cantares 1:1",
+            "en": "Song of Solomon 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1000",
+        "event": {
+            "es": "Salomón completa la escritura de Eclesiastés",
+            "en": "Solomon completes writing Ecclesiastes"
+        },
+        "bible_reference": {
+            "es": "Eclesiastés 1:1",
+            "en": "Ecclesiastes 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-844",
+        "event": {
+            "es": "Jonás completa la escritura de Jonás",
+            "en": "Jonah completes writing Jonah"
+        },
+        "bible_reference": {
+            "es": "Jonás 1:1",
+            "en": "Jonah 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-820",
+        "event": {
+            "es": "Joel completa la escritura de Joel",
+            "en": "Joel completes writing Joel"
+        },
+        "bible_reference": {
+            "es": "Joel 1:1",
+            "en": "Joel 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-804",
+        "event": {
+            "es": "Amós completa la escritura de Amós",
+            "en": "Amos completes writing Amos"
+        },
+        "bible_reference": {
+            "es": "Amós 1:1",
+            "en": "Amos 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-745",
+        "event": {
+            "es": "Oseas completa la escritura de Oseas",
+            "en": "Hosea completes writing Hosea"
+        },
+        "bible_reference": {
+            "es": "Oseas 1:1",
+            "en": "Hosea 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-732",
+        "event": {
+            "es": "Isaías completa la escritura de Isaías",
+            "en": "Isaiah completes writing Isaiah"
+        },
+        "bible_reference": {
+            "es": "Isaías 1:1",
+            "en": "Isaiah 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-717",
+        "event": {
+            "es": "Salomón, Agur y Lemuel completan la escritura de Proverbios",
+            "en": "Solomon, Agur and Lemuel complete writing Proverbs"
+        },
+        "bible_reference": {
+            "es": "Proverbios 1:1",
+            "en": "Proverbs 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-717",
+        "event": {
+            "es": "Miqueas completa la escritura de Miqueas",
+            "en": "Micah completes writing Micah"
+        },
+        "bible_reference": {
+            "es": "Miqueas 1:1",
+            "en": "Micah 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-648",
+        "event": {
+            "es": "Sofonías completa la escritura de Sofonías",
+            "en": "Zephaniah completes writing Zephaniah"
+        },
+        "bible_reference": {
+            "es": "Sofonías 1:1",
+            "en": "Zephaniah 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-628",
+        "event": {
+            "es": "Habacuc completa la escritura de Habacuc",
+            "en": "Habakkuk completes writing Habakkuk"
+        },
+        "bible_reference": {
+            "es": "Habacuc 1:1",
+            "en": "Habakkuk 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-607",
+        "event": {
+            "es": "Jeremías completa la escritura de Lamentaciones",
+            "en": "Jeremiah completes writing Lamentations"
+        },
+        "bible_reference": {
+            "es": "Lamentaciones 1:1",
+            "en": "Lamentations 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-607",
+        "event": {
+            "es": "Abdías completa la escritura de Abdías",
+            "en": "Obadiah completes writing Obadiah"
+        },
+        "bible_reference": {
+            "es": "Abdías 1:1",
+            "en": "Obadiah 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-580",
+        "event": {
+            "es": "Jeremías completa la escritura de 1 Reyes",
+            "en": "Jeremiah completes writing 1 Kings"
+        },
+        "bible_reference": {
+            "es": "1 Reyes 1:1",
+            "en": "1 Kings 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-580",
+        "event": {
+            "es": "Jeremías completa la escritura de 2 Reyes",
+            "en": "Jeremiah completes writing 2 Kings"
+        },
+        "bible_reference": {
+            "es": "2 Reyes 1:1",
+            "en": "2 Kings 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-580",
+        "event": {
+            "es": "Jeremías completa la escritura de Jeremías",
+            "en": "Jeremiah completes writing Jeremiah"
+        },
+        "bible_reference": {
+            "es": "Jeremías 1:1",
+            "en": "Jeremiah 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-536",
+        "event": {
+            "es": "Daniel completa la escritura de Daniel",
+            "en": "Daniel completes writing Daniel"
+        },
+        "bible_reference": {
+            "es": "Daniel 1:1",
+            "en": "Daniel 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-460",
+        "event": {
+            "es": "Esdras completa la escritura de 1 Crónicas",
+            "en": "Ezra completes writing 1 Chronicles"
+        },
+        "bible_reference": {
+            "es": "1 Crónicas 1:1",
+            "en": "1 Chronicles 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-460",
+        "event": {
+            "es": "Esdras completa la escritura de 2 Crónicas",
+            "en": "Ezra completes writing 2 Chronicles"
+        },
+        "bible_reference": {
+            "es": "2 Crónicas 1:1",
+            "en": "2 Chronicles 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-460",
+        "event": {
+            "es": "Esdras completa la escritura de Esdras",
+            "en": "Ezra completes writing Ezra"
+        },
+        "bible_reference": {
+            "es": "Esdras 1:1",
+            "en": "Ezra 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-460",
+        "event": {
+            "es": "David y otros completan la escritura de Salmos",
+            "en": "David and others complete writing Psalms"
+        },
+        "bible_reference": {
+            "es": "Salmos 1:1",
+            "en": "Psalms 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "60",
+        "event": {
+            "es": "Marcos completa la escritura de Marcos",
+            "en": "Mark completes writing Mark"
+        },
+        "bible_reference": {
+            "es": "Marcos 1:1",
+            "en": "Mark 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "96",
+        "event": {
+            "es": "El apóstol Juan completa la escritura de Revelación",
+            "en": "Apostle John completes writing Revelation"
+        },
+        "bible_reference": {
+            "es": "Revelación 1:1",
+            "en": "Revelation 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "98",
+        "event": {
+            "es": "El apóstol Juan completa la escritura de Juan",
+            "en": "Apostle John completes writing John"
+        },
+        "bible_reference": {
+            "es": "Juan 1:1",
+            "en": "John 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "98",
+        "event": {
+            "es": "El apóstol Juan completa la escritura de 1 Juan",
+            "en": "Apostle John completes writing 1 John"
+        },
+        "bible_reference": {
+            "es": "1 Juan 1:1",
+            "en": "1 John 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "98",
+        "event": {
+            "es": "El apóstol Juan completa la escritura de 2 Juan",
+            "en": "Apostle John completes writing 2 John"
+        },
+        "bible_reference": {
+            "es": "2 Juan 1:1",
+            "en": "2 John 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "98",
+        "event": {
+            "es": "El apóstol Juan completa la escritura de 3 Juan",
+            "en": "Apostle John completes writing 3 John"
+        },
+        "bible_reference": {
+            "es": "3 Juan 1:1",
+            "en": "3 John 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
             ]
         }
     }
