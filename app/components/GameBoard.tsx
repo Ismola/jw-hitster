@@ -290,7 +290,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                         <button
                             onClick={startGame}
                             className="px-8 py-3  rounded-lg font-semibold cursor-pointer 
-                        text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-zinc-200 dark:hover:bg-zinc-600
+                        text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10
                          
                         hover:bg-gray-700 dark:hover:bg-gray-200 transition"
                         >

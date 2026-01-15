@@ -25,7 +25,7 @@ export default function GamePage({ }: GamePageProps) {
         <>
             <Header />
 
-            <div className="flex flex-col h-full items-start md:items-center justify-start pt-8 ">
+            <div className="flex flex-col h-full items-start md:items-center justify-start pt-8 overflow-x-hidden">
                 <AnimatedContent
                     distance={200}
                     direction="vertical"
