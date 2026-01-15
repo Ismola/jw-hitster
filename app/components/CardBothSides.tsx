@@ -9,8 +9,8 @@ const ANIMATION_CONFIG = {
     initial: {
         scale: 0.3,
         opacity: 0,
-        y: -50,
-        rotateX: -90
+        y: -50, // pixels upward
+        rotateX: -90 // degrees
     },
     final: {
         scale: 1,
@@ -18,7 +18,7 @@ const ANIMATION_CONFIG = {
         y: 0,
         rotateX: 0
     },
-    duration: 0.6,
+    duration: 0.6, // seconds
     ease: 'back.out(1.7)'
 };
 
