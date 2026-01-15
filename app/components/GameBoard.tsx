@@ -389,8 +389,9 @@ export default function GameBoard({ locale }: { locale: string }) {
                         className="pointer-events-none"
                         style={{
                             position: 'fixed',
-                            left: dragPosition.x - 72,
-                            top: dragPosition.y - 96,
+                            left: 0,
+                            top: 0,
+                            transform: `translate(${dragPosition.x}px, ${dragPosition.y}px) translate(-50%, -50%)`,
                             zIndex: 1000,
                         }}
                     >
