@@ -67,6 +67,7 @@ export default function GameBoard({ locale }: { locale: string }) {
     const [touchStartPos, setTouchStartPos] = useState<{ x: number; y: number } | null>(null);
     const [dragOffset, setDragOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
     const [newlyPlacedCardId, setNewlyPlacedCardId] = useState<number | null>(null);
+    const [failedCard, setFailedCard] = useState<BoardCard | null>(null);
 
     const lang = (locale === 'es' || locale === 'en' ? locale : 'en') as keyof typeof messages;
     const t = messages[lang];
@@ -152,6 +153,7 @@ export default function GameBoard({ locale }: { locale: string }) {
         setDraggedOver(null);
         setTouchStartPos(null);
         setDragOffset({ x: 0, y: 0 });
+        setFailedCard(null);
     };
 
     const checkPosition = (position: number) => {
@@ -189,6 +191,7 @@ export default function GameBoard({ locale }: { locale: string }) {
             }
         } else {
             showMessage(t.lose, 'error');
+            setFailedCard(currentCard);
             setGameState('gameOver');
         }
     };
@@ -490,6 +493,23 @@ export default function GameBoard({ locale }: { locale: string }) {
                                 )}
                             </div>
                         ))}
+
+                        {/* Failed Card - Show at the end when game is over */}
+                        {gameState === 'gameOver' && failedCard && (
+                            <div className="shrink-0">
+                                <CardBothSides
+                                    date={failedCard.date}
+                                    event={failedCard.event[lang]}
+                                    bibleReference={failedCard.bible_reference[lang]}
+                                    bcText={t.bc}
+                                    adText={t.ad}
+                                    bibliography={failedCard.bibliografy?.[lang]}
+                                    isNewlyPlaced={false}
+                                    onAnimationComplete={handleAnimationComplete}
+                                    isFailedCard={true}
+                                />
+                            </div>
+                        )}
                     </div>
 
 
