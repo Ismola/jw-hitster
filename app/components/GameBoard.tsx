@@ -346,7 +346,7 @@ export default function GameBoard({ locale }: { locale: string }) {
 
 
 
-            <div className="flex flex-col  items-end md:items-center  md:gap-12 gap-8 w-full ">
+            <div className="flex flex-col text-(--text-light) dark:text-(--text-dark)  items-end md:items-center  md:gap-12 gap-8 w-full ">
                 {/* Score */}
                 <AnimatedContent
                     distance={0}
