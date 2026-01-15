@@ -75,11 +75,11 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
 
     // Card styling based on failed state
     const cardClassName = isFailedCard 
-        ? 'bg-red-600 text-white dark:bg-red-700 dark:text-white ring-4 ring-red-400 dark:ring-red-500' 
+        ? 'bg-red-600 text-white dark:bg-red-700 dark:text-white  ' 
         : 'bg-(--text-dark) text-(--text-light) dark:bg-(--text-light) dark:text-(--text-dark)';
 
     const cardBackClassName = isFailedCard 
-        ? 'bg-red-600 text-white dark:bg-red-700 dark:text-white ring-4 ring-red-400 dark:ring-red-500' 
+        ? 'bg-red-600 text-white dark:bg-red-700 dark:text-white ' 
         : 'bg-(--text-light) text-(--text-dark) dark:bg-(--text-dark) dark:text-(--text-light)';
 
     const handleInteraction = () => {
