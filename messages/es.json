@@ -17,5 +17,39 @@
     "placeHere": "Colocar aquí",
     "playAgain": "Jugar de nuevo",
     "bc": "a.C.",
-    "ad": "d.C."
+    "ad": "d.C.",
+    "credits": {
+        "title": "Créditos",
+        "developer": "Desarrollado por",
+        "thanksTitle": "Agradecimientos",
+        "thanksText": "Este proyecto fue posible gracias a las siguientes herramientas y recursos:",
+        "resources": {
+            "jw": {
+                "name": "JW.org",
+                "description": "Inspiración y contenido bíblico"
+            },
+            "reactbits": {
+                "name": "ReactBits",
+                "description": "Componentes animados y efectos visuales"
+            },
+            "tailwind": {
+                "name": "Tailwind CSS",
+                "description": "Framework de estilos"
+            },
+            "svgrepo": {
+                "name": "SVG Repo",
+                "description": "Iconos y recursos gráficos"
+            },
+            "hitster": {
+                "name": "Hitster Game",
+                "description": "Inspiración para la mecánica de juego"
+            },
+            "portfolio": {
+                "name": "Portfolio",
+                "description": "Desarrollo y más proyectos"
+            }
+        },
+        "contact": "Contacto",
+        "viewGithub": "Ver en GitHub"
+    }
 }

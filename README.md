@@ -137,8 +137,8 @@ Fondos:
   > #bg-zinc-700
 
 Traslúcido:
->text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10
->hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40
+> text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10
+> hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40
 
 ### Traducciones
 
@@ -150,8 +150,16 @@ Este proyecto es de código abierto y está disponible bajo la licencia MIT.
 
 ## 🙏 Créditos
 
-- Inspirado en [Hitster Game](https://hitstergame.com)
-- Logos de JW.org y WOL utilizados con fines educativos
-- Datos cronológicos basados en publicaciones de jw.org
+### Desarrollado por
 
+- [Ismola](https://github.com/Ismola)
 
+### Agradecimientos
+
+Este proyecto fue posible gracias a las siguientes herramientas y recursos:
+
+- **[JW.org](https://www.jw.org/)** - Inspiración, contenido bíblico y datos cronológicos
+- **[ReactBits](https://www.reactbits.dev/)** - Componentes animados y efectos visuales
+- **[Tailwind CSS](https://tailwindcss.com/)** - Framework de estilos
+- **[SVG Repo](https://www.svgrepo.com/)** - Iconos y recursos gráficos
+- **[Hitster Game](https://hitstergame.com)** - Inspiración para la mecánica de juego

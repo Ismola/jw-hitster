@@ -17,5 +17,39 @@
     "placeHere": "Place here",
     "playAgain": "Play Again",
     "bc": "BC",
-    "ad": "AD"
+    "ad": "AD",
+    "credits": {
+        "title": "Credits",
+        "developer": "Developed by",
+        "thanksTitle": "Acknowledgments",
+        "thanksText": "This project was made possible thanks to the following tools and resources:",
+        "resources": {
+            "jw": {
+                "name": "JW.org",
+                "description": "Inspiration and biblical content"
+            },
+            "reactbits": {
+                "name": "ReactBits",
+                "description": "Animated components and visual effects"
+            },
+            "tailwind": {
+                "name": "Tailwind CSS",
+                "description": "Styling framework"
+            },
+            "svgrepo": {
+                "name": "SVG Repo",
+                "description": "Icons and graphic resources"
+            },
+            "hitster": {
+                "name": "Hitster Game",
+                "description": "Game mechanics inspiration"
+            },
+            "portfolio": {
+                "name": "Portfolio",
+                "description": "Development and more projects"
+            }
+        },
+        "contact": "Contact",
+        "viewGithub": "View on GitHub"
+    }
 }
