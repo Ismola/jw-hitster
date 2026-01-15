@@ -41,7 +41,7 @@ export default function LanguageSwitcher() {
                         // Seccionado
                         ? 'bg-[var(--text-light)] text-white dark:bg-[var(--text-dark)] dark:text-black '
                         // Sin seleccionar
-                        : 'cursor-pointer backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10  text-(--text-light) dark:text-(--text-dark) hover:bg-zinc-300 dark:hover:bg-zinc-600  '
+                        : 'cursor-pointer backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10  text-(--text-light) dark:text-(--text-dark) hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40  '
                         }`}
                     disabled={isPending}
                 >
@@ -66,7 +66,7 @@ export default function LanguageSwitcher() {
                         // Seccionado
                         ? 'bg-(--text-light) text-white dark:bg-(--text-dark) dark:text-black '
                         // Sin seleccionar
-                        : 'cursor-pointer backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10  text-(--text-light) dark:text-(--text-dark) hover:bg-zinc-300 dark:hover:bg-zinc-600  '
+                        : 'cursor-pointer backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10  text-(--text-light) dark:text-(--text-dark) hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40  '
                         }`}
                     disabled={isPending}
                 >

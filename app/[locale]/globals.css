@@ -246,3 +246,9 @@ body {
 .dark .scrollbar-minimal {
   scrollbar-color: rgba(209, 213, 219, 0.3) transparent;
 }
+
+/* Efecto de difuminado en los extremos del contenedor scrollable */
+.scrollable-fade {
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}

@@ -138,7 +138,7 @@ Fondos:
 
 Traslúcido:
 >text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10
->hover:bg-zinc-200 dark:hover:bg-zinc-600
+>hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40
 
 ### Traducciones
 

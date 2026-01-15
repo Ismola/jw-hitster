@@ -375,7 +375,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                             className="px-8 py-3  rounded-lg font-semibold cursor-pointer 
                         text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10
                          
-                        hover:bg-zinc-200 dark:hover:bg-zinc-600 transition"
+                        hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40 transition"
                         >
                             {t.playAgain}
                         </button>
@@ -396,7 +396,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                         threshold={0.1}
 
                     >
-                        <div className="w-fit  h-0 md:h-auto wrap-break-word sticky right-5 md:right-0 top-70 md:top-0 z-50 md:relative flex items-center flex-col">
+                        <div className="w-fit   h-0 md:h-auto wrap-break-word sticky right-5 md:right-0 top-70 md:top-0 z-50 md:relative flex items-center flex-col">
                             {/* TODO cambiar texto de instruccion */}
                             <div className="text-lg font-semibold mb-6">
                                 {t.placeCard}:
@@ -451,9 +451,9 @@ export default function GameBoard({ locale }: { locale: string }) {
                     )}
 
                 {/* Board Cards with Position Buttons */}
-                <div className="w-full pb-4 flex justify-start md:justify-center">
+                <div className="w-full pb-4 flex justify-start md:justify-center  md:scrollable-fade">
 
-                    <div className="flex flex-col md:flex-row gap-4 items-left justify-start  md:justify-center md:max-w-max overflow-x-auto overflow-y-auto md:overflow-y-hidden scrollbar-minimal px-4">
+                    <div className="flex flex-col md:flex-row gap-4 items-left justify-start  md:justify-center md:max-w-max overflow-x-auto overflow-y-auto md:overflow-y-hidden scrollbar-minimal px-4 ">
                         {gameState === 'playing' && currentCard && (
                             <AnimatedContent
                                 distance={100}
@@ -478,9 +478,11 @@ export default function GameBoard({ locale }: { locale: string }) {
                                     className={`
                                 backdrop-blur-xl
                                 shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32  rounded-lg transition-all cursor-pointer ${draggedOver === 0
-                                            ? ' bg-(--text-dark)/30 dark:bg-(--text-light)/50 scale-105'
-                                            : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
-                                        }`}
+                                            ? 'bg-green-200/50 dark:bg-green-900/50 scale-105'
+                                            : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40   '
+                                        }
+                                        
+                                        `}
                                 >
                                     <svg
                                         className="w-10 h-10 md:w-10 md:h-10  mb-2"
@@ -535,8 +537,16 @@ export default function GameBoard({ locale }: { locale: string }) {
                                             onDrop={(e) => handleDrop(e, index + 1)}
                                             className={`shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32  rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
                                                 ? 'bg-green-200/50 dark:bg-green-900/50 scale-105'
-                                                : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
-                                                }`}
+                                                : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40   '
+                                                }
+
+                                                
+                                                
+                                                
+                                                `
+
+
+                                            }
                                         >
                                             <svg
                                                 className="w-10 h-10 md:w-10 md:h-10  mb-2"

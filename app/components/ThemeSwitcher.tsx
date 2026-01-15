@@ -195,7 +195,7 @@ export default function ThemeSwitcher() {
                     onClick={handleSystemToggle}
                     className={`cursor-pointer rounded-full p-2 transition-colors ${theme === "system"
                         ? "bg-(--text-light) text-(--text-dark) dark:bg-(--text-dark) dark:text-(--text-light)  "
-                        : "text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-zinc-200 dark:hover:bg-zinc-600"
+                        : "text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40"
                         }`}
                     aria-label="Use system theme"
                     aria-pressed={theme === "system"}
