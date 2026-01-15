@@ -2,24 +2,25 @@ name: Test
 
 on:
   workflow_call:
+  pull_request:
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Create external network
         run: docker network create cloudflare_default || true
-      
+
       - name: Start services with Docker Compose
         run: docker compose up -d
-      
+
       - name: Wait for services to be ready
         run: sleep 10
-      
+
       - name: Test application endpoint
         run: |
           response=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/es)
@@ -30,11 +31,11 @@ jobs:
             echo "✗ Application returned HTTP $response"
             exit 1
           fi
-      
+
       - name: Show logs on failure
         if: failure()
         run: docker compose logs
-      
+
       - name: Cleanup
         if: always()
         run: docker compose down -v
