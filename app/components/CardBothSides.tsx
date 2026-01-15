@@ -73,6 +73,15 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
         }
     };
 
+    // Card styling based on failed state
+    const cardClassName = isFailedCard 
+        ? 'bg-red-600 text-white dark:bg-red-700 dark:text-white ring-4 ring-red-400 dark:ring-red-500' 
+        : 'bg-(--text-dark) text-(--text-light) dark:bg-(--text-light) dark:text-(--text-dark)';
+
+    const cardBackClassName = isFailedCard 
+        ? 'bg-red-600 text-white dark:bg-red-700 dark:text-white ring-4 ring-red-400 dark:ring-red-500' 
+        : 'bg-(--text-light) text-(--text-dark) dark:bg-(--text-dark) dark:text-(--text-light)';
+
     const handleInteraction = () => {
         if (isTouchDevice) {
             setIsFlipped(!isFlipped);
@@ -109,11 +118,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
             >
                 {/* Front - Date Only */}
                 <div
-                    className={`absolute w-full h-full backface-hidden rounded-lg shadow-lg flex items-center justify-center p-4 ${
-                        isFailedCard 
-                            ? 'bg-red-600 text-white dark:bg-red-700 dark:text-white ring-4 ring-red-400 dark:ring-red-500' 
-                            : 'bg-(--text-dark) text-(--text-light) dark:bg-(--text-light) dark:text-(--text-dark)'
-                    }`}
+                    className={`absolute w-full h-full backface-hidden rounded-lg shadow-lg flex items-center justify-center p-4 ${cardClassName}`}
                     style={{ backfaceVisibility: 'hidden' }}
                 >
                     <div className=" text-center">
@@ -123,11 +128,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
 
                 {/* Back - Event Details */}
                 <div
-                    className={`absolute w-full h-full backface-hidden rounded-lg shadow-lg flex flex-col items-center justify-center p-4 ${
-                        isFailedCard 
-                            ? 'bg-red-600 text-white dark:bg-red-700 dark:text-white ring-4 ring-red-400 dark:ring-red-500' 
-                            : 'bg-(--text-light) text-(--text-dark) dark:bg-(--text-dark) dark:text-(--text-light)'
-                    }`}
+                    className={`absolute w-full h-full backface-hidden rounded-lg shadow-lg flex flex-col items-center justify-center p-4 ${cardBackClassName}`}
                     style={{
                         backfaceVisibility: 'hidden',
                         transform: 'rotateY(180deg)'
