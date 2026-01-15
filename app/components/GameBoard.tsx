@@ -109,13 +109,6 @@ export default function GameBoard({ locale }: { locale: string }) {
         }
     }, [isMounted, gameState, boardCards, currentCard, score, shuffledDeck, deckIndex]);
 
-    useEffect(() => {
-        if (!message) return;
-
-        const timer = setTimeout(() => setMessage(null), (MESSAGE_VISIBILITY_SECONDS + 0.5) * 1000);
-        return () => clearTimeout(timer);
-    }, [message, MESSAGE_VISIBILITY_SECONDS]);
-
     const showMessage = (text: string, tone: MessageTone) => {
         setMessage({
             id: Date.now(),
