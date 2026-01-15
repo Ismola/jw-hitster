@@ -1,5 +1,6 @@
 'use client';
 
+import { createPortal } from 'react-dom';
 import { useCallback, useEffect, useState } from 'react';
 import CardBothSides from './CardBothSides';
 import CardDataOnly from './CardDataOnly';
@@ -64,6 +65,7 @@ export default function GameBoard({ locale }: { locale: string }) {
     const [isDragging, setIsDragging] = useState(false);
     const [dragPosition, setDragPosition] = useState<{ x: number; y: number } | null>(null);
     const [touchStartPos, setTouchStartPos] = useState<{ x: number; y: number } | null>(null);
+    const [dragOffset, setDragOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
     const [newlyPlacedCardId, setNewlyPlacedCardId] = useState<number | null>(null);
 
     const lang = (locale === 'es' || locale === 'en' ? locale : 'en') as keyof typeof messages;
@@ -149,6 +151,7 @@ export default function GameBoard({ locale }: { locale: string }) {
         setDragPosition(null);
         setDraggedOver(null);
         setTouchStartPos(null);
+        setDragOffset({ x: 0, y: 0 });
     };
 
     const checkPosition = (position: number) => {
@@ -197,6 +200,10 @@ export default function GameBoard({ locale }: { locale: string }) {
         img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
         e.dataTransfer.setDragImage(img, 0, 0);
 
+        // Capturar el offset del clic dentro del elemento
+        const rect = (e.target as HTMLElement).getBoundingClientRect();
+        setDragOffset({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+
         setIsDragging(true);
         setDragPosition({ x: e.clientX, y: e.clientY });
     };
@@ -232,6 +239,11 @@ export default function GameBoard({ locale }: { locale: string }) {
     const handleTouchStart = (e: React.TouchEvent) => {
         e.preventDefault(); // Prevent scrolling while dragging
         const touch = e.touches[0];
+
+        // Capturar el offset del toque dentro del elemento
+        const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+        setDragOffset({ x: touch.clientX - rect.left, y: touch.clientY - rect.top });
+
         setTouchStartPos({ x: touch.clientX, y: touch.clientY });
         setDragPosition({ x: touch.clientX, y: touch.clientY });
         setIsDragging(true);
@@ -384,23 +396,26 @@ export default function GameBoard({ locale }: { locale: string }) {
                 )}
 
                 {/* Carta flotante mientras arrastra */}
-                {gameState === 'playing' && isDragging && dragPosition && currentCard && (
-                    <div
-                        className="pointer-events-none"
-                        style={{
-                            position: 'fixed',
-                            left: dragPosition.x - 72,
-                            top: dragPosition.y - 96,
-                            zIndex: 1000,
-                        }}
-                    >
-                        <CardDataOnly
-                            event={currentCard.event[lang]}
-                            bibleReference={currentCard.bible_reference[lang]}
-                            isAnimating={true}
-                        />
-                    </div>
-                )}
+                {isMounted && gameState === 'playing' && isDragging && dragPosition && currentCard &&
+                    createPortal(
+                        <div
+                            className="pointer-events-none"
+                            style={{
+                                position: 'fixed',
+                                left: 0,
+                                top: 0,
+                                transform: `translate(${dragPosition.x - dragOffset.x}px, ${dragPosition.y - dragOffset.y}px)`,
+                                zIndex: 1000,
+                            }}
+                        >
+                            <CardDataOnly
+                                event={currentCard.event[lang]}
+                                bibleReference={currentCard.bible_reference[lang]}
+                                isAnimating={true}
+                            />
+                        </div>,
+                        document.body
+                    )}
 
                 {/* Board Cards with Position Buttons */}
                 <div className="w-full pb-4 flex justify-start md:justify-center">
