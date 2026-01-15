@@ -119,7 +119,6 @@ export default function GameBoard({ locale }: { locale: string }) {
         setGameState('playing');
         setScore(0);
         clearMessage();
-        setSavedGame(null); // Clear any saved game
 
         // Reset drag states
         setIsDragging(false);
