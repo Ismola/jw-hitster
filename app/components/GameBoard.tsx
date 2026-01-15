@@ -337,13 +337,26 @@ export default function GameBoard({ locale }: { locale: string }) {
 
 
 
-            <div className="flex flex-col  items-end md:items-center  md:gap-12 gap-8 w-full">
-
+            <div className="flex flex-col  items-end md:items-center  md:gap-12 gap-8 w-full ">
                 {/* Score */}
-                <div className="text-2xl font-bold flex justify-center items-center w-full">
-                    {t.score}: {score}
-                </div>
+                <AnimatedContent
+                    distance={0}
+                    direction="horizontal"
+                    reverse={false}
+                    duration={.5}
 
+                    ease="power3.out"
+                    initialOpacity={0}
+                    animateOpacity
+                    scale={1.1}
+                    threshold={0.1}
+                    delay={.5}
+                    className='flex justify-center items-center w-full md:w-auto'
+                >
+                    <div className="text-2xl font-bold flex justify-center items-center w-full">
+                        {t.score}: {score}
+                    </div>
+                </AnimatedContent>
 
 
                 {/* Game Over Button */}
@@ -364,35 +377,48 @@ export default function GameBoard({ locale }: { locale: string }) {
 
                 {/* Current Card to Place */}
                 {gameState === 'playing' && currentCard && (
-                    <div className="w-fit  h-0 md:h-auto wrap-break-word sticky right-5 md:right-0 top-70 md:top-0 z-50 md:relative flex items-center flex-col">
-                        {/* TODO cambiar texto de instruccion */}
-                        <div className="text-lg font-semibold mb-6">
-                            {t.placeCard}:
-                        </div>
-                        <div className="relative">
-                            {/* Draggable card */}
-                            <div
-                                draggable
-                                onDragStart={handleDragStart}
-                                onDrag={handleDrag}
-                                onDragEnd={handleDragEnd}
-                                onTouchStart={handleTouchStart}
-                                onTouchMove={handleTouchMove}
-                                onTouchEnd={handleTouchEnd}
-                                className="cursor-move touch-none select-none"
-                                style={{
-                                    opacity: isDragging && dragPosition ? 0 : 1,
-                                    transition: 'none'
-                                }}
-                            >
-                                <CardDataOnly
-                                    event={currentCard.event[lang]}
-                                    bibleReference={currentCard.bible_reference[lang]}
-                                    isDragging={isDragging}
-                                />
+                    <AnimatedContent
+                        distance={0}
+                        direction="horizontal"
+                        reverse={false}
+                        duration={1.2}
+                        ease="power3.out"
+                        initialOpacity={0}
+                        animateOpacity
+                        scale={.1}
+                        threshold={0.1}
+                        
+                    >
+                        <div className="w-fit  h-0 md:h-auto wrap-break-word sticky right-5 md:right-0 top-70 md:top-0 z-50 md:relative flex items-center flex-col">
+                            {/* TODO cambiar texto de instruccion */}
+                            <div className="text-lg font-semibold mb-6">
+                                {t.placeCard}:
+                            </div>
+                            <div className="relative">
+                                {/* Draggable card */}
+                                <div
+                                    draggable
+                                    onDragStart={handleDragStart}
+                                    onDrag={handleDrag}
+                                    onDragEnd={handleDragEnd}
+                                    onTouchStart={handleTouchStart}
+                                    onTouchMove={handleTouchMove}
+                                    onTouchEnd={handleTouchEnd}
+                                    className="cursor-move touch-none select-none"
+                                    style={{
+                                        opacity: isDragging && dragPosition ? 0 : 1,
+                                        transition: 'none'
+                                    }}
+                                >
+                                    <CardDataOnly
+                                        event={currentCard.event[lang]}
+                                        bibleReference={currentCard.bible_reference[lang]}
+                                        isDragging={isDragging}
+                                    />
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </AnimatedContent>
                 )}
 
                 {/* Carta flotante mientras arrastra */}
@@ -419,33 +445,49 @@ export default function GameBoard({ locale }: { locale: string }) {
 
                 {/* Board Cards with Position Buttons */}
                 <div className="w-full pb-4 flex justify-start md:justify-center">
-                    <div className="flex flex-col md:flex-row gap-4 items-left justify-start  md:justify-center md:max-w-max overflow-x-auto overflow-y-auto scrollbar-minimal px-4">
+
+                    <div className="flex flex-col md:flex-row gap-4 items-left justify-start  md:justify-center md:max-w-max overflow-x-auto overflow-y-auto md:overflow-y-hidden scrollbar-minimal px-4">
                         {gameState === 'playing' && currentCard && (
-                            <div
-                                data-drop-zone="0"
-                                onClick={() => checkPosition(0)}
-                                onDragOver={(e) => handleDragOver(e, 0)}
-                                onDragLeave={handleDragLeave}
-                                onDrop={(e) => handleDrop(e, 0)}
-                                className={`
+                            <AnimatedContent
+                                distance={100}
+                                direction="vertical"
+                                reverse={false}
+                                duration={.5}
+
+                                ease="power3.out"
+                                initialOpacity={0}
+                                animateOpacity
+                                scale={1.1}
+                                threshold={0.1}
+
+
+                            >
+                                <div
+                                    data-drop-zone="0"
+                                    onClick={() => checkPosition(0)}
+                                    onDragOver={(e) => handleDragOver(e, 0)}
+                                    onDragLeave={handleDragLeave}
+                                    onDrop={(e) => handleDrop(e, 0)}
+                                    className={`
                                 backdrop-blur-xl
                                 shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32  rounded-lg transition-all cursor-pointer ${draggedOver === 0
-                                        ? ' bg-(--text-dark)/30 dark:bg-(--text-light)/50 scale-105'
-                                        : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
-                                    }`}
-                            >
-                                <svg
-                                    className="w-10 h-10 md:w-10 md:h-10  mb-2"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
+                                            ? ' bg-(--text-dark)/30 dark:bg-(--text-light)/50 scale-105'
+                                            : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                                        }`}
                                 >
-                                    <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" />
-                                </svg>
-                                <span className="text-xs text-center  px-2">
-                                    {t.placeHere}
-                                </span>
-                            </div>
+                                    <svg
+                                        className="w-10 h-10 md:w-10 md:h-10  mb-2"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" />
+                                    </svg>
+                                    <span className="text-xs text-center  px-2">
+                                        {t.placeHere}
+                                    </span>
+                                </div>
+                            </AnimatedContent>
                         )}
 
                         {boardCards.map((card, index) => (
@@ -464,29 +506,44 @@ export default function GameBoard({ locale }: { locale: string }) {
                                 </div>
 
                                 {gameState === 'playing' && currentCard && (
-                                    <div
-                                        data-drop-zone={index + 1}
-                                        onClick={() => checkPosition(index + 1)}
-                                        onDragOver={(e) => handleDragOver(e, index + 1)}
-                                        onDragLeave={handleDragLeave}
-                                        onDrop={(e) => handleDrop(e, index + 1)}
-                                        className={`shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32  rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
-                                            ? 'bg-green-200/50 dark:bg-green-900/50 scale-105'
-                                            : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
-                                            }`}
+                                    <AnimatedContent
+                                        distance={100}
+                                        direction="vertical"
+                                        reverse={false}
+                                        duration={.5}
+
+                                        ease="power3.out"
+                                        initialOpacity={0}
+                                        animateOpacity
+                                        scale={1.1}
+                                        threshold={0.1}
+
+
                                     >
-                                        <svg
-                                            className="w-10 h-10 md:w-10 md:h-10  mb-2"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
+                                        <div
+                                            data-drop-zone={index + 1}
+                                            onClick={() => checkPosition(index + 1)}
+                                            onDragOver={(e) => handleDragOver(e, index + 1)}
+                                            onDragLeave={handleDragLeave}
+                                            onDrop={(e) => handleDrop(e, index + 1)}
+                                            className={`shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32  rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
+                                                ? 'bg-green-200/50 dark:bg-green-900/50 scale-105'
+                                                : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:border-green-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                                                }`}
                                         >
-                                            <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" />
-                                        </svg>
-                                        <span className="text-xs text-center  px-2">
-                                            {t.placeHere}
-                                        </span>
-                                    </div>
+                                            <svg
+                                                className="w-10 h-10 md:w-10 md:h-10  mb-2"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" />
+                                            </svg>
+                                            <span className="text-xs text-center  px-2">
+                                                {t.placeHere}
+                                            </span>
+                                        </div>
+                                    </AnimatedContent>
                                 )}
                             </div>
                         ))}
