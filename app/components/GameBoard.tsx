@@ -408,7 +408,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                     ))}
 
                     {/* SPACE */}
-                    <div className='md:hidden h-25 '></div>
+                    <div className=' h-[25vh] md:h-50 '></div>
 
 
                     {/* READY TITLE */}
@@ -449,7 +449,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                     </div>
 
                     {/* SPACE */}
-                    <div className='h-75 w-full flex items-center justify-center'>
+                    <div className='md:h-75 h-10 w-full flex items-center justify-center'>
 
                     </div>
                 </div>
