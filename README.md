@@ -20,7 +20,7 @@ JW Hitster es un juego educativo que permite ordenar eventos bíblicos cronológ
 - 🌍 **Multiidioma**: Soporta español e inglés
 - 📚 **Referencias bibliográficas**: Cada evento incluye enlaces a jw.org y wol.jw.org
 - 🎴 **Tarjetas con animación 3D**: Las cartas colocadas muestran detalles al hacer hover/click
-- 🎯 **Formato BC/AD**: Las fechas se muestran en formato "antes de Cristo" / "después de Cristo"
+- 🎯 **Formato a.e.c/c.e**: Las fechas se muestran en formato "antes de la era común" / "era común"
 
 ## 🚀 Tecnologías
 
