@@ -16,8 +16,8 @@
     "placeCard": "Place this card",
     "placeHere": "Place here",
     "playAgain": "Play Again",
-    "bc": "BC",
-    "ad": "AD",
+    "bc": "b.c.e",
+    "ad": "c.e",
     "instructions": {
         "title": "How to Play",
         "step0": "1. Order biblical events chronologically by placing each card in its correct position on the timeline.",

@@ -16,8 +16,8 @@
     "placeCard": "Coloca esta tarjeta",
     "placeHere": "Colocar aquí",
     "playAgain": "Jugar de nuevo",
-    "bc": "a.C.",
-    "ad": "d.C.",
+    "bc": "a.e.c",
+    "ad": "e.c",
     "instructions": {
         "title": "Cómo Jugar",
         "step0": "1. Ordena los eventos bíblicos cronológicamente colocando cada carta en su posición correcta en la línea de tiempo.",
