@@ -19,16 +19,15 @@
     "bc": "BC",
     "ad": "AD",
     "instructions": {
-        "title": "How to Play",        
-        "step0": "Order biblical events chronologically by placing each card in its correct position on the timeline.",        
-        "step1": "You will be shown a card with a biblical event",
-        "step2": "Drag and drop the card to the correct position on the timeline",
-        "step3": "If you place it correctly, you'll earn a point and continue",
-        "step4": "If you make a mistake, the game will end",
-        "tips": "Tips",
-        "tip1": "Carefully read the date and event on each card",
-        "tip2": "Remember that BC (Before Christ) goes in descending order",
-        "tip3": "AD (Anno Domini) dates go in ascending order",
+        "title": "How to Play",
+        "step0": "1. Order biblical events chronologically by placing each card in its correct position on the timeline.",
+        "step1": "2. You will be shown a card with a biblical event",
+        "step2": "3. Drag and drop the card to the correct position on the timeline",
+        "step3": "4. If you place it correctly, you'll earn a point and continue",
+        "step4": "5. If you make a mistake, the game will end",
+        "step5": "6. Carefully read the date and event on each card",
+        "step6": "7. Remember that BC (Before Christ) goes in descending order",
+        "step7": "8. AD (Anno Domini) dates go in ascending order",
         "ready": "Ready to start?"
     },
     "credits": {
@@ -64,5 +63,16 @@
         },
         "contact": "Contact",
         "viewGithub": "View on GitHub"
+    },
+    "legal": {
+        "title": "Legal notice",
+        "text": "This application runs locally on your device. It only stores basic information required for proper operation, such as display preferences and usage progress. No personal data is collected or shared with third parties. Use of the application implies acceptance of these terms."
+    },
+    "cookies": {
+        "title": "Cookies and local storage usage",
+        "text": "We use browser storage tools to remember your preferences and improve your user experience. The information is stored exclusively on your device and is not used for any other purpose.",
+        "banner": "We use local storage to provide a better user experience.",
+        "accept": "Accept",
+        "learnMore": "More information"
     }
 }

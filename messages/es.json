@@ -20,23 +20,21 @@
     "ad": "d.C.",
     "instructions": {
         "title": "Cómo Jugar",
-        
-        "step0": "1. Ordena los eventos bíblicos cronológicamente colocando cada carta en su posición correcta en la línea de tiempo.",        
+        "step0": "1. Ordena los eventos bíblicos cronológicamente colocando cada carta en su posición correcta en la línea de tiempo.",
         "step1": "2. Se te mostrará una carta con un evento bíblico",
         "step2": "3. Arrastra y suelta la carta en la posición correcta de la línea de tiempo",
         "step3": "4. Si la colocas correctamente, ganarás un punto y continuarás",
         "step4": "5. Si te equivocas, el juego terminará",
-        "tips": "Consejos",
-        "tip1": "Lee cuidadosamente la fecha y el evento de cada carta",
-        "tip2": "Recuerda que a.C. (antes de Cristo) va en orden descendente",
-        "tip3": "Las fechas d.C. (después de Cristo) van en orden ascendente",
+        "step5": "6. Lee cuidadosamente la fecha y el evento de cada carta",
+        "step6": "7. Recuerda que a.C. (antes de Cristo) va en orden descendente",
+        "step7": "8. Las fechas d.C. (después de Cristo) van en orden ascendente",
         "ready": "¿Listo para comenzar?"
     },
     "credits": {
         "title": "Créditos",
         "developer": "Desarrollado por",
         "thanksTitle": "Agradecimientos",
-        "thanksText": "Este proyecto fue posible gracias a las siguientes herramientas y recursos:",
+        "thanksText": "Este proyecto fue posibele gracias a las siguientes herramientas y recursos:",
         "resources": {
             "jw": {
                 "name": "JW.org",
@@ -65,5 +63,16 @@
         },
         "contact": "Contacto",
         "viewGithub": "Ver en GitHub"
+    },
+    "legal": {
+        "title": "Aviso legal",
+        "text": "Esta aplicación funciona de forma local en tu dispositivo. Solo se guarda información básica para su correcto funcionamiento, como la preferencia de visualización y el progreso de uso. No se recopilan datos personales ni se comparte información con terceros. El uso de la aplicación implica la aceptación de estas condiciones."
+    },
+    "cookies": {
+        "title": "Uso de cookies y almacenamiento local",
+        "text": "Utilizamos herramientas de almacenamiento del navegador para recordar tus preferencias y mejorar tu experiencia de uso. La información se conserva únicamente en tu dispositivo y no se utiliza con otros fines.",
+        "banner": "Usamos almacenamiento local para ofrecer una mejor experiencia de uso.",
+        "accept": "Aceptar",
+        "learnMore": "Más información"
     }
 }

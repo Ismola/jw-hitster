@@ -93,7 +93,7 @@ export default function Backgtound() {
     }, [isError, errorColor, targetColor]);
 
     return (
-        <div className="w-screen  top-0 h-[120vh] md:h-screen absolute  left-0 -z-100">
+        <div className="w-full  top-0 h-screen absolute  left-0 -z-100">
             <LiquidChrome
                 baseColor={baseColor}
                 speed={0.3}

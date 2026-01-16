@@ -164,6 +164,7 @@ export default function Home() {
         </div>
 
       </div>
+
       <div
         onClick={handleModalToggle}
         className='absolute md:bottom-5 md:top-auto right-5 
@@ -172,6 +173,7 @@ export default function Home() {
         cursor-pointer
         text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40
         p-2 rounded-full text-xs w-10 h-10 z-50'>
+
         <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 17V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           <circle cx="1" cy="1" r="1" transform="matrix(1 0 0 -1 11 9)" fill="currentColor" />
@@ -182,7 +184,7 @@ export default function Home() {
       {/* Modal de información */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 backdrop-blur-xl bg-(--text-light)/5 dark:bg-(--text-dark)/5 animate-in fade-in duration-300"
+          className="fixed inset-0 z-100 flex items-center justify-center p-4 backdrop-blur-xl bg-(--text-light)/5 dark:bg-(--text-dark)/5 animate-in fade-in duration-300"
           onClick={handleModalToggle}
         >
           <div
@@ -233,7 +235,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="flex items-start gap-3 p-3 rounded-lg bg-(--text-light)/5 dark:bg-(--text-dark)/5 hover:bg-(--text-light)/10 dark:hover:bg-(--text-dark)/10 transition-all group"
                   >
-                    <svg className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <svg className="w-5 h-5 mt-0.5 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                     <div>
@@ -248,7 +250,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="flex items-start gap-3 p-3 rounded-lg bg-(--text-light)/5 dark:bg-(--text-dark)/5 hover:bg-(--text-light)/10 dark:hover:bg-(--text-dark)/10 transition-all group"
                   >
-                    <svg className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <svg className="w-5 h-5 mt-0.5 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                     <div>
@@ -263,7 +265,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="flex items-start gap-3 p-3 rounded-lg bg-(--text-light)/5 dark:bg-(--text-dark)/5 hover:bg-(--text-light)/10 dark:hover:bg-(--text-dark)/10 transition-all group"
                   >
-                    <svg className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <svg className="w-5 h-5 mt-0.5 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                     <div>
@@ -278,7 +280,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="flex items-start gap-3 p-3 rounded-lg bg-(--text-light)/5 dark:bg-(--text-dark)/5 hover:bg-(--text-light)/10 dark:hover:bg-(--text-dark)/10 transition-all group"
                   >
-                    <svg className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <svg className="w-5 h-5 mt-0.5 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                     <div>
@@ -293,7 +295,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="flex items-start gap-3 p-3 rounded-lg bg-(--text-light)/5 dark:bg-(--text-dark)/5 hover:bg-(--text-light)/10 dark:hover:bg-(--text-dark)/10 transition-all group"
                   >
-                    <svg className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <svg className="w-5 h-5 mt-0.5 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                     <div>
@@ -305,6 +307,14 @@ export default function Home() {
               </div>
 
               {/* Contact Section */}
+              {/* Legal & Cookies Section */}
+              <div className="space-y-3 pt-4 border-t border-(--text-light)/10 dark:border-(--text-dark)/10">
+                <h3 className="text-xl font-semibold">{t.legal?.title}</h3>
+                <p className="text-sm opacity-90">{t.legal?.text}</p>
+
+                <h4 className="text-lg font-semibold pt-2">{t.cookies?.title}</h4>
+                <p className="text-sm opacity-90">{t.cookies?.text}</p>
+              </div>
               <div className="space-y-3 pt-4 border-t border-(--text-light)/20 dark:border-(--text-dark)/20">
                 <h3 className="text-xl font-semibold">{t.credits.contact}</h3>
                 <a

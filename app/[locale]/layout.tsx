@@ -52,7 +52,7 @@ export default async function RootLayout({
           } catch (e) {} })();`}
         </Script>
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased  `}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-w-hidden  `}>
         <LayoutClient locale={locale}>
           {children}
         </LayoutClient>

@@ -77,7 +77,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
                 scrollTrigger: {
                     trigger: el,
                     scroller,
-                    start: 'top bottom',
+                    start: 'top bottom-=20%',
                     end: wordAnimationEnd,
                     scrub: true
                 }
@@ -95,7 +95,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
                     scrollTrigger: {
                         trigger: el,
                         scroller,
-                        start: 'top bottom',
+                        start: 'top bottom-=20%',
                         end: wordAnimationEnd,
                         scrub: true
                     }
