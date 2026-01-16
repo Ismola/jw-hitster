@@ -366,8 +366,8 @@ export default function GameBoard({ locale }: { locale: string }) {
                     </div>
 
                     {/* INSTRUCTIONS */}
-                    {[t.instructions.step0, t.instructions.step1, t.instructions.step2, t.instructions.step3, t.instructions.step4, t.instructions.step5, t.instructions.step6, t.instructions.step7,].map((instruction: string) => (
-                        <>
+                    {[t.instructions.step0, t.instructions.step1, t.instructions.step2, t.instructions.step3, t.instructions.step4, t.instructions.step5, t.instructions.step6, t.instructions.step7,].map((instruction: string, index: number) => (
+                        <div key={index}>
                             <ScrollReveal
                                 scrollContainerRef={scrollContainerRef as React.RefObject<HTMLElement>}
                                 baseOpacity={0}
@@ -384,26 +384,27 @@ export default function GameBoard({ locale }: { locale: string }) {
                             <div className='md:h-75 hidden md:block w-full '></div>
 
 
-                        </>
+                        </div>
                     ))}
 
                     {/* INSTRUCTIONS MOBILE */}
-                    {[t.instructions.step0, t.instructions.step1, t.instructions.step2, t.instructions.step3, t.instructions.step4, t.instructions.step5, t.instructions.step6, t.instructions.step7,].map((instruction: string) => (
-                        <>
-                            <ScrollReveal
-                                scrollContainerRef={scrollContainerRef as React.RefObject<HTMLElement>}
-                                baseOpacity={0}
-                                enableBlur={true}
-                                baseRotation={5}
-                                blurStrength={5}
-                                rotationEnd="bottom top"
-                                wordAnimationEnd="bottom top"
-                                containerClassName="px-4 text-(--text-light)  md:hidden dark:text-(--text-dark) "
-                            >
-                                {/* AQUI NO PUEDE HABER HTML SOLO TEXTO PLANO */}
-                                {instruction}
-                            </ScrollReveal>
-                        </>
+                    {[t.instructions.step0, t.instructions.step1, t.instructions.step2, t.instructions.step3, t.instructions.step4, t.instructions.step5, t.instructions.step6, t.instructions.step7,].map((instruction: string, index: number) => (
+
+                        <ScrollReveal
+                            key={index}
+                            scrollContainerRef={scrollContainerRef as React.RefObject<HTMLElement>}
+                            baseOpacity={0}
+                            enableBlur={true}
+                            baseRotation={5}
+                            blurStrength={5}
+                            rotationEnd="bottom top"
+                            wordAnimationEnd="bottom top"
+                            containerClassName="px-4 text-(--text-light)  md:hidden dark:text-(--text-dark) "
+                        >
+                            {/* AQUI NO PUEDE HABER HTML SOLO TEXTO PLANO */}
+                            {instruction}
+                        </ScrollReveal>
+
                     ))}
 
                     {/* SPACE */}
