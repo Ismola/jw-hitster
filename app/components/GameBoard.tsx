@@ -329,7 +329,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                     ref={scrollContainerRef} className='scroll-smooth  border-0 w-full h-screen overflow-y-scroll  border-white/20 rounded-lg p-4 [&::-webkit-scrollbar]:hidden'>
 
                     {/* INSTRUCTIONS TITLE */}
-                    <div className='md:h-187.5 h-[75vh]   w-full flex items-start md:items-center justify-center gap-10'>
+                    <div className='md:h-187.5 h-[75vh]   w-full flex items-center justify-center gap-10'>
                         <ShinyText
                             text={t.instructions.title}
                             speed={3}
