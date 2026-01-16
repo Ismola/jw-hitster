@@ -326,12 +326,10 @@ export default function GameBoard({ locale }: { locale: string }) {
                         msOverflowStyle: 'none',
                     }}
 
-                    ref={scrollContainerRef} className='
-                    
-                    
-                    
-                   scroll-smooth border-0  w-full h-screen overflow-y-scroll  border-white/20 rounded-lg p-4 [&::-webkit-scrollbar]:hidden'>
-                    <div className='h-[calc(150vh/2)] w-full flex items-center justify-center gap-10'>
+                    ref={scrollContainerRef} className='scroll-smooth  border-0 w-full h-screen overflow-y-scroll  border-white/20 rounded-lg p-4 [&::-webkit-scrollbar]:hidden'>
+
+                    {/* INSTRUCTIONS TITLE */}
+                    <div className='md:h-187.5 h-[75vh]   w-full flex items-start md:items-center justify-center gap-10'>
                         <ShinyText
                             text={t.instructions.title}
                             speed={3}
@@ -349,10 +347,9 @@ export default function GameBoard({ locale }: { locale: string }) {
                             <title>scroll_up [#1381]</title>
                             <desc>Created with Sketch.</desc>
                             <defs>
-
                             </defs>
-                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g id="Dribbble-Light-Preview" transform="translate(-420.000000, -760.000000)" fill={isDark ? "#e9e5ff" : "#11224E"}>
+                            <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                                <g id="Dribbble-Light-Preview" transform="translate(-420.000000, -760.000000)" className="text-(--text-light) dark:text-(--text-dark)" fill="currentColor">
                                     <g id="icons" transform="translate(56.000000, 160.000000)">
                                         <path d="M369.277343,604 C369.859711,604 370.332357,603.552 370.332357,603 L370.332357,601 C370.332357,600.448 369.859711,600 369.277343,600 C368.694975,600 368.222329,600.448 368.222329,601 L368.222329,603 C368.222329,603.552 368.694975,604 369.277343,604 M373.296948,614.464 L371.382097,616.147 C371.049767,616.462 370.332357,616.239 370.332357,615.793 L370.332357,610.657 C370.332357,610.104 369.859711,609.657 369.277343,609.657 C368.694975,609.657 368.222329,610.104 368.222329,610.657 L368.222329,615.791 C368.222329,616.237 367.803488,616.46 367.471159,616.145 L365.726165,614.464 C365.314709,614.073 364.707021,614.073 364.29451,614.464 C363.882,614.854 363.912595,615.488 364.325106,615.879 L367.695877,619.059 L368.079902,619.415 C368.903868,620.195 370.245846,620.195 371.068757,619.415 L374.807728,615.878 C375.220239,615.488 375.231844,614.855 374.820389,614.464 C374.407878,614.074 373.709458,614.074 373.296948,614.464 M382.776252,608.36 L378.654311,610.516 C378.23969,610.787 377.679477,610.731 377.323938,610.394 C376.866061,609.96 376.931472,609.223 377.461089,608.87 L378.719722,608 L369.757375,608 C369.175007,608 368.69814,607.586 368.69814,607.033 C368.69814,606.323 369.376514,606.066 369.748935,606.066 L375.061987,606.059 L375.466057,601.741 C375.802607,600.784 376.75001,600.215 377.793419,600.413 L381.53661,600.745 C382.523048,600.932 382.99253,601.753 382.99253,602.706 L382.99253,607.541 C382.99253,607.87 383.062161,608.174 382.776252,608.36" id="scroll_up-[#1381]">
 
@@ -361,110 +358,98 @@ export default function GameBoard({ locale }: { locale: string }) {
                                 </g>
                             </g>
                         </svg>
-
                         <svg className='hidden md:block' width="50px" height="50px" viewBox="0 0 20 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-                            <path d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z" stroke={isDark ? "#e9e5ff" : "#11224E"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                            <path d="M12 6V14" stroke={isDark ? "#e9e5ff" : "#11224E"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M15 11L12 14L9 11" stroke={isDark ? "#e9e5ff" : "#11224E"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                            <path d="M12 6V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M15 11L12 14L9 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                         </svg>
                     </div>
 
-
-                    {[
-
-                        t.instructions.step0,
-                        t.instructions.step1,
-                        t.instructions.step2,
-                        t.instructions.step3,
-                        t.instructions.step4,
-
-                    ].map((instruction: string, index: number) => (
-                        <div key={index}>
-
+                    {/* INSTRUCTIONS */}
+                    {[t.instructions.step0, t.instructions.step1, t.instructions.step2, t.instructions.step3, t.instructions.step4, t.instructions.step5, t.instructions.step6, t.instructions.step7,].map((instruction: string) => (
+                        <>
                             <ScrollReveal
                                 scrollContainerRef={scrollContainerRef as React.RefObject<HTMLElement>}
                                 baseOpacity={0}
                                 enableBlur={true}
-                                baseRotation={3}
-                                blurStrength={20}
-
+                                baseRotation={5}
+                                blurStrength={15}
                                 rotationEnd="bottom top"
                                 wordAnimationEnd="bottom top"
-                                containerClassName="px-4 text-(--text-light) dark:text-(--text-dark) "
-
+                                containerClassName="px-4 text-(--text-light) hidden md:block  dark:text-(--text-dark) "
                             >
                                 {/* AQUI NO PUEDE HABER HTML SOLO TEXTO PLANO */}
                                 {instruction}
                             </ScrollReveal>
-                            <div className='h-[50vh] w-full flex items-center justify-center'>
+                            <div className='md:h-75 hidden md:block w-full '></div>
 
-                            </div>
-                        </div>
+
+                        </>
                     ))}
 
-                    <div className='h-32 w-full flex items-center justify-center'>
-
-                        <ShinyText
-                            text={t.instructions.tips}
-                            speed={3}
-                            delay={2}
-                            color={isDark ? "#e9e5ff" : "#11224E"}
-                            shineColor={isDark ? "#ffff" : "#3060db"}
-                            spread={120}
-                            direction="left"
-                            yoyo={true}
-                            pauseOnHover={false}
-                            className={`text-center transition-all text-5xl font-extrabold`}
-                        />
-
-
-                    </div>
-
-                    {[
-
-                        t.instructions.tip1,
-                        t.instructions.tip2,
-                        t.instructions.tip3,
-
-                        t.instructions.ready
-                    ].map((instruction: string, index: number) => (
-                        <div key={index}>
-
+                    {/* INSTRUCTIONS MOBILE */}
+                    {[t.instructions.step0, t.instructions.step1, t.instructions.step2, t.instructions.step3, t.instructions.step4, t.instructions.step5, t.instructions.step6, t.instructions.step7,].map((instruction: string) => (
+                        <>
                             <ScrollReveal
                                 scrollContainerRef={scrollContainerRef as React.RefObject<HTMLElement>}
                                 baseOpacity={0}
                                 enableBlur={true}
-                                baseRotation={3}
-                                blurStrength={20}
-
+                                baseRotation={5}
+                                blurStrength={5}
                                 rotationEnd="bottom top"
                                 wordAnimationEnd="bottom top"
-                                containerClassName="px-4 text-(--text-light) dark:text-(--text-dark) "
+                                containerClassName="px-4 text-(--text-light)  md:hidden dark:text-(--text-dark) "
                             >
                                 {/* AQUI NO PUEDE HABER HTML SOLO TEXTO PLANO */}
                                 {instruction}
                             </ScrollReveal>
-                            <div className='h-32 w-full flex items-center justify-center'>
-
-                            </div>
-                        </div>
+                        </>
                     ))}
 
+                    {/* SPACE */}
+                    <div className='md:hidden h-25 '></div>
 
 
-                    <div className='h-screen w-full flex items-center justify-center'>
-                        <Magnet padding={100} disabled={false} magnetStrength={5}>
+                    {/* READY TITLE */}
+                    <div className='md:h-50 h-[75vh] w-full flex items-start md:items-center justify-center '>
+                        <Magnet padding={500} disabled={false} magnetStrength={9}>
                             <button
                                 onClick={startGame}
-                                className="cursor-pointer md:text-7xl text-5xl font-mono px-8 w-[75vw]  py-10 
-                                text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10
-                                hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40
-                                transition-all  
-                                 rounded-lg  "
+                                aria-label={t.start}
+                                className="group relative overflow-hidden cursor-pointer md:text-6xl text-4xl font-semibold px-8 w- py-8
+                                    text-(--text-light) dark:text-(--text-dark) rounded-2xl
+                                    bg-linear-to-r from-[rgba(255,255,255,0.06)] via-[rgba(255,255,255,0.03)] to-[rgba(0,0,0,0.03)]
+                                    dark:from-[rgba(255,255,255,0.03)] dark:via-[rgba(255,255,255,0.02)] dark:to-[rgba(0,0,0,0.5)]
+                                    border border-(--text-light)/10 dark:border-(--text-dark)/20
+                                    shadow-2xl hover:shadow-[0_20px_60px_rgba(60,50,120,0.25)]
+                                    transform transition-all duration-300 hover:scale-[1.3] backdrop-blur-lg"
                             >
-                                {t.start}
+                                {/* Subtle moving sheen */}
+                                <span className="pointer-events-none absolute -inset-1 bg-white/5 mix-blend-screen blur-md
+                                    transform -translate-x-24 rotate-12 transition-all duration-700 group-hover:translate-x-40" />
+                                {/* inner content */}
+                                <span className="relative z-10 flex items-center justify-center gap-4">
+                                    <span className="select-none">
+                                        <ShinyText
+                                            text={t.instructions.ready}
+                                            speed={3}
+                                            delay={2}
+                                            color={isDark ? "#e9e5ff" : "#11224E"}
+                                            shineColor={isDark ? "#ffff" : "#3060db"}
+                                            spread={120}
+                                            direction="left"
+                                            yoyo={true}
+                                            pauseOnHover={false}
+                                        />
+                                    </span>
+                                </span>
                             </button>
                         </Magnet>
+                    </div>
+
+                    {/* SPACE */}
+                    <div className='h-75 w-full flex items-center justify-center'>
+
                     </div>
                 </div>
 
@@ -556,29 +541,32 @@ export default function GameBoard({ locale }: { locale: string }) {
                             {t.placeCard}:
                         </div>
                         <div className="relative">
-                            {/* Draggable card */}
-                            <div
-                                draggable
-                                onDragStart={handleDragStart}
-                                onDrag={handleDrag}
-                                onDragEnd={handleDragEnd}
-                                onTouchStart={handleTouchStart}
-                                onTouchMove={handleTouchMove}
-                                onTouchEnd={handleTouchEnd}
-                                className="cursor-move touch-none select-none"
-                                style={{
-                                    opacity: isDragging && dragPosition ? 0 : 1,
-                                    transition: 'none'
-                                }}
-                            >
-                                <CardDataOnly
-                                    event={currentCard.event[lang]}
-                                    bibleReference={currentCard.bible_reference[lang]}
-                                    isDragging={isDragging}
-                                />
-                            </div>
+                            <Magnet padding={1000} disabled={false} magnetStrength={15}>
+                                {/* Draggable card */}
+                                <div
+                                    draggable
+                                    onDragStart={handleDragStart}
+                                    onDrag={handleDrag}
+                                    onDragEnd={handleDragEnd}
+                                    onTouchStart={handleTouchStart}
+                                    onTouchMove={handleTouchMove}
+                                    onTouchEnd={handleTouchEnd}
+                                    className="cursor-move touch-none select-none"
+                                    style={{
+                                        opacity: isDragging && dragPosition ? 0 : 1,
+                                        transition: 'none'
+                                    }}
+                                >
+                                    <CardDataOnly
+                                        event={currentCard.event[lang]}
+                                        bibleReference={currentCard.bible_reference[lang]}
+                                        isDragging={isDragging}
+                                    />
+                                </div>
+                            </Magnet>
                         </div>
                     </div>
+
 
                 )}
 
@@ -707,7 +695,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                 </div>
 
 
-            </div>
+            </div >
         </>
     );
 }
