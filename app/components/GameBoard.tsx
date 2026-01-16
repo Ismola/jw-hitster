@@ -417,7 +417,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                             <button
                                 onClick={startGame}
                                 aria-label={t.start}
-                                className="group relative overflow-hidden cursor-pointer md:text-6xl text-4xl font-semibold px-8 w- py-8
+                                className="group relative overflow-hidden cursor-pointer md:text-4xl text-2xl font-semibold px-8 w- py-8
                                     text-(--text-light) dark:text-(--text-dark) rounded-2xl
                                     bg-linear-to-r from-[rgba(255,255,255,0.06)] via-[rgba(255,255,255,0.03)] to-[rgba(0,0,0,0.03)]
                                     dark:from-[rgba(255,255,255,0.03)] dark:via-[rgba(255,255,255,0.02)] dark:to-[rgba(0,0,0,0.5)]
@@ -495,7 +495,7 @@ export default function GameBoard({ locale }: { locale: string }) {
 
 
 
-            <div className="flex flex-col text-(--text-light) dark:text-(--text-dark)  items-end md:items-center  md:gap-12 gap-8 w-full ">
+            <div className="flex flex-col text-(--text-light) dark:text-(--text-dark)  items-center   md:gap-12 gap-8 w-full ">
                 {/* Score */}
                 <AnimatedContent
                     distance={0}
@@ -536,7 +536,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                 {/* Current Card to Place */}
                 {gameState === 'playing' && currentCard && (
 
-                    <div className="w-fit   h-0 md:h-auto wrap-break-word sticky right-5 md:right-0 top-70 md:top-0 z-50 md:relative flex items-center flex-col">
+                    <div className="w-fit   h-auto wrap-break-word  right-0  z-50 relative flex items-center flex-col">
 
                         <div className="text-lg font-semibold mb-6">
                             {t.placeCard}:
@@ -594,9 +594,9 @@ export default function GameBoard({ locale }: { locale: string }) {
                     )}
 
                 {/* Board Cards with Position Buttons */}
-                <div className="w-full  pb-4 flex justify-start md:justify-center ">
-
-                    <div className="flex flex-col md:flex-row gap-4 items-left justify-start  md:justify-center md:max-w-max overflow-x-auto overflow-y-auto md:overflow-y-hidden scrollbar-minimal px-4 ">
+                <div className="w-full pb-4 flex justify-center  md:mt-0 mt-[20vw] ">
+                    <div className="h-35 md:h-50 flex flex-row gap-4 items-left  justify-center-safe max-w-max overflow-x-auto overflow-y-visible  scrollbar-minimal px-4 ">
+                        {/* PLACE HERE */}
                         {gameState === 'playing' && currentCard && (
                             <div
                                 data-drop-zone="0"
@@ -606,13 +606,13 @@ export default function GameBoard({ locale }: { locale: string }) {
                                 onDrop={(e) => handleDrop(e, 0)}
                                 className={`
                                 backdrop-blur-xl
-                                shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32  rounded-lg transition-all cursor-pointer ${draggedOver === 0
-                                        ? 'bg-green-200/50 dark:bg-green-900/50 scale-105'
+                                shrink-0 flex flex-col items-center justify-center w-22 h-32 md:w-32 md:h-44 md:min-w-32  rounded-lg transition-all cursor-pointer ${draggedOver === 0
+                                        ? 'bg-green-200/50 dark:bg-green-900/50 scale-95'
                                         : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40   '
                                     }`}
                             >
                                 <svg
-                                    className="w-10 h-10 md:w-10 md:h-10  mb-2"
+                                    className="w-8 h-8 md:w-10 md:h-10  mb-2"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -625,8 +625,9 @@ export default function GameBoard({ locale }: { locale: string }) {
                             </div>
                         )}
 
+                        {/* CARDS */}
                         {boardCards.map((card, index) => (
-                            <div key={card.id} className="flex   flex-col md:flex-row gap-4 items-start shrink-0">
+                            <div key={card.id} className="flex   flex-row gap-4 items-start shrink-0 ">
                                 <div className="shrink-0">
                                     <CardBothSides
                                         date={card.date}
@@ -648,14 +649,14 @@ export default function GameBoard({ locale }: { locale: string }) {
                                         onDragOver={(e) => handleDragOver(e, index + 1)}
                                         onDragLeave={handleDragLeave}
                                         onDrop={(e) => handleDrop(e, index + 1)}
-                                        className={`shrink-0 flex flex-col items-center justify-center w-36 h-48 md:w-32 md:h-44 md:min-w-32  rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
-                                            ? 'bg-green-200/50 dark:bg-green-900/50 scale-105'
+                                        className={`shrink-0 flex flex-col items-center justify-center w-22 h-32 md:w-32 md:h-44 md:min-w-32  rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
+                                            ? 'bg-green-200/50 dark:bg-green-900/50 scale-95'
                                             : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40   '
                                             }`
                                         }
                                     >
                                         <svg
-                                            className="w-10 h-10 md:w-10 md:h-10  mb-2"
+                                            className="w-8 h-8 md:w-10 md:h-10  mb-2"
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"

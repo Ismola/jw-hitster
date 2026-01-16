@@ -103,7 +103,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
     return (
         <div
             ref={cardRef}
-            className="w-36 h-48 md:w-48 md:h-64 perspective-1000 cursor-pointer"
+            className="w-22 h-32 md:h-44 md:min-w-32 perspective-1000 cursor-pointer"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleInteraction}
@@ -122,19 +122,19 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
                     style={{ backfaceVisibility: 'hidden' }}
                 >
                     <div className=" text-center">
-                        <div className="text-3xl md:text-5xl font-bold">{formatDate(date)}</div>
+                        <div className="text-xl md:text-3xl font-bold">{formatDate(date)}</div>
                     </div>
                 </div>
 
                 {/* Back - Event Details */}
                 <div
-                    className={`absolute w-full h-full backface-hidden rounded-lg shadow-lg flex flex-col items-center justify-center p-4 ${cardBackClassName}`}
+                    className={`absolute w-full h-full backface-hidden rounded-lg shadow-lg flex flex-col items-center md:justify-center justify-evenly p-4 ${cardBackClassName}`}
                     style={{
                         backfaceVisibility: 'hidden',
                         transform: 'rotateY(180deg)'
                     }}
                 >
-                    <div className="text-xs md:text-sm font-bold mb-3 text-center">{event}</div>
+                    <div className="text-[10px] md:text-sm font-bold md:mb-3 text-center">{event}</div>
                     <div className={`text-[10px] md:text-xs text-center ${isFailedCard ? 'opacity-90' : 'opacity-75'}`}>{bibleReference}</div>
                     <div className={`absolute top-2 right-2 text-[10px] md:text-xs ${isFailedCard ? 'opacity-80' : 'opacity-50'}`}>{formatDate(date)}</div>
 

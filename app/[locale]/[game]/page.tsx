@@ -25,7 +25,7 @@ export default function GamePage({ }: GamePageProps) {
         <>
             <Header />
 
-            <div className="flex flex-col h-full items-start md:items-center justify-start pt-8 gap-7 ">
+            <div className="flex flex-col  items-start md:items-center  pt-8 gap-16 ">
                 <AnimatedContent
                     distance={190}
                     direction="vertical"
