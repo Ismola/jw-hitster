@@ -16,8 +16,8 @@
     "placeCard": "Coloca esta tarjeta",
     "placeHere": "Colocar aquí",
     "playAgain": "Jugar de nuevo",
-    "bc": "a.e.c",
-    "ad": "e.c",
+    "bc": "a.e.c.",
+    "ad": "e.c.",
     "instructions": {
         "title": "Cómo Jugar",
         "step0": "1. Ordena los eventos bíblicos cronológicamente colocando cada carta en su posición correcta en la línea de tiempo.",
@@ -26,8 +26,8 @@
         "step3": "4. Si la colocas correctamente, ganarás un punto y continuarás",
         "step4": "5. Si te equivocas, el juego terminará",
         "step5": "6. Lee cuidadosamente la fecha y el evento de cada carta",
-        "step6": "7. Recuerda que a.C. (antes de Cristo) va en orden descendente",
-        "step7": "8. Las fechas d.C. (después de Cristo) van en orden ascendente",
+        "step6": "7. Recuerda que a.e.c. (antes de la era común) va en orden descendente",
+        "step7": "8. Las fechas d.e.c. (después de la era común) van en orden ascendente",
         "ready": "¿Listo para comenzar?"
     },
     "credits": {
