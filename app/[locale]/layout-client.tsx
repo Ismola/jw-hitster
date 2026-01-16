@@ -88,7 +88,7 @@ export function LayoutClient({
                             onClick={handleCloseCookieModal}
                         >
                             <div
-                                className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-(--text-dark) dark:bg-(--text-light) text-(--text-light) dark:text-(--text-dark) rounded-2xl shadow-2xl p-6"
+                                className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto bg-(--text-dark) dark:bg-(--text-light) text-(--text-light) dark:text-(--text-dark) rounded-2xl shadow-2xl p-6"
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 <button
