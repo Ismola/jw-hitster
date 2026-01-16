@@ -4,6 +4,8 @@ Juego Bíblico de línea de tiempo basado en [Hitster Game](https://hitstergame.
 
 **DEMO:** [jw-hitster.ismola.dev](https://jw-hitster.ismola.dev/)
 
+![screenshot](./public/screenshot.png)
+
 [![Deploy](https://github.com/Ismola/jw-hitster/actions/workflows/deploy.yml/badge.svg)](https://github.com/Ismola/jw-hitster/actions/workflows/deploy.yml)
 
 ## 📖 Descripción
