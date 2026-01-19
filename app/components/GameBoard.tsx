@@ -9,7 +9,6 @@ import { messages } from '@/config/text';
 import AnimatedContent from './ReactBits/AnimatedContent';
 import { useLocalStorage } from '@/app/hooks/useLocalStorage';
 import { useSuccess } from '../[locale]/SuccessContext';
-import GradualBlur from './ReactBits/GradualBlur';
 import Magnet from './ReactBits/Magnet';
 import ScrollReveal from './ReactBits/ScrollReveal';
 import ShinyText from './ReactBits/ShinyText';

@@ -156,7 +156,7 @@ export default function ThemeSwitcher() {
                             }`}
                     >
                         {isDark ? (
-                            // SOLecito
+                            // Solecito
                             <svg
                                 className={`w-6 h-6  `}
                                 fill="currentColor"
@@ -193,21 +193,14 @@ export default function ThemeSwitcher() {
             >
                 <button
                     onClick={handleSystemToggle}
-                    className={`cursor-pointer rounded-full p-2 transition-colors ${theme === "system"
+                    className={`cursor-pointer rounded-full p-2 w-9 h-9 flex justify-center items-center font-bold  transition-colors ${theme === "system"
                         ? "bg-(--text-light) text-(--text-dark) dark:bg-(--text-dark) dark:text-(--text-light)  "
                         : "text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40"
                         }`}
                     aria-label="Use system theme"
                     aria-pressed={theme === "system"}
                 >
-                    <svg
-                        className="w-5 h-5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path fillRule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clipRule="evenodd" />
-                    </svg>
+                    A
                 </button>
             </AnimatedContent>
         </div>
