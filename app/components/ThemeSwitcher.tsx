@@ -143,10 +143,10 @@ export default function ThemeSwitcher() {
             >
                 <button
                     onClick={() => switchTo(isDark ? "light" : "dark")}
-                    disabled={theme === "system"}
-                    className={`relative flex items-center justify-center  h-9 rounded-full transition-colors  ${theme === "system"
-                        ? "w-9 backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10  text-(--text-light) dark:text-(--text-dark) cursor-not-allowed "
-                        : "cursor-pointer  w-14 hover:bg-(--text-dark) hover:text-(--text-light) dark:hover:bg-(--text-light) dark:hover:text-(--text-dark)  bg-(--text-light) dark:bg-(--text-dark) text-(--text-dark)  dark:text-(--text-light)"
+                    
+                    className={` cursor-pointer relative flex items-center justify-center  h-9 rounded-full transition-colors  ${theme === "system"
+                        ? "w-9 backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10  text-(--text-light) dark:text-(--text-dark)  "
+                        : "  w-14 hover:bg-(--text-dark) hover:text-(--text-light) dark:hover:bg-(--text-light) dark:hover:text-(--text-dark)  bg-(--text-light) dark:bg-(--text-dark) text-(--text-dark)  dark:text-(--text-light)"
                         }`}
                     aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
                 >
