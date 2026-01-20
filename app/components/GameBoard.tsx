@@ -323,12 +323,12 @@ export default function GameBoard({ locale }: { locale: string }) {
                     style={{
                         scrollbarWidth: 'none',
                         msOverflowStyle: 'none',
+                        maskImage: 'linear-gradient(to bottom, transparent 0%, black 40%, transparent 100%)'
                     }}
-
-                    ref={scrollContainerRef} className='scroll-smooth  border-0 w-full h-screen overflow-y-scroll  border-white/20 rounded-lg p-4 [&::-webkit-scrollbar]:hidden'>
+                    ref={scrollContainerRef} className='scroll-smooth  border-0 w-full h-[75vh]  overflow-y-auto border-white/20 rounded-lg p-4 [&::-webkit-scrollbar]:hidden'>
 
                     {/* INSTRUCTIONS TITLE */}
-                    <div className='md:h-187.5 h-[75vh]   w-full flex items-center justify-center gap-10'>
+                    <div className='h-[50vh]   w-full flex items-center justify-center gap-10'>
                         <ShinyText
                             text={t.instructions.title}
                             speed={3}
@@ -364,47 +364,30 @@ export default function GameBoard({ locale }: { locale: string }) {
                         </svg>
                     </div>
 
-                    {/* INSTRUCTIONS */}
-                    {[t.instructions.step0, t.instructions.step1, t.instructions.step2, t.instructions.step3, t.instructions.step4, t.instructions.step5, t.instructions.step6, t.instructions.step7,].map((instruction: string, index: number) => (
-                        <div key={index}>
-                            <ScrollReveal
-                                scrollContainerRef={scrollContainerRef as React.RefObject<HTMLElement>}
-                                baseOpacity={0}
-                                enableBlur={true}
-                                baseRotation={5}
-                                blurStrength={15}
-                                rotationEnd="bottom top"
-                                wordAnimationEnd="bottom top"
-                                containerClassName="px-4 text-(--text-light) hidden md:block  dark:text-(--text-dark) "
-                            >
-                                {/* AQUI NO PUEDE HABER HTML SOLO TEXTO PLANO */}
-                                {instruction}
-                            </ScrollReveal>
-                            <div className='md:h-75 hidden md:block w-full '></div>
+                    <div className='flex justify-center md:items-center flex-col gap-16'>
+                        {[t.instructions.step0, t.instructions.step1, t.instructions.step2, t.instructions.step3, t.instructions.step4, t.instructions.step5, t.instructions.step6, t.instructions.step7,].map((instruction: string, index: number) => (
+                            <div key={index}>
+                                <span className=' text-(--text-light) dark:text-(--text-dark) md:text-lg text-base  md:leading-8 leading-6 font-medium  '>
+                                    <ShinyText
+                                        text={instruction}
+                                        speed={3}
+                                        delay={2}
+                                        color={isDark ? "#e9e5ff" : "#11224E"}
+                                        shineColor={isDark ? "#ffff" : "#3060db"}
+                                        spread={120}
+                                        direction="left"
+                                        yoyo={true}
+                                        pauseOnHover={false}
+                                        className={` transition-all text-2xl font-extrabold`}
+                                    />
+
+                                </span>
 
 
-                        </div>
-                    ))}
 
-                    {/* INSTRUCTIONS MOBILE */}
-                    {[t.instructions.step0, t.instructions.step1, t.instructions.step2, t.instructions.step3, t.instructions.step4, t.instructions.step5, t.instructions.step6, t.instructions.step7,].map((instruction: string, index: number) => (
-
-                        <ScrollReveal
-                            key={index}
-                            scrollContainerRef={scrollContainerRef as React.RefObject<HTMLElement>}
-                            baseOpacity={0}
-                            enableBlur={true}
-                            baseRotation={5}
-                            blurStrength={5}
-                            rotationEnd="bottom top"
-                            wordAnimationEnd="bottom top"
-                            containerClassName="px-4 text-(--text-light)  md:hidden dark:text-(--text-dark) "
-                        >
-                            {/* AQUI NO PUEDE HABER HTML SOLO TEXTO PLANO */}
-                            {instruction}
-                        </ScrollReveal>
-
-                    ))}
+                            </div>
+                        ))}
+                    </div>
 
                     {/* SPACE */}
                     <div className=' h-[25vh] md:h-50 '></div>
