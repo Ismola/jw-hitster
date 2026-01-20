@@ -29,21 +29,8 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
         if (!containerRef.current) return;
 
         const container = containerRef.current;
-        let renderer: Renderer | null = null;
-        let gl: WebGLRenderingContext | null = null;
-
-        try {
-            renderer = new Renderer({ antialias: true });
-            gl = renderer.gl as WebGLRenderingContext | null;
-        } catch (error) {
-            console.error('WebGL initialization failed:', error);
-            return;
-        }
-
-        if (!renderer || !gl) {
-            return;
-        }
-
+        const renderer = new Renderer({ antialias: true });
+        const gl = renderer.gl;
         gl.clearColor(1, 1, 1, 1);
 
         const vertexShader = `
@@ -126,9 +113,7 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
 
         function resize() {
             const scale = 1;
-            const width = Math.max(container.offsetWidth * scale, 1);
-            const height = Math.max(container.offsetHeight * scale, 1);
-            renderer.setSize(width, height);
+            renderer.setSize(container.offsetWidth * scale, container.offsetHeight * scale);
             const resUniform = program.uniforms.uResolution.value as Float32Array;
             resUniform[0] = gl.canvas.width;
             resUniform[1] = gl.canvas.height;
