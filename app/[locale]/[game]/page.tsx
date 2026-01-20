@@ -25,7 +25,7 @@ export default function GamePage({ }: GamePageProps) {
         <>
             <Header />
 
-            <div className="flex flex-col  items-start md:items-center  pt-8 gap-16 ">
+            <div className="flex flex-col relative h-full items-start md:items-center  pt-8 gap-16 ">
                 <AnimatedContent
                     distance={190}
                     direction="vertical"
@@ -63,7 +63,7 @@ export default function GamePage({ }: GamePageProps) {
                     scale={.7}
                     threshold={0.1}
                     delay={1.3}
-                    className='w-full'
+                    className='w-full h-full'
                 >
                     <GameBoard locale={locale} />
                 </AnimatedContent>

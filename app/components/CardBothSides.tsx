@@ -45,7 +45,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
     useEffect(() => {
         if (isNewlyPlaced && cardRef.current) {
             const card = cardRef.current;
-            
+
             // Set initial state
             gsap.set(card, ANIMATION_CONFIG.initial);
 
@@ -74,12 +74,12 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
     };
 
     // Card styling based on failed state
-    const cardClassName = isFailedCard 
-        ? 'bg-red-600 text-white dark:bg-red-700 dark:text-white  ' 
+    const cardClassName = isFailedCard
+        ? 'bg-red-600 text-white dark:bg-red-700 dark:text-white  '
         : 'bg-(--text-dark) text-(--text-light) dark:bg-(--text-light) dark:text-(--text-dark)';
 
-    const cardBackClassName = isFailedCard 
-        ? 'bg-red-600 text-white dark:bg-red-700 dark:text-white ' 
+    const cardBackClassName = isFailedCard
+        ? 'bg-red-600 text-white dark:bg-red-700 dark:text-white '
         : 'bg-(--text-light) text-(--text-dark) dark:bg-(--text-dark) dark:text-(--text-light)';
 
     const handleInteraction = () => {
@@ -103,7 +103,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
     return (
         <div
             ref={cardRef}
-            className="w-22 h-32 md:h-44 md:min-w-32 perspective-1000 cursor-pointer"
+            className="w-22 h-32 md:h-44 md:w-32 perspective-1000 cursor-pointer"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleInteraction}
@@ -134,7 +134,9 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
                         transform: 'rotateY(180deg)'
                     }}
                 >
-                    <div className="text-[10px] md:text-sm font-bold md:mb-3 text-center">{event}</div>
+                    <div className="text-[10px] md:text-sm font-bold text-center line-clamp-3 md:line-clamp-5">
+                        {event}
+                    </div>
                     <div className={`text-[10px] md:text-xs text-center ${isFailedCard ? 'opacity-90' : 'opacity-75'}`}>{bibleReference}</div>
                     <div className={`absolute top-2 right-2 text-[10px] md:text-xs ${isFailedCard ? 'opacity-80' : 'opacity-50'}`}>{formatDate(date)}</div>
 

@@ -10,7 +10,6 @@ import AnimatedContent from './ReactBits/AnimatedContent';
 import { useLocalStorage } from '@/app/hooks/useLocalStorage';
 import { useSuccess } from '../[locale]/SuccessContext';
 import Magnet from './ReactBits/Magnet';
-import ScrollReveal from './ReactBits/ScrollReveal';
 import ShinyText from './ReactBits/ShinyText';
 import { useTheme } from './ThemeProvider';
 
@@ -477,7 +476,7 @@ export default function GameBoard({ locale }: { locale: string }) {
 
 
 
-            <div className="flex flex-col text-(--text-light) dark:text-(--text-dark)  items-center   md:gap-12 gap-8 w-full ">
+            <div className="flex flex-col text-(--text-light) dark:text-(--text-dark)  items-center justify-center md:gap-10  h-[75vh] gap-4     w-full ">
                 {/* Score */}
                 <AnimatedContent
                     distance={0}
@@ -576,7 +575,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                     )}
 
                 {/* Board Cards with Position Buttons */}
-                <div className="w-full pb-4 flex justify-center  md:mt-0 mt-[20vw] ">
+                <div className="w-full  pb-4 flex justify-center  ">
                     <div className="h-35 md:h-50 flex flex-row gap-4 items-left  justify-center-safe max-w-max overflow-x-auto overflow-y-hidden scrollbar-minimal px-4 ">
                         {/* PLACE HERE */}
                         {gameState === 'playing' && currentCard && (
