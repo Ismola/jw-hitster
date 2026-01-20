@@ -577,7 +577,7 @@ export default function GameBoard({ locale }: { locale: string }) {
 
                 {/* Board Cards with Position Buttons */}
                 <div className="w-full pb-4 flex justify-center  md:mt-0 mt-[20vw] ">
-                    <div className="h-35 md:h-50 flex flex-row gap-4 items-left  justify-center-safe max-w-max overflow-x-auto overflow-y-visible  scrollbar-minimal px-4 ">
+                    <div className="h-35 md:h-50 flex flex-row gap-4 items-left  justify-center-safe max-w-max overflow-x-auto overflow-y-hidden scrollbar-minimal px-4 ">
                         {/* PLACE HERE */}
                         {gameState === 'playing' && currentCard && (
                             <div
