@@ -325,7 +325,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                         msOverflowStyle: 'none',
                         maskImage: 'linear-gradient(to bottom, transparent 0%, black 40%, transparent 100%)'
                     }}
-                    ref={scrollContainerRef} className='scroll-smooth  border-0 w-full h-[75vh]  overflow-y-auto border-white/20 rounded-lg p-4 [&::-webkit-scrollbar]:hidden'>
+                    ref={scrollContainerRef} className='p-16 scroll-smooth  border-0 w-full h-[75vh]  overflow-y-auto border-white/20 rounded-lg  [&::-webkit-scrollbar]:hidden'>
 
                     {/* INSTRUCTIONS TITLE */}
                     <div className='h-[50vh]   w-full flex items-center justify-center gap-10'>
