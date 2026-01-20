@@ -143,6 +143,7 @@ export default function Home() {
 
               xl:w-250 xl:h-250
 
+              
 
               rounded-full
               flex items-center justify-center
@@ -152,11 +153,12 @@ export default function Home() {
        ">
                 {/* {t.startGame} */}
                 <CircularText
-                  text={t.startGame}
+                  text={t.startGame + t.startGame + t.startGame}
                   onHover="slowDown"
                   spinDuration={30}
                   className="w-full h-full "
                   direction='counterclockwise'
+
                 />
               </Link>
             </AnimatedContent>
