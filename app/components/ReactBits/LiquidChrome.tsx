@@ -30,11 +30,11 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
 
         const container = containerRef.current;
         let renderer: Renderer | null = null;
-        let gl: Renderer['gl'] | null = null;
+        let gl: WebGLRenderingContext | null = null;
 
         try {
             renderer = new Renderer({ antialias: true });
-            gl = renderer.gl ?? null;
+            gl = renderer.gl as WebGLRenderingContext | null;
         } catch (error) {
             console.error('WebGL initialization failed:', error);
             return;
@@ -44,10 +44,7 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
             return;
         }
 
-        const oglRenderer = renderer;
-        const oglGl = gl;
-
-        oglGl.clearColor(1, 1, 1, 1);
+        gl.clearColor(1, 1, 1, 1);
 
         const vertexShader = `
       attribute vec2 position;
@@ -106,14 +103,14 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
       }
     `;
 
-        const geometry = new Triangle(oglGl);
-        const program = new Program(oglGl, {
+        const geometry = new Triangle(gl);
+        const program = new Program(gl, {
             vertex: vertexShader,
             fragment: fragmentShader,
             uniforms: {
                 uTime: { value: 0 },
                 uResolution: {
-                    value: new Float32Array([oglGl.canvas.width, oglGl.canvas.height, oglGl.canvas.width / oglGl.canvas.height])
+                    value: new Float32Array([gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height])
                 },
                 uBaseColor: { value: new Float32Array(baseColor) },
                 uPreviousColor: { value: new Float32Array(baseColor) },
@@ -125,17 +122,17 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
             }
         });
         programRef.current = program;
-        const mesh = new Mesh(oglGl, { geometry, program });
+        const mesh = new Mesh(gl, { geometry, program });
 
         function resize() {
             const scale = 1;
             const width = Math.max(container.offsetWidth * scale, 1);
             const height = Math.max(container.offsetHeight * scale, 1);
-            oglRenderer.setSize(width, height);
+            renderer.setSize(width, height);
             const resUniform = program.uniforms.uResolution.value as Float32Array;
-            resUniform[0] = oglGl.canvas.width;
-            resUniform[1] = oglGl.canvas.height;
-            resUniform[2] = oglGl.canvas.width / oglGl.canvas.height;
+            resUniform[0] = gl.canvas.width;
+            resUniform[1] = gl.canvas.height;
+            resUniform[2] = gl.canvas.width / gl.canvas.height;
         }
         window.addEventListener('resize', resize);
         resize();
@@ -182,11 +179,11 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
                 }
             }
 
-            oglRenderer.render({ scene: mesh });
+            renderer.render({ scene: mesh });
         }
         animationId = requestAnimationFrame(update);
 
-        container.appendChild(oglGl.canvas);
+        container.appendChild(gl.canvas);
 
         return () => {
             cancelAnimationFrame(animationId);
@@ -195,10 +192,10 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
                 container.removeEventListener('mousemove', handleMouseMove);
                 container.removeEventListener('touchmove', handleTouchMove);
             }
-            if (oglGl.canvas.parentElement) {
-                oglGl.canvas.parentElement.removeChild(oglGl.canvas);
+            if (gl.canvas.parentElement) {
+                gl.canvas.parentElement.removeChild(gl.canvas);
             }
-            oglGl.getExtension('WEBGL_lose_context')?.loseContext();
+            gl.getExtension('WEBGL_lose_context')?.loseContext();
         };
     }, [speed, amplitude, frequencyX, frequencyY, interactive]);
 
