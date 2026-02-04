@@ -575,8 +575,8 @@ export default function GameBoard({ locale }: { locale: string }) {
                     )}
 
                 {/* Board Cards with Position Buttons */}
-                <div className="w-full  pb-4 flex justify-center  ">
-                    <div className="h-35 md:h-50 flex flex-row gap-4 items-left  justify-center-safe max-w-max overflow-x-auto overflow-y-hidden scrollbar-minimal px-4 ">
+                <div className="w-full h-min pb-4 flex justify-center  ">
+                    <div className=" flex flex-row gap-4 items-left  justify-center-safe max-w-max overflow-x-auto overflow-y-hidden scrollbar-minimal px-4 ">
                         {/* PLACE HERE */}
                         {gameState === 'playing' && currentCard && (
                             <div
@@ -584,13 +584,13 @@ export default function GameBoard({ locale }: { locale: string }) {
                                 onClick={() => checkPosition(0)}
                                 onDragOver={(e) => handleDragOver(e, 0)}
                                 onDragLeave={handleDragLeave}
-                                onDrop={(e) => handleDrop(e, 0)}
-                                className={`
-                                backdrop-blur-xl
-                                shrink-0 flex flex-col items-center justify-center w-22 h-32 md:w-32 md:h-44 md:min-w-32  rounded-lg transition-all cursor-pointer ${draggedOver === 0
-                                        ? 'bg-green-200/50 dark:bg-green-900/50 scale-95'
-                                        : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40   '
-                                    }`}
+                                 onDrop={(e) => handleDrop(e, 0)}
+                                        // Esta tarjeta define el alto de todas las tarjetas
+                                        className={`shrink-0 flex flex-col items-center justify-center w-22 h-44 md:h-60 w-36 md:w-60   rounded-lg transition-all cursor-pointer ${draggedOver === 0
+                                            ? 'bg-green-200/50 dark:bg-green-900/50 scale-95'
+                                            : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40   '
+                                            }`
+                                        }
                             >
                                 <svg
                                     className="w-8 h-8 md:w-10 md:h-10  mb-2"
@@ -609,7 +609,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                         {/* CARDS */}
                         {boardCards.map((card, index) => (
                             <div key={card.id} className="flex   flex-row gap-4 items-start shrink-0 ">
-                                <div className="shrink-0">
+                                <div className="shrink-0  h-full">
                                     <CardBothSides
                                         date={card.date}
                                         event={card.event[lang]}
@@ -630,7 +630,8 @@ export default function GameBoard({ locale }: { locale: string }) {
                                         onDragOver={(e) => handleDragOver(e, index + 1)}
                                         onDragLeave={handleDragLeave}
                                         onDrop={(e) => handleDrop(e, index + 1)}
-                                        className={`shrink-0 flex flex-col items-center justify-center w-22 h-32 md:w-32 md:h-44 md:min-w-32  rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
+                                        // Esta tarjeta define el alto de todas las tarjetas
+                                        className={`shrink-0 flex flex-col items-center justify-center w-22 h-44  md:h-60 w-36 md:w-60   rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
                                             ? 'bg-green-200/50 dark:bg-green-900/50 scale-95'
                                             : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40   '
                                             }`

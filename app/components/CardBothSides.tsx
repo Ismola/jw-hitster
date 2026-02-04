@@ -103,7 +103,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
     return (
         <div
             ref={cardRef}
-            className="w-22 h-32 md:h-44 md:w-32 perspective-1000 cursor-pointer"
+            className="w-36 md:w-60 h-full perspective-1000 cursor-pointer"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleInteraction}
@@ -134,7 +134,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
                         transform: 'rotateY(180deg)'
                     }}
                 >
-                    <div className="text-[10px] md:text-sm font-bold text-center line-clamp-3 md:line-clamp-5">
+                    <div className="text-[10px] md:text-[13px]  font-bold mb-2 line-clamp-0">
                         {event}
                     </div>
                     <div className={`text-[10px] md:text-xs text-center ${isFailedCard ? 'opacity-90' : 'opacity-75'}`}>{bibleReference}</div>
