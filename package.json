@@ -9,7 +9,8 @@
     "start": "next start",
     "preview": "rm -rf .next && npm run build && npm run start",
     "lint": "eslint",
-    "lint:css": "stylelint '**/*.css'"
+    "lint:css": "stylelint '**/*.css'",
+    "sort-info": "node scripts/sort-info.js"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
