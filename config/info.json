@@ -21,556 +21,6 @@
         }
     },
     {
-        "date": "-2970",
-        "event": {
-            "es": "Nacimiento de Noé",
-            "en": "Birth of Noah"
-        },
-        "bible_reference": {
-            "es": "Génesis 5:28-29",
-            "en": "Genesis 5:28-29"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
-            ]
-        }
-    },
-    {
-        "date": "-2018",
-        "event": {
-            "es": "Nacimiento de Abraham",
-            "en": "Birth of Abraham"
-        },
-        "bible_reference": {
-            "es": "Génesis 11:26",
-            "en": "Genesis 11:26"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
-            ]
-        }
-    },
-    {
-        "date": "-1919",
-        "event": {
-            "es": "Destrucción de Sodoma y Gomorra",
-            "en": "Destruction of Sodom and Gomorrah"
-        },
-        "bible_reference": {
-            "es": "Génesis 19:24",
-            "en": "Genesis 19:24"
-        },
-        "bibliografy": {
-            "es": [
-                "https://wol.jw.org/es/wol/d/r4/lp-s/1951246",
-                "https://www.jw.org/es/biblioteca/libros/lecciones-historias-biblia/3/acuerdate-esposa-lot/"
-            ],
-            "en": [
-                "https://wol.jw.org/en/wol/d/r1/lp-e/1951246",
-                "https://www.jw.org/en/library/books/bible-stories-lessons/3/remember-lots-wife/"
-            ]
-        }
-    },
-    {
-        "date": "-1918",
-        "event": {
-            "es": "Nacimiento de Isaac",
-            "en": "Birth of Isaac"
-        },
-        "bible_reference": {
-            "es": "Génesis 21:2",
-            "en": "Genesis 21:2"
-        },
-        "bibliografy": {
-            "es": [
-                "https://wol.jw.org/es/wol/d/r4/lp-s/1951246",
-                "https://www.jw.org/es/biblioteca/libros/lecciones-historias-biblia/3/isaac-ismael/"
-            ],
-            "en": [
-                "https://wol.jw.org/en/wol/d/r1/lp-e/1951246",
-                "https://www.jw.org/en/library/books/bible-stories-lessons/3/isaac-and-ishmael/"
-            ]
-        }
-    },
-    {
-        "date": "-332",
-        "event": {
-            "es": "Potencia mundial: Grecia",
-            "en": "World power: Greece"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-mesias-cristianos-primer-siglo/linea-tiempo-mesias-cristianos-primer-siglo/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/days-of-messiah-first-century-christians/timeline-messiah-first-century-christians/"
-            ]
-        }
-    },
-    {
-        "date": "-63",
-        "event": {
-            "es": "Potencia mundial: Roma",
-            "en": "World power: Rome"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-mesias-cristianos-primer-siglo/linea-tiempo-mesias-cristianos-primer-siglo/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/days-of-messiah-first-century-christians/timeline-messiah-first-century-christians/"
-            ]
-        }
-    },
-    {
-        "date": "33",
-        "event": {
-            "es": "Se derrama espíritu santo en Pentecostés",
-            "en": "Holy spirit poured out at Pentecost"
-        },
-        "bible_reference": {
-            "es": "Hechos 2:1-4",
-            "en": "Acts 2:1-4"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-mesias-cristianos-primer-siglo/linea-tiempo-mesias-cristianos-primer-siglo/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/days-of-messiah-first-century-christians/timeline-messiah-first-century-christians/"
-            ]
-        }
-    },
-    {
-        "date": "36",
-        "event": {
-            "es": "Los primeros gentiles incircuncisos se bautizan",
-            "en": "First uncircumcised Gentiles are baptized"
-        },
-        "bible_reference": {
-            "es": "Hechos 10:44-48",
-            "en": "Acts 10:44-48"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-mesias-cristianos-primer-siglo/linea-tiempo-mesias-cristianos-primer-siglo/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/days-of-messiah-first-century-christians/timeline-messiah-first-century-christians/"
-            ]
-        }
-    },
-    {
-        "date": "41",
-        "event": {
-            "es": "Mateo escribe el primer Evangelio",
-            "en": "Matthew writes the first Gospel"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-mesias-cristianos-primer-siglo/linea-tiempo-mesias-cristianos-primer-siglo/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/days-of-messiah-first-century-christians/timeline-messiah-first-century-christians/"
-            ]
-        }
-    },
-    {
-        "date": "70",
-        "event": {
-            "es": "Destrucción de Jerusalén y su templo",
-            "en": "Destruction of Jerusalem and its temple"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-mesias-cristianos-primer-siglo/linea-tiempo-mesias-cristianos-primer-siglo/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/days-of-messiah-first-century-christians/timeline-messiah-first-century-christians/"
-            ]
-        }
-    },
-    {
-        "date": "98",
-        "event": {
-            "es": "Se termina de escribir la Biblia",
-            "en": "The Bible is completed"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-mesias-cristianos-primer-siglo/linea-tiempo-mesias-cristianos-primer-siglo/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/days-of-messiah-first-century-christians/timeline-messiah-first-century-christians/"
-            ]
-        }
-    },
-    {
-        "date": "-1600",
-        "event": {
-            "es": "Potencia mundial: Egipto",
-            "en": "World power: Egypt"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ],
-            "en": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ]
-        }
-    },
-    {
-        "date": "-1027",
-        "event": {
-            "es": "Se termina el templo de Salomón",
-            "en": "Solomon's temple is completed"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ],
-            "en": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ]
-        }
-    },
-    {
-        "date": "-997",
-        "event": {
-            "es": "Israel se divide en dos reinos",
-            "en": "Israel divides into two kingdoms"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ],
-            "en": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ]
-        }
-    },
-    {
-        "date": "-874",
-        "event": {
-            "es": "Potencia mundial: Asiria",
-            "en": "World power: Assyria"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ],
-            "en": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ]
-        }
-    },
-    {
-        "date": "-740",
-        "event": {
-            "es": "Asiria conquista el reino de 10 tribus",
-            "en": "Assyria conquers the ten-tribe kingdom"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ],
-            "en": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ]
-        }
-    },
-    {
-        "date": "-625",
-        "event": {
-            "es": "Potencia mundial: Babilonia",
-            "en": "World power: Babylon"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ],
-            "en": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ]
-        }
-    },
-    {
-        "date": "-607",
-        "event": {
-            "es": "Nabucodonosor destruye Jerusalén",
-            "en": "Nebuchadnezzar destroys Jerusalem"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ],
-            "en": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ]
-        }
-    },
-    {
-        "date": "-539",
-        "event": {
-            "es": "Potencia mundial: Medopersia",
-            "en": "World power: Medo-Persia"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ],
-            "en": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ]
-        }
-    },
-    {
-        "date": "-537",
-        "event": {
-            "es": "Se libera a los judíos de Babilonia",
-            "en": "Jews are released from Babylon"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ],
-            "en": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ]
-        }
-    },
-    {
-        "date": "-515",
-        "event": {
-            "es": "Se reconstruye el templo de Jerusalén",
-            "en": "The temple in Jerusalem is rebuilt"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ],
-            "en": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ]
-        }
-    },
-    {
-        "date": "-455",
-        "event": {
-            "es": "Se terminan las murallas de Jerusalén",
-            "en": "The walls of Jerusalem are completed"
-        },
-        "bible_reference": {
-            "es": "",
-            "en": ""
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ],
-            "en": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
-            ]
-        }
-    },
-    {
-        "date": "-2370",
-        "event": {
-            "es": "Diluvio",
-            "en": "Flood"
-        },
-        "bible_reference": {
-            "es": "Génesis 7:6, 11",
-            "en": "Genesis 7:6, 11"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
-            ]
-        }
-    },
-    {
-        "date": "-1943",
-        "event": {
-            "es": "El pacto con Abrahán entra en vigor",
-            "en": "Abrahamic covenant takes effect"
-        },
-        "bible_reference": {
-            "es": "Génesis 12:4, 7; Éxodo 12:40; Gálatas 3:17",
-            "en": "Genesis 12:4, 7; Exodus 12:40; Galatians 3:17"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
-            ]
-        }
-    },
-    {
-        "date": "-1728",
-        "event": {
-            "es": "La familia de Jacob llega a Egipto",
-            "en": "Jacob’s family arrives in Egypt"
-        },
-        "bible_reference": {
-            "es": "Génesis 45:6; 46:26; 47:9",
-            "en": "Genesis 45:6; 46:26; 47:9"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
-            ]
-        }
-    },
-    {
-        "date": "-1513",
-        "event": {
-            "es": "Los israelitas salen de Egipto",
-            "en": "Israelites leave Egypt"
-        },
-        "bible_reference": {
-            "es": "Éxodo 12:12; 14:27",
-            "en": "Exodus 12:12; 14:27"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
-            ]
-        }
-    },
-    {
-        "date": "-1473",
-        "event": {
-            "es": "Los israelitas entran a Canaán",
-            "en": "Israelites enter Canaan"
-        },
-        "bible_reference": {
-            "es": "Josué 4:19",
-            "en": "Joshua 4:19"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
-            ]
-        }
-    },
-        {
-        "date": "-1473",
-        "event": {
-            "es": "Jehová elige a Josué",
-            "en": "Jehovah chooses Joshua"
-        },
-        "bible_reference": {
-            "es": "Números 27:18",
-            "en": "Numbers 27:18"
-        },
-        "bibliografy": {
-           
-        }
-    },
-    {
-        "date": "-1117",
-        "event": {
-            "es": "Samuel unge a Saúl como rey",
-            "en": "Samuel anoints Saul as king"
-        },
-        "bible_reference": {
-            "es": "1 Samuel 10:1",
-            "en": "1 Samuel 10:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
-            ]
-        }
-    },
-    {
         "date": "-3895",
         "event": {
             "es": "Caín asesina a Abel",
@@ -685,6 +135,25 @@
         }
     },
     {
+        "date": "-2970",
+        "event": {
+            "es": "Nacimiento de Noé",
+            "en": "Birth of Noah"
+        },
+        "bible_reference": {
+            "es": "Génesis 5:28-29",
+            "en": "Genesis 5:28-29"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
+            ]
+        }
+    },
+    {
         "date": "-2490",
         "event": {
             "es": "Declaración de Dios referente a la humanidad",
@@ -738,6 +207,25 @@
             ],
             "en": [
                 "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+            ]
+        }
+    },
+    {
+        "date": "-2370",
+        "event": {
+            "es": "Diluvio",
+            "en": "Flood"
+        },
+        "bible_reference": {
+            "es": "Génesis 7:6, 11",
+            "en": "Genesis 7:6, 11"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
             ]
         }
     },
@@ -799,6 +287,44 @@
         }
     },
     {
+        "date": "-2018",
+        "event": {
+            "es": "Nacimiento de Abraham",
+            "en": "Birth of Abraham"
+        },
+        "bible_reference": {
+            "es": "Génesis 11:26",
+            "en": "Genesis 11:26"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
+            ]
+        }
+    },
+    {
+        "date": "-1943",
+        "event": {
+            "es": "El pacto con Abrahán entra en vigor",
+            "en": "Abrahamic covenant takes effect"
+        },
+        "bible_reference": {
+            "es": "Génesis 12:4, 7; Éxodo 12:40; Gálatas 3:17",
+            "en": "Genesis 12:4, 7; Exodus 12:40; Galatians 3:17"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
+            ]
+        }
+    },
+    {
         "date": "-1932",
         "event": {
             "es": "Nacimiento de Ismael",
@@ -814,6 +340,48 @@
             ],
             "en": [
                 "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+            ]
+        }
+    },
+    {
+        "date": "-1919",
+        "event": {
+            "es": "Destrucción de Sodoma y Gomorra",
+            "en": "Destruction of Sodom and Gomorrah"
+        },
+        "bible_reference": {
+            "es": "Génesis 19:24",
+            "en": "Genesis 19:24"
+        },
+        "bibliografy": {
+            "es": [
+                "https://wol.jw.org/es/wol/d/r4/lp-s/1951246",
+                "https://www.jw.org/es/biblioteca/libros/lecciones-historias-biblia/3/acuerdate-esposa-lot/"
+            ],
+            "en": [
+                "https://wol.jw.org/en/wol/d/r1/lp-e/1951246",
+                "https://www.jw.org/en/library/books/bible-stories-lessons/3/remember-lots-wife/"
+            ]
+        }
+    },
+    {
+        "date": "-1918",
+        "event": {
+            "es": "Nacimiento de Isaac",
+            "en": "Birth of Isaac"
+        },
+        "bible_reference": {
+            "es": "Génesis 21:2",
+            "en": "Genesis 21:2"
+        },
+        "bibliografy": {
+            "es": [
+                "https://wol.jw.org/es/wol/d/r4/lp-s/1951246",
+                "https://www.jw.org/es/biblioteca/libros/lecciones-historias-biblia/3/isaac-ismael/"
+            ],
+            "en": [
+                "https://wol.jw.org/en/wol/d/r1/lp-e/1951246",
+                "https://www.jw.org/en/library/books/bible-stories-lessons/3/isaac-and-ishmael/"
             ]
         }
     },
@@ -1008,6 +576,25 @@
         }
     },
     {
+        "date": "-1728",
+        "event": {
+            "es": "La familia de Jacob llega a Egipto",
+            "en": "Jacob’s family arrives in Egypt"
+        },
+        "bible_reference": {
+            "es": "Génesis 45:6; 46:26; 47:9",
+            "en": "Genesis 45:6; 46:26; 47:9"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
+            ]
+        }
+    },
+    {
         "date": "-1712",
         "event": {
             "es": "Muerte de Jacob",
@@ -1042,6 +629,25 @@
             ],
             "en": [
                 "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+            ]
+        }
+    },
+    {
+        "date": "-1600",
+        "event": {
+            "es": "Potencia mundial: Egipto",
+            "en": "World power: Egypt"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ],
+            "en": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
             ]
         }
     },
@@ -1084,6 +690,44 @@
         }
     },
     {
+        "date": "-1513",
+        "event": {
+            "es": "Los israelitas salen de Egipto",
+            "en": "Israelites leave Egypt"
+        },
+        "bible_reference": {
+            "es": "Éxodo 12:12; 14:27",
+            "en": "Exodus 12:12; 14:27"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
+            ]
+        }
+    },
+    {
+        "date": "-1513",
+        "event": {
+            "es": "Moisés completa la escritura de Génesis",
+            "en": "Moses completes writing Genesis"
+        },
+        "bible_reference": {
+            "es": "Génesis 1:1",
+            "en": "Genesis 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
         "date": "-1512",
         "event": {
             "es": "Construcción del tabernáculo completada",
@@ -1103,6 +747,132 @@
         }
     },
     {
+        "date": "-1512",
+        "event": {
+            "es": "Moisés completa la escritura de Éxodo",
+            "en": "Moses completes writing Exodus"
+        },
+        "bible_reference": {
+            "es": "Éxodo 1:1",
+            "en": "Exodus 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1512",
+        "event": {
+            "es": "Moisés completa la escritura de Levítico",
+            "en": "Moses completes writing Leviticus"
+        },
+        "bible_reference": {
+            "es": "Levítico 1:1",
+            "en": "Leviticus 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1473",
+        "event": {
+            "es": "Los israelitas entran a Canaán",
+            "en": "Israelites enter Canaan"
+        },
+        "bible_reference": {
+            "es": "Josué 4:19",
+            "en": "Joshua 4:19"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
+            ]
+        }
+    },
+    {
+        "date": "-1473",
+        "event": {
+            "es": "Jehová elige a Josué",
+            "en": "Jehovah chooses Joshua"
+        },
+        "bible_reference": {
+            "es": "Números 27:18",
+            "en": "Numbers 27:18"
+        },
+        "bibliografy": {}
+    },
+    {
+        "date": "-1473",
+        "event": {
+            "es": "Moisés completa la escritura de Números",
+            "en": "Moses completes writing Numbers"
+        },
+        "bible_reference": {
+            "es": "Números 1:1",
+            "en": "Numbers 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1473",
+        "event": {
+            "es": "Moisés completa la escritura de Deuteronomio",
+            "en": "Moses completes writing Deuteronomy"
+        },
+        "bible_reference": {
+            "es": "Deuteronomio 1:1",
+            "en": "Deuteronomy 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1473",
+        "event": {
+            "es": "Moisés completa la escritura de Job",
+            "en": "Moses completes writing Job"
+        },
+        "bible_reference": {
+            "es": "Job 1:1",
+            "en": "Job 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
         "date": "-1467",
         "event": {
             "es": "Fin de las operaciones bélicas de Josué en Canaán",
@@ -1118,6 +888,25 @@
             ],
             "en": [
                 "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+            ]
+        }
+    },
+    {
+        "date": "-1450",
+        "event": {
+            "es": "Josué completa la escritura de Josué",
+            "en": "Joshua completes writing Joshua"
+        },
+        "bible_reference": {
+            "es": "Josué 1:1",
+            "en": "Joshua 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
             ]
         }
     },
@@ -1179,6 +968,25 @@
         }
     },
     {
+        "date": "-1117",
+        "event": {
+            "es": "Samuel unge a Saúl como rey",
+            "en": "Samuel anoints Saul as king"
+        },
+        "bible_reference": {
+            "es": "1 Samuel 10:1",
+            "en": "1 Samuel 10:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-patriarcas-epoca-jueces/linea-tiempo-dias-patriarcas-epoca-jueces/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/patriarchs-to-time-of-judges/timeline-patriarchs-to-time-of-judges/"
+            ]
+        }
+    },
+    {
         "date": "-1107",
         "event": {
             "es": "Nacimiento de David en Belén",
@@ -1194,6 +1002,63 @@
             ],
             "en": [
                 "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+            ]
+        }
+    },
+    {
+        "date": "-1100",
+        "event": {
+            "es": "Samuel completa la escritura de Jueces",
+            "en": "Samuel completes writing Judges"
+        },
+        "bible_reference": {
+            "es": "Jueces 1:1",
+            "en": "Judges 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1090",
+        "event": {
+            "es": "Samuel completa la escritura de Rut",
+            "en": "Samuel completes writing Ruth"
+        },
+        "bible_reference": {
+            "es": "Rut 1:1",
+            "en": "Ruth 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1078",
+        "event": {
+            "es": "Samuel, Gad y Natán completan la escritura de 1 Samuel",
+            "en": "Samuel, Gad and Nathan complete writing 1 Samuel"
+        },
+        "bible_reference": {
+            "es": "1 Samuel 1:1",
+            "en": "1 Samuel 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
             ]
         }
     },
@@ -1255,6 +1120,25 @@
         }
     },
     {
+        "date": "-1040",
+        "event": {
+            "es": "Gad y Natán completan la escritura de 2 Samuel",
+            "en": "Gad and Nathan complete writing 2 Samuel"
+        },
+        "bible_reference": {
+            "es": "2 Samuel 1:1",
+            "en": "2 Samuel 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
         "date": "-1037",
         "event": {
             "es": "Muerte del rey David",
@@ -1289,6 +1173,82 @@
             ],
             "en": [
                 "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+            ]
+        }
+    },
+    {
+        "date": "-1027",
+        "event": {
+            "es": "Se termina el templo de Salomón",
+            "en": "Solomon's temple is completed"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ],
+            "en": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ]
+        }
+    },
+    {
+        "date": "-1020",
+        "event": {
+            "es": "Salomón completa la escritura del Cantar de los Cantares",
+            "en": "Solomon completes writing Song of Solomon"
+        },
+        "bible_reference": {
+            "es": "Cantar de los Cantares 1:1",
+            "en": "Song of Solomon 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-1000",
+        "event": {
+            "es": "Salomón completa la escritura de Eclesiastés",
+            "en": "Solomon completes writing Ecclesiastes"
+        },
+        "bible_reference": {
+            "es": "Eclesiastés 1:1",
+            "en": "Ecclesiastes 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-997",
+        "event": {
+            "es": "Israel se divide en dos reinos",
+            "en": "Israel divides into two kingdoms"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ],
+            "en": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
             ]
         }
     },
@@ -1426,6 +1386,25 @@
         }
     },
     {
+        "date": "-874",
+        "event": {
+            "es": "Potencia mundial: Asiria",
+            "en": "World power: Assyria"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ],
+            "en": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ]
+        }
+    },
+    {
         "date": "-866",
         "event": {
             "es": "Amasías toma el lugar de Joás",
@@ -1445,6 +1424,25 @@
         }
     },
     {
+        "date": "-844",
+        "event": {
+            "es": "Jonás completa la escritura de Jonás",
+            "en": "Jonah completes writing Jonah"
+        },
+        "bible_reference": {
+            "es": "Jonás 1:1",
+            "en": "Jonah 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
         "date": "-826",
         "event": {
             "es": "Uzías llega a ser rey",
@@ -1460,6 +1458,44 @@
             ],
             "en": [
                 "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+            ]
+        }
+    },
+    {
+        "date": "-820",
+        "event": {
+            "es": "Joel completa la escritura de Joel",
+            "en": "Joel completes writing Joel"
+        },
+        "bible_reference": {
+            "es": "Joel 1:1",
+            "en": "Joel 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-804",
+        "event": {
+            "es": "Amós completa la escritura de Amós",
+            "en": "Amos completes writing Amos"
+        },
+        "bible_reference": {
+            "es": "Amós 1:1",
+            "en": "Amos 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
             ]
         }
     },
@@ -1521,6 +1557,101 @@
         }
     },
     {
+        "date": "-745",
+        "event": {
+            "es": "Oseas completa la escritura de Oseas",
+            "en": "Hosea completes writing Hosea"
+        },
+        "bible_reference": {
+            "es": "Oseas 1:1",
+            "en": "Hosea 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-740",
+        "event": {
+            "es": "Asiria conquista el reino de 10 tribus",
+            "en": "Assyria conquers the ten-tribe kingdom"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ],
+            "en": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ]
+        }
+    },
+    {
+        "date": "-732",
+        "event": {
+            "es": "Isaías completa la escritura de Isaías",
+            "en": "Isaiah completes writing Isaiah"
+        },
+        "bible_reference": {
+            "es": "Isaías 1:1",
+            "en": "Isaiah 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-717",
+        "event": {
+            "es": "Salomón, Agur y Lemuel completan la escritura de Proverbios",
+            "en": "Solomon, Agur and Lemuel complete writing Proverbs"
+        },
+        "bible_reference": {
+            "es": "Proverbios 1:1",
+            "en": "Proverbs 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-717",
+        "event": {
+            "es": "Miqueas completa la escritura de Miqueas",
+            "en": "Micah completes writing Micah"
+        },
+        "bible_reference": {
+            "es": "Miqueas 1:1",
+            "en": "Micah 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
         "date": "-716",
         "event": {
             "es": "Manasés toma el lugar de Ezequías",
@@ -1578,6 +1709,25 @@
         }
     },
     {
+        "date": "-648",
+        "event": {
+            "es": "Sofonías completa la escritura de Sofonías",
+            "en": "Zephaniah completes writing Zephaniah"
+        },
+        "bible_reference": {
+            "es": "Sofonías 1:1",
+            "en": "Zephaniah 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
         "date": "-632",
         "event": {
             "es": "Nínive cae en manos de los caldeos y medos",
@@ -1631,6 +1781,44 @@
             ],
             "en": [
                 "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+            ]
+        }
+    },
+    {
+        "date": "-628",
+        "event": {
+            "es": "Habacuc completa la escritura de Habacuc",
+            "en": "Habakkuk completes writing Habakkuk"
+        },
+        "bible_reference": {
+            "es": "Habacuc 1:1",
+            "en": "Habakkuk 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-625",
+        "event": {
+            "es": "Potencia mundial: Babilonia",
+            "en": "World power: Babylon"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ],
+            "en": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
             ]
         }
     },
@@ -1768,6 +1956,63 @@
         }
     },
     {
+        "date": "-607",
+        "event": {
+            "es": "Nabucodonosor destruye Jerusalén",
+            "en": "Nebuchadnezzar destroys Jerusalem"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ],
+            "en": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ]
+        }
+    },
+    {
+        "date": "-607",
+        "event": {
+            "es": "Jeremías completa la escritura de Lamentaciones",
+            "en": "Jeremiah completes writing Lamentations"
+        },
+        "bible_reference": {
+            "es": "Lamentaciones 1:1",
+            "en": "Lamentations 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-607",
+        "event": {
+            "es": "Abdías completa la escritura de Abdías",
+            "en": "Obadiah completes writing Obadiah"
+        },
+        "bible_reference": {
+            "es": "Abdías 1:1",
+            "en": "Obadiah 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
         "date": "-591",
         "event": {
             "es": "Ezequiel escribe el libro de Ezequiel",
@@ -1783,6 +2028,120 @@
             ],
             "en": [
                 "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+            ]
+        }
+    },
+    {
+        "date": "-580",
+        "event": {
+            "es": "Jeremías completa la escritura de 1 Reyes",
+            "en": "Jeremiah completes writing 1 Kings"
+        },
+        "bible_reference": {
+            "es": "1 Reyes 1:1",
+            "en": "1 Kings 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-580",
+        "event": {
+            "es": "Jeremías completa la escritura de 2 Reyes",
+            "en": "Jeremiah completes writing 2 Kings"
+        },
+        "bible_reference": {
+            "es": "2 Reyes 1:1",
+            "en": "2 Kings 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-580",
+        "event": {
+            "es": "Jeremías completa la escritura de Jeremías",
+            "en": "Jeremiah completes writing Jeremiah"
+        },
+        "bible_reference": {
+            "es": "Jeremías 1:1",
+            "en": "Jeremiah 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-539",
+        "event": {
+            "es": "Potencia mundial: Medopersia",
+            "en": "World power: Medo-Persia"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ],
+            "en": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ]
+        }
+    },
+    {
+        "date": "-537",
+        "event": {
+            "es": "Se libera a los judíos de Babilonia",
+            "en": "Jews are released from Babylon"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ],
+            "en": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ]
+        }
+    },
+    {
+        "date": "-536",
+        "event": {
+            "es": "Daniel completa la escritura de Daniel",
+            "en": "Daniel completes writing Daniel"
+        },
+        "bible_reference": {
+            "es": "Daniel 1:1",
+            "en": "Daniel 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
             ]
         }
     },
@@ -1844,6 +2203,25 @@
         }
     },
     {
+        "date": "-515",
+        "event": {
+            "es": "Se reconstruye el templo de Jerusalén",
+            "en": "The temple in Jerusalem is rebuilt"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ],
+            "en": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ]
+        }
+    },
+    {
         "date": "-474",
         "event": {
             "es": "Mardoqueo escribe el libro de Ester",
@@ -1878,6 +2256,101 @@
             ],
             "en": [
                 "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+            ]
+        }
+    },
+    {
+        "date": "-460",
+        "event": {
+            "es": "Esdras completa la escritura de 1 Crónicas",
+            "en": "Ezra completes writing 1 Chronicles"
+        },
+        "bible_reference": {
+            "es": "1 Crónicas 1:1",
+            "en": "1 Chronicles 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-460",
+        "event": {
+            "es": "Esdras completa la escritura de 2 Crónicas",
+            "en": "Ezra completes writing 2 Chronicles"
+        },
+        "bible_reference": {
+            "es": "2 Crónicas 1:1",
+            "en": "2 Chronicles 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-460",
+        "event": {
+            "es": "Esdras completa la escritura de Esdras",
+            "en": "Ezra completes writing Ezra"
+        },
+        "bible_reference": {
+            "es": "Esdras 1:1",
+            "en": "Ezra 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-460",
+        "event": {
+            "es": "David y otros completan la escritura de Salmos",
+            "en": "David and others complete writing Psalms"
+        },
+        "bible_reference": {
+            "es": "Salmos 1:1",
+            "en": "Psalms 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "-455",
+        "event": {
+            "es": "Se terminan las murallas de Jerusalén",
+            "en": "The walls of Jerusalem are completed"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
+            ],
+            "en": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-reyes-reconstruccion-jerusalen/linea-tiempo-dias-reyes-reconstruccion-jerusalen/"
             ]
         }
     },
@@ -1939,6 +2412,25 @@
         }
     },
     {
+        "date": "-332",
+        "event": {
+            "es": "Potencia mundial: Grecia",
+            "en": "World power: Greece"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-mesias-cristianos-primer-siglo/linea-tiempo-mesias-cristianos-primer-siglo/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/days-of-messiah-first-century-christians/timeline-messiah-first-century-christians/"
+            ]
+        }
+    },
+    {
         "date": "-165",
         "event": {
             "es": "Renovación del templo después de profanación por la idolatría griega",
@@ -1954,6 +2446,25 @@
             ],
             "en": [
                 "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+            ]
+        }
+    },
+    {
+        "date": "-63",
+        "event": {
+            "es": "Potencia mundial: Roma",
+            "en": "World power: Rome"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-mesias-cristianos-primer-siglo/linea-tiempo-mesias-cristianos-primer-siglo/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/days-of-messiah-first-century-christians/timeline-messiah-first-century-christians/"
             ]
         }
     },
@@ -2055,6 +2566,25 @@
     {
         "date": "33",
         "event": {
+            "es": "Se derrama espíritu santo en Pentecostés",
+            "en": "Holy spirit poured out at Pentecost"
+        },
+        "bible_reference": {
+            "es": "Hechos 2:1-4",
+            "en": "Acts 2:1-4"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-mesias-cristianos-primer-siglo/linea-tiempo-mesias-cristianos-primer-siglo/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/days-of-messiah-first-century-christians/timeline-messiah-first-century-christians/"
+            ]
+        }
+    },
+    {
+        "date": "33",
+        "event": {
             "es": "14 de nisán. Jesús provee sacrificio para el nuevo pacto. Es empalado",
             "en": "14 Nisan. Jesus provides sacrifice for new covenant. He is impaled"
         },
@@ -2093,6 +2623,25 @@
     {
         "date": "36",
         "event": {
+            "es": "Los primeros gentiles incircuncisos se bautizan",
+            "en": "First uncircumcised Gentiles are baptized"
+        },
+        "bible_reference": {
+            "es": "Hechos 10:44-48",
+            "en": "Acts 10:44-48"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-mesias-cristianos-primer-siglo/linea-tiempo-mesias-cristianos-primer-siglo/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/days-of-messiah-first-century-christians/timeline-messiah-first-century-christians/"
+            ]
+        }
+    },
+    {
+        "date": "36",
+        "event": {
             "es": "Fin de las 70 semanas de años",
             "en": "End of 70 weeks of years"
         },
@@ -2106,6 +2655,25 @@
             ],
             "en": [
                 "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
+            ]
+        }
+    },
+    {
+        "date": "41",
+        "event": {
+            "es": "Mateo escribe el primer Evangelio",
+            "en": "Matthew writes the first Gospel"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-mesias-cristianos-primer-siglo/linea-tiempo-mesias-cristianos-primer-siglo/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/days-of-messiah-first-century-christians/timeline-messiah-first-century-christians/"
             ]
         }
     },
@@ -2414,6 +2982,25 @@
         }
     },
     {
+        "date": "60",
+        "event": {
+            "es": "Marcos completa la escritura de Marcos",
+            "en": "Mark completes writing Mark"
+        },
+        "bible_reference": {
+            "es": "Marcos 1:1",
+            "en": "Mark 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
         "date": "61",
         "event": {
             "es": "Pablo escribe 'Hebreos' desde Roma",
@@ -2566,6 +3153,139 @@
         }
     },
     {
+        "date": "70",
+        "event": {
+            "es": "Destrucción de Jerusalén y su templo",
+            "en": "Destruction of Jerusalem and its temple"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-mesias-cristianos-primer-siglo/linea-tiempo-mesias-cristianos-primer-siglo/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/days-of-messiah-first-century-christians/timeline-messiah-first-century-christians/"
+            ]
+        }
+    },
+    {
+        "date": "96",
+        "event": {
+            "es": "El apóstol Juan completa la escritura de Revelación",
+            "en": "Apostle John completes writing Revelation"
+        },
+        "bible_reference": {
+            "es": "Revelación 1:1",
+            "en": "Revelation 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "98",
+        "event": {
+            "es": "Se termina de escribir la Biblia",
+            "en": "The Bible is completed"
+        },
+        "bible_reference": {
+            "es": "",
+            "en": ""
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/libros/seamos-valientes-andar-dios/dias-mesias-cristianos-primer-siglo/linea-tiempo-mesias-cristianos-primer-siglo/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/books/walk-courageously-with-god/days-of-messiah-first-century-christians/timeline-messiah-first-century-christians/"
+            ]
+        }
+    },
+    {
+        "date": "98",
+        "event": {
+            "es": "El apóstol Juan completa la escritura de Juan",
+            "en": "Apostle John completes writing John"
+        },
+        "bible_reference": {
+            "es": "Juan 1:1",
+            "en": "John 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "98",
+        "event": {
+            "es": "El apóstol Juan completa la escritura de 1 Juan",
+            "en": "Apostle John completes writing 1 John"
+        },
+        "bible_reference": {
+            "es": "1 Juan 1:1",
+            "en": "1 John 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "98",
+        "event": {
+            "es": "El apóstol Juan completa la escritura de 2 Juan",
+            "en": "Apostle John completes writing 2 John"
+        },
+        "bible_reference": {
+            "es": "2 Juan 1:1",
+            "en": "2 John 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
+        "date": "98",
+        "event": {
+            "es": "El apóstol Juan completa la escritura de 3 Juan",
+            "en": "Apostle John completes writing 3 John"
+        },
+        "bible_reference": {
+            "es": "3 Juan 1:1",
+            "en": "3 John 1:1"
+        },
+        "bibliografy": {
+            "es": [
+                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
+            ],
+            "en": [
+                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
+            ]
+        }
+    },
+    {
         "date": "325",
         "event": {
             "es": "Comienzo de la organizada cristiandad apóstata en Nicea",
@@ -2695,728 +3415,6 @@
             ],
             "en": [
                 "https://wol.jw.org/en/wol/d/r1/lp-e/1951246"
-            ]
-        }
-    },
-    {
-        "date": "-1513",
-        "event": {
-            "es": "Moisés completa la escritura de Génesis",
-            "en": "Moses completes writing Genesis"
-        },
-        "bible_reference": {
-            "es": "Génesis 1:1",
-            "en": "Genesis 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-1512",
-        "event": {
-            "es": "Moisés completa la escritura de Éxodo",
-            "en": "Moses completes writing Exodus"
-        },
-        "bible_reference": {
-            "es": "Éxodo 1:1",
-            "en": "Exodus 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-1512",
-        "event": {
-            "es": "Moisés completa la escritura de Levítico",
-            "en": "Moses completes writing Leviticus"
-        },
-        "bible_reference": {
-            "es": "Levítico 1:1",
-            "en": "Leviticus 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-1473",
-        "event": {
-            "es": "Moisés completa la escritura de Números",
-            "en": "Moses completes writing Numbers"
-        },
-        "bible_reference": {
-            "es": "Números 1:1",
-            "en": "Numbers 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-1473",
-        "event": {
-            "es": "Moisés completa la escritura de Deuteronomio",
-            "en": "Moses completes writing Deuteronomy"
-        },
-        "bible_reference": {
-            "es": "Deuteronomio 1:1",
-            "en": "Deuteronomy 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-1473",
-        "event": {
-            "es": "Moisés completa la escritura de Job",
-            "en": "Moses completes writing Job"
-        },
-        "bible_reference": {
-            "es": "Job 1:1",
-            "en": "Job 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-1450",
-        "event": {
-            "es": "Josué completa la escritura de Josué",
-            "en": "Joshua completes writing Joshua"
-        },
-        "bible_reference": {
-            "es": "Josué 1:1",
-            "en": "Joshua 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-1100",
-        "event": {
-            "es": "Samuel completa la escritura de Jueces",
-            "en": "Samuel completes writing Judges"
-        },
-        "bible_reference": {
-            "es": "Jueces 1:1",
-            "en": "Judges 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-1090",
-        "event": {
-            "es": "Samuel completa la escritura de Rut",
-            "en": "Samuel completes writing Ruth"
-        },
-        "bible_reference": {
-            "es": "Rut 1:1",
-            "en": "Ruth 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-1078",
-        "event": {
-            "es": "Samuel, Gad y Natán completan la escritura de 1 Samuel",
-            "en": "Samuel, Gad and Nathan complete writing 1 Samuel"
-        },
-        "bible_reference": {
-            "es": "1 Samuel 1:1",
-            "en": "1 Samuel 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-1040",
-        "event": {
-            "es": "Gad y Natán completan la escritura de 2 Samuel",
-            "en": "Gad and Nathan complete writing 2 Samuel"
-        },
-        "bible_reference": {
-            "es": "2 Samuel 1:1",
-            "en": "2 Samuel 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-1020",
-        "event": {
-            "es": "Salomón completa la escritura del Cantar de los Cantares",
-            "en": "Solomon completes writing Song of Solomon"
-        },
-        "bible_reference": {
-            "es": "Cantar de los Cantares 1:1",
-            "en": "Song of Solomon 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-1000",
-        "event": {
-            "es": "Salomón completa la escritura de Eclesiastés",
-            "en": "Solomon completes writing Ecclesiastes"
-        },
-        "bible_reference": {
-            "es": "Eclesiastés 1:1",
-            "en": "Ecclesiastes 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-844",
-        "event": {
-            "es": "Jonás completa la escritura de Jonás",
-            "en": "Jonah completes writing Jonah"
-        },
-        "bible_reference": {
-            "es": "Jonás 1:1",
-            "en": "Jonah 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-820",
-        "event": {
-            "es": "Joel completa la escritura de Joel",
-            "en": "Joel completes writing Joel"
-        },
-        "bible_reference": {
-            "es": "Joel 1:1",
-            "en": "Joel 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-804",
-        "event": {
-            "es": "Amós completa la escritura de Amós",
-            "en": "Amos completes writing Amos"
-        },
-        "bible_reference": {
-            "es": "Amós 1:1",
-            "en": "Amos 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-745",
-        "event": {
-            "es": "Oseas completa la escritura de Oseas",
-            "en": "Hosea completes writing Hosea"
-        },
-        "bible_reference": {
-            "es": "Oseas 1:1",
-            "en": "Hosea 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-732",
-        "event": {
-            "es": "Isaías completa la escritura de Isaías",
-            "en": "Isaiah completes writing Isaiah"
-        },
-        "bible_reference": {
-            "es": "Isaías 1:1",
-            "en": "Isaiah 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-717",
-        "event": {
-            "es": "Salomón, Agur y Lemuel completan la escritura de Proverbios",
-            "en": "Solomon, Agur and Lemuel complete writing Proverbs"
-        },
-        "bible_reference": {
-            "es": "Proverbios 1:1",
-            "en": "Proverbs 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-717",
-        "event": {
-            "es": "Miqueas completa la escritura de Miqueas",
-            "en": "Micah completes writing Micah"
-        },
-        "bible_reference": {
-            "es": "Miqueas 1:1",
-            "en": "Micah 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-648",
-        "event": {
-            "es": "Sofonías completa la escritura de Sofonías",
-            "en": "Zephaniah completes writing Zephaniah"
-        },
-        "bible_reference": {
-            "es": "Sofonías 1:1",
-            "en": "Zephaniah 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-628",
-        "event": {
-            "es": "Habacuc completa la escritura de Habacuc",
-            "en": "Habakkuk completes writing Habakkuk"
-        },
-        "bible_reference": {
-            "es": "Habacuc 1:1",
-            "en": "Habakkuk 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-607",
-        "event": {
-            "es": "Jeremías completa la escritura de Lamentaciones",
-            "en": "Jeremiah completes writing Lamentations"
-        },
-        "bible_reference": {
-            "es": "Lamentaciones 1:1",
-            "en": "Lamentations 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-607",
-        "event": {
-            "es": "Abdías completa la escritura de Abdías",
-            "en": "Obadiah completes writing Obadiah"
-        },
-        "bible_reference": {
-            "es": "Abdías 1:1",
-            "en": "Obadiah 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-580",
-        "event": {
-            "es": "Jeremías completa la escritura de 1 Reyes",
-            "en": "Jeremiah completes writing 1 Kings"
-        },
-        "bible_reference": {
-            "es": "1 Reyes 1:1",
-            "en": "1 Kings 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-580",
-        "event": {
-            "es": "Jeremías completa la escritura de 2 Reyes",
-            "en": "Jeremiah completes writing 2 Kings"
-        },
-        "bible_reference": {
-            "es": "2 Reyes 1:1",
-            "en": "2 Kings 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-580",
-        "event": {
-            "es": "Jeremías completa la escritura de Jeremías",
-            "en": "Jeremiah completes writing Jeremiah"
-        },
-        "bible_reference": {
-            "es": "Jeremías 1:1",
-            "en": "Jeremiah 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-536",
-        "event": {
-            "es": "Daniel completa la escritura de Daniel",
-            "en": "Daniel completes writing Daniel"
-        },
-        "bible_reference": {
-            "es": "Daniel 1:1",
-            "en": "Daniel 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-460",
-        "event": {
-            "es": "Esdras completa la escritura de 1 Crónicas",
-            "en": "Ezra completes writing 1 Chronicles"
-        },
-        "bible_reference": {
-            "es": "1 Crónicas 1:1",
-            "en": "1 Chronicles 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-460",
-        "event": {
-            "es": "Esdras completa la escritura de 2 Crónicas",
-            "en": "Ezra completes writing 2 Chronicles"
-        },
-        "bible_reference": {
-            "es": "2 Crónicas 1:1",
-            "en": "2 Chronicles 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-460",
-        "event": {
-            "es": "Esdras completa la escritura de Esdras",
-            "en": "Ezra completes writing Ezra"
-        },
-        "bible_reference": {
-            "es": "Esdras 1:1",
-            "en": "Ezra 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "-460",
-        "event": {
-            "es": "David y otros completan la escritura de Salmos",
-            "en": "David and others complete writing Psalms"
-        },
-        "bible_reference": {
-            "es": "Salmos 1:1",
-            "en": "Psalms 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "60",
-        "event": {
-            "es": "Marcos completa la escritura de Marcos",
-            "en": "Mark completes writing Mark"
-        },
-        "bible_reference": {
-            "es": "Marcos 1:1",
-            "en": "Mark 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "96",
-        "event": {
-            "es": "El apóstol Juan completa la escritura de Revelación",
-            "en": "Apostle John completes writing Revelation"
-        },
-        "bible_reference": {
-            "es": "Revelación 1:1",
-            "en": "Revelation 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "98",
-        "event": {
-            "es": "El apóstol Juan completa la escritura de Juan",
-            "en": "Apostle John completes writing John"
-        },
-        "bible_reference": {
-            "es": "Juan 1:1",
-            "en": "John 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "98",
-        "event": {
-            "es": "El apóstol Juan completa la escritura de 1 Juan",
-            "en": "Apostle John completes writing 1 John"
-        },
-        "bible_reference": {
-            "es": "1 Juan 1:1",
-            "en": "1 John 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "98",
-        "event": {
-            "es": "El apóstol Juan completa la escritura de 2 Juan",
-            "en": "Apostle John completes writing 2 John"
-        },
-        "bible_reference": {
-            "es": "2 Juan 1:1",
-            "en": "2 John 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
-            ]
-        }
-    },
-    {
-        "date": "98",
-        "event": {
-            "es": "El apóstol Juan completa la escritura de 3 Juan",
-            "en": "Apostle John completes writing 3 John"
-        },
-        "bible_reference": {
-            "es": "3 Juan 1:1",
-            "en": "3 John 1:1"
-        },
-        "bibliografy": {
-            "es": [
-                "https://www.jw.org/es/biblioteca/biblia/nwt/lista-de-los-libros-de-la-biblia/"
-            ],
-            "en": [
-                "https://www.jw.org/en/library/bible/nwt/books-of-the-bible-list/"
             ]
         }
     }

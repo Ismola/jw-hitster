@@ -98,6 +98,12 @@ Edita el archivo `config/info.json`:
 }
 ```
 
+Después de añadir eventos, ejecuta el script para mantener el archivo ordenado por fecha:
+
+```bash
+npm run sort-info
+```
+
 ## 📦 Build y Deploy
 
 ```bash
