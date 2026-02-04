@@ -103,7 +103,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
     return (
         <div
             ref={cardRef}
-            className="w-22 min-h-32 md:min-h-44 md:w-32 perspective-1000 cursor-pointer"
+            className="w-22 min-h-32 max-h-48 md:min-h-44 md:max-h-56 md:w-32 perspective-1000 cursor-pointer"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleInteraction}
