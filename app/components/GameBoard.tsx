@@ -576,7 +576,7 @@ export default function GameBoard({ locale }: { locale: string }) {
 
                 {/* Board Cards with Position Buttons */}
                 <div className="w-full h-min pb-4 flex justify-center  ">
-                    <div className=" flex flex-row gap-4 items-left  justify-center-safe max-w-max overflow-x-auto overflow-y-hidden scrollbar-minimal px-4 ">
+                    <div className=" flex flex-row gap-4 items-left  justify-center-safe max-w-max overflow-x-auto overflow-y-hidden scrollbar-minimal px-4 min-h-50 pt-5 pb-10">
                         {/* PLACE HERE */}
                         {gameState === 'playing' && currentCard && (
                             <div
@@ -584,13 +584,13 @@ export default function GameBoard({ locale }: { locale: string }) {
                                 onClick={() => checkPosition(0)}
                                 onDragOver={(e) => handleDragOver(e, 0)}
                                 onDragLeave={handleDragLeave}
-                                 onDrop={(e) => handleDrop(e, 0)}
-                                        // Esta tarjeta define el alto de todas las tarjetas
-                                        className={`shrink-0 flex flex-col items-center justify-center w-22 h-44 md:h-60 w-36 md:w-60   rounded-lg transition-all cursor-pointer ${draggedOver === 0
-                                            ? 'bg-green-200/50 dark:bg-green-900/50 scale-95'
-                                            : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40   '
-                                            }`
-                                        }
+                                onDrop={(e) => handleDrop(e, 0)}
+                                // Esta tarjeta define el alto de todas las tarjetas
+                                className={`shrink-0 flex flex-col items-center justify-center  h-44 md:h-60 w-36 md:w-60   rounded-lg transition-all cursor-pointer ${draggedOver === 0
+                                    ? 'bg-green-200/50 dark:bg-green-900/50 scale-95'
+                                    : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40   '
+                                    }`
+                                }
                             >
                                 <svg
                                     className="w-8 h-8 md:w-10 md:h-10  mb-2"
@@ -631,7 +631,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                                         onDragLeave={handleDragLeave}
                                         onDrop={(e) => handleDrop(e, index + 1)}
                                         // Esta tarjeta define el alto de todas las tarjetas
-                                        className={`shrink-0 flex flex-col items-center justify-center w-22 h-44  md:h-60 w-36 md:w-60   rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
+                                        className={`shrink-0 flex flex-col items-center justify-center  h-44  md:h-60 w-36 md:w-60   rounded-lg transition-all cursor-pointer ${draggedOver === index + 1
                                             ? 'bg-green-200/50 dark:bg-green-900/50 scale-95'
                                             : 'text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40   '
                                             }`
