@@ -134,7 +134,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
                         transform: 'rotateY(180deg)'
                     }}
                 >
-                    <div className="text-[10px] md:text-sm font-bold text-center">
+                    <div className="text-[10px] md:text-sm font-bold text-center break-words">
                         {event}
                     </div>
                     <div className={`text-[10px] md:text-xs text-center ${isFailedCard ? 'opacity-90' : 'opacity-75'}`}>{bibleReference}</div>
