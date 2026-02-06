@@ -1,0 +1,20 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    uses: ./.github/workflows/test.yml
+  
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Trigger deployment webhook
+        run: |
+          curl -X POST "${{ secrets.DEPLOY_WEBHOOK_URL_STAGING }}"
+          echo "✓ Deployment webhook triggered successfully"
