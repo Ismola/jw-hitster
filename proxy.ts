@@ -6,6 +6,12 @@ const localeSet = new Set<string>(locales as readonly string[]);
 export default function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
+    if (pathname.length > 1 && pathname.endsWith('/')) {
+        const url = request.nextUrl.clone();
+        url.pathname = pathname.slice(0, -1);
+        return NextResponse.rewrite(url);
+    }
+
     if (pathname === '/' || pathname === '') {
         const url = request.nextUrl.clone();
         url.pathname = `/${defaultLocale}`;
