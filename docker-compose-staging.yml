@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jw-hitster-app
+    expose:
+      - "3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - jw-network
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    container_name: jw-hitster-nginx
+    ports:
+      - "3000:80"
+    depends_on:
+      - app
+    restart: unless-stopped
+    networks:
+      - jw-network
+      - cloudflare_default
+
+networks:
+  jw-network:
+    driver: bridge
+  cloudflare_default:
+    external: true
