@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: jw-hitster-app
+    container_name: jw-hitster-app-staging
     expose:
       - "3000"
     environment:
@@ -18,7 +18,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.nginx
-    container_name: jw-hitster-nginx
+    container_name: jw-hitster-nginx-staging
     ports:
       - "3000:80"
     depends_on:
