@@ -19,8 +19,8 @@ services:
       context: .
       dockerfile: Dockerfile.nginx
     container_name: jw-hitster-nginx
-    ports:
-      - "3000:80"
+    expose:
+      - "80"
     depends_on:
       - app
     restart: unless-stopped
