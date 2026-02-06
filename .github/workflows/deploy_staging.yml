@@ -3,14 +3,11 @@ name: Deploy to Staging
 on:
   push:
     branches:
-      - main
+      - staging
 
 jobs:
-  test:
-    uses: ./.github/workflows/test.yml
-  
   deploy:
-    needs: test
+    
     runs-on: ubuntu-latest
     
     steps:
