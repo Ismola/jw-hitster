@@ -1,13 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import createMiddleware from 'next-intl/middleware';
 import { locales, defaultLocale } from './i18n.config';
 
 const localeSet = new Set<string>(locales as readonly string[]);
-const intlMiddleware = createMiddleware({
-    locales,
-    defaultLocale,
-    localePrefix: 'always',
-});
 
 export default function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
@@ -27,7 +21,7 @@ export default function middleware(request: NextRequest) {
         return NextResponse.redirect(url);
     }
 
-    return intlMiddleware(request);
+    return NextResponse.next();
 }
 
 export const config = {
