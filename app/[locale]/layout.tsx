@@ -3,7 +3,9 @@ import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { messages } from "@/config/text";
-import { LayoutClient } from "./layout-client";
+import { ThemeProvider } from "@/app/components/ThemeProvider";
+import { SuccessProvider } from "./SuccessContext";
+import { BlurTextProvider } from "./BlurTextContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,10 +54,14 @@ export default async function RootLayout({
           } catch (e) {} })();`}
         </Script>
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-w-hidden  `}>
-        <LayoutClient locale={locale}>
-          {children}
-        </LayoutClient>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider>
+          <SuccessProvider>
+            <BlurTextProvider showBlurText={true}>
+              {children}
+            </BlurTextProvider>
+          </SuccessProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

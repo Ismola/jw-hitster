@@ -5,31 +5,31 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: jw-hitster-app
+    container_name: next-template-app
     expose:
       - "3000"
     environment:
       - NODE_ENV=production
     restart: unless-stopped
     networks:
-      - jw-network
+      - test-network
 
   nginx:
     build:
       context: .
       dockerfile: Dockerfile.nginx
-    container_name: jw-hitster-nginx
-    expose:
-      - "80"
+    container_name: next-template-nginx
+    ports:
+      - "3001:80"
     depends_on:
       - app
     restart: unless-stopped
     networks:
-      - jw-network
+      - test-network
       - cloudflare_default
 
 networks:
-  jw-network:
+  test-network:
     driver: bridge
   cloudflare_default:
     external: true
