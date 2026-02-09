@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  skipTrailingSlashRedirect: true,
+  async rewrites() {
+    return [
+      { source: '/:locale(es|en)/', destination: '/:locale' },
+    ];
+  },
 };
 
 export default nextConfig;
