@@ -2,9 +2,7 @@ version: '3.8'
 
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/ismola/jw-hitster:main
     container_name: jw-hitster-app
     expose:
       - "3000"
@@ -15,9 +13,7 @@ services:
     #   - jw-network
 
   nginx:
-    build:
-      context: .
-      dockerfile: Dockerfile.nginx
+    image: ghcr.io/ismola/jw-hitster-nginx:main
     container_name: jw-hitster-nginx
     expose:
       - "80"
