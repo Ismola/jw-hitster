@@ -11,8 +11,8 @@ services:
     environment:
       - NODE_ENV=production
     restart: unless-stopped
-    networks:
-      - jw-network
+    # networks:
+    #   - jw-network
 
   nginx:
     build:
@@ -24,12 +24,12 @@ services:
     depends_on:
       - app
     restart: unless-stopped
-    networks:
-      - jw-network
-      - cloudflare_default
+    # networks:
+    #   - jw-network
+    #   - cloudflare_default
 
-networks:
-  jw-network:
-    driver: bridge
-  cloudflare_default:
-    external: true
+# networks:
+#   jw-network:
+#     driver: bridge
+#   cloudflare_default:
+#     external: true
