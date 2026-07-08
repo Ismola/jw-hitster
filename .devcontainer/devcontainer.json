@@ -12,7 +12,7 @@
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "docker network create cloudflare_default 2>/dev/null || true && npm install",
+	
 	// Configure tool-specific properties.
 	// "customizations": {},
 	"remoteUser": "root",
@@ -21,7 +21,7 @@
 		"memory": "8gb",
 		"storage": "32gb"
 	},
-	"appPort": "3013:3000",
+	"appPort": "3000:3000",
 	"runArgs": [
 		"--name",
 		"jw-hipster",

@@ -1,6 +1,13 @@
 // Component ported from https://codepen.io/JuanFuentes/full/rgXKGQ
 
-import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
+import {
+    useEffect,
+    useRef,
+    useState,
+    useMemo,
+    useCallback,
+    type PointerEvent as ReactPointerEvent
+} from 'react';
 
 interface TextPressureProps {
     text?: string;
@@ -20,6 +27,9 @@ interface TextPressureProps {
     minFontSize?: number;
 }
 
+const AUTO_ANIMATION_DURATION = 10000;
+const AUTO_ANIMATION_PADDING = 0.12;
+
 const dist = (a: { x: number; y: number }, b: { x: number; y: number }) => {
     const dx = b.x - a.x;
     const dy = b.y - a.y;
@@ -27,24 +37,26 @@ const dist = (a: { x: number; y: number }, b: { x: number; y: number }) => {
 };
 
 const getAttr = (distance: number, maxDist: number, minVal: number, maxVal: number) => {
-    const val = maxVal - Math.abs((maxVal * distance) / maxDist);
+    const safeMaxDist = Math.max(maxDist, 1);
+    const val = maxVal - Math.abs((maxVal * distance) / safeMaxDist);
     return Math.max(minVal, val + minVal);
 };
 
-const debounce = (func: (...args: unknown[]) => void, delay: number) => {
+const debounce = (func: (...args: any[]) => void, delay: number) => {
     let timeoutId: ReturnType<typeof setTimeout>;
-    return (...args: unknown[]) => {
+
+    return (...args: any[]) => {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
-            func.apply(this, args);
+            func(...args);
         }, delay);
     };
 };
 
 const TextPressure: React.FC<TextPressureProps> = ({
     text = 'Compressa',
-    fontFamily = 'Compressa VF',
-    fontUrl = 'https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2',
+    fontFamily = 'Roboto Flex',
+    fontUrl = 'https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap',
     width = true,
     weight = true,
     italic = true,
@@ -65,46 +77,50 @@ const TextPressure: React.FC<TextPressureProps> = ({
     const mouseRef = useRef({ x: 0, y: 0 });
     const cursorRef = useRef({ x: 0, y: 0 });
 
+    /**
+     * Importante:
+     * true  = animación automática
+     * false = usa la posición real del ratón
+     */
+    const autoAnimateRef = useRef(true);
+
     const [fontSize, setFontSize] = useState(minFontSize);
     const [scaleY, setScaleY] = useState(1);
     const [lineHeight, setLineHeight] = useState(1);
 
-    const chars = text.split('');
+    const chars = useMemo(() => text.split(''), [text]);
+
+    const centerCursor = useCallback(() => {
+        const target = titleRef.current || containerRef.current;
+        if (!target) return;
+
+        const rect = target.getBoundingClientRect();
+
+        const center = {
+            x: rect.left + rect.width / 2,
+            y: rect.top + rect.height / 2
+        };
+
+        mouseRef.current = center;
+        cursorRef.current = center;
+    }, []);
 
     useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-            cursorRef.current.x = e.clientX;
-            cursorRef.current.y = e.clientY;
-        };
-        const handleTouchMove = (e: TouchEvent) => {
-            const t = e.touches[0];
-            cursorRef.current.x = t.clientX;
-            cursorRef.current.y = t.clientY;
-        };
+        centerCursor();
+    }, [centerCursor]);
 
-        window.addEventListener('mousemove', handleMouseMove);
-        window.addEventListener('touchmove', handleTouchMove, { passive: true });
-
-        if (containerRef.current) {
-            const { left, top, width, height } = containerRef.current.getBoundingClientRect();
-            mouseRef.current.x = left + width / 2;
-            mouseRef.current.y = top + height / 2;
-            cursorRef.current.x = mouseRef.current.x;
-            cursorRef.current.y = mouseRef.current.y;
-        }
-
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-            window.removeEventListener('touchmove', handleTouchMove);
-        };
-    }, []);
+    useEffect(() => {
+        spansRef.current = spansRef.current.slice(0, chars.length);
+    }, [chars.length]);
 
     const setSize = useCallback(() => {
         if (!containerRef.current || !titleRef.current) return;
 
         const { width: containerW, height: containerH } = containerRef.current.getBoundingClientRect();
 
-        let newFontSize = containerW / (chars.length / 2);
+        const safeCharsLength = Math.max(chars.length, 1);
+
+        let newFontSize = containerW / (safeCharsLength / 2);
         newFontSize = Math.max(newFontSize, minFontSize);
 
         setFontSize(newFontSize);
@@ -113,6 +129,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
 
         requestAnimationFrame(() => {
             if (!titleRef.current) return;
+
             const textRect = titleRef.current.getBoundingClientRect();
 
             if (scale && textRect.height > 0) {
@@ -120,30 +137,85 @@ const TextPressure: React.FC<TextPressureProps> = ({
                 setScaleY(yRatio);
                 setLineHeight(yRatio);
             }
+
+            centerCursor();
         });
-    }, [chars.length, minFontSize, scale]);
+    }, [chars.length, minFontSize, scale, centerCursor]);
 
     useEffect(() => {
         const debouncedSetSize = debounce(setSize, 100);
+
         debouncedSetSize();
+
         window.addEventListener('resize', debouncedSetSize);
-        return () => window.removeEventListener('resize', debouncedSetSize);
+
+        return () => {
+            window.removeEventListener('resize', debouncedSetSize);
+        };
     }, [setSize]);
+
+    const handlePointerEnter = (e: ReactPointerEvent<HTMLDivElement>) => {
+        if (e.pointerType !== 'mouse') return;
+
+        autoAnimateRef.current = false;
+
+        cursorRef.current.x = e.clientX;
+        cursorRef.current.y = e.clientY;
+    };
+
+    const handlePointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
+        if (e.pointerType !== 'mouse') return;
+
+        autoAnimateRef.current = false;
+
+        cursorRef.current.x = e.clientX;
+        cursorRef.current.y = e.clientY;
+    };
+
+    const handlePointerLeave = () => {
+        autoAnimateRef.current = true;
+    };
 
     useEffect(() => {
         let rafId: number;
+
         const animate = () => {
+            const title = titleRef.current;
+
+            if (autoAnimateRef.current && title) {
+                const rect = title.getBoundingClientRect();
+
+                const progress = (performance.now() % AUTO_ANIMATION_DURATION) / AUTO_ANIMATION_DURATION;
+
+                /**
+                 * 0 -> 1 -> 0
+                 * Simula que el ratón pasa de izquierda a derecha
+                 * y luego de derecha a izquierda.
+                 */
+                const pingPongProgress = progress < 0.5
+                    ? progress * 2
+                    : (1 - progress) * 2;
+                const minX = rect.left + rect.width * AUTO_ANIMATION_PADDING;
+                const maxX = rect.right - rect.width * AUTO_ANIMATION_PADDING;
+
+                cursorRef.current.x = minX + (maxX - minX) * pingPongProgress;
+                cursorRef.current.y = rect.top + rect.height / 2;
+
+
+            }
+
             mouseRef.current.x += (cursorRef.current.x - mouseRef.current.x) / 15;
             mouseRef.current.y += (cursorRef.current.y - mouseRef.current.y) / 15;
 
             if (titleRef.current) {
                 const titleRect = titleRef.current.getBoundingClientRect();
-                const maxDist = titleRect.width / 2;
+                const maxDist = Math.max(titleRect.width / 2, 1);
 
                 spansRef.current.forEach(span => {
                     if (!span) return;
 
                     const rect = span.getBoundingClientRect();
+
                     const charCenter = {
                         x: rect.x + rect.width / 2,
                         y: rect.y + rect.height / 2
@@ -161,6 +233,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
                     if (span.style.fontVariationSettings !== newFontVariationSettings) {
                         span.style.fontVariationSettings = newFontVariationSettings;
                     }
+
                     if (alpha && span.style.opacity !== alphaVal) {
                         span.style.opacity = alphaVal;
                     }
@@ -171,45 +244,53 @@ const TextPressure: React.FC<TextPressureProps> = ({
         };
 
         animate();
-        return () => cancelAnimationFrame(rafId);
+
+        return () => {
+            cancelAnimationFrame(rafId);
+        };
     }, [width, weight, italic, alpha]);
 
     const styleElement = useMemo(() => {
         return (
             <style>{`
-        @font-face {
-          font-family: '${fontFamily}';
-          src: url('${fontUrl}');
-          font-style: normal;
-        }
-        .stroke span {
-          position: relative;
-          color: ${textColor};
-        }
-        .stroke span::after {
-          content: attr(data-char);
-          position: absolute;
-          left: 0;
-          top: 0;
-          color: transparent;
-          z-index: -1;
-          -webkit-text-stroke-width: ${strokeWidth}px;
-          -webkit-text-stroke-color: ${strokeColor};
-        }
-      `}</style>
+                @import url('${fontUrl}');
+
+                .stroke span {
+                    position: relative;
+                    color: ${textColor};
+                }
+
+                .stroke span::after {
+                    content: attr(data-char);
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    color: transparent;
+                    z-index: -1;
+                    -webkit-text-stroke-width: ${strokeWidth}px;
+                    -webkit-text-stroke-color: ${strokeColor};
+                }
+            `}</style>
         );
-    }, [fontFamily, fontUrl, stroke, textColor, strokeColor, strokeWidth]);
+    }, [fontUrl, textColor, strokeColor, strokeWidth]);
 
     return (
-        <div ref={containerRef} className="relative w-full h-full overflow-hidden bg-transparent">
+        <div
+            ref={containerRef}
+            className="relative w-full h-full overflow-hidden bg-transparent"
+            onPointerEnter={handlePointerEnter}
+            onPointerMove={handlePointerMove}
+            onPointerLeave={handlePointerLeave}
+        >
             {styleElement}
+
             <h1
                 ref={titleRef}
                 className={`text-pressure-title ${className} ${flex ? 'flex justify-between' : ''
                     } ${stroke ? 'stroke' : ''} uppercase text-center`}
                 style={{
                     fontFamily,
-                    fontSize: fontSize,
+                    fontSize,
                     lineHeight,
                     transform: `scale(1, ${scaleY})`,
                     transformOrigin: 'center top',
@@ -220,7 +301,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
             >
                 {chars.map((char, i) => (
                     <span
-                        key={i}
+                        key={`${char}-${i}`}
                         ref={el => {
                             spansRef.current[i] = el;
                         }}
