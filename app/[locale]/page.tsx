@@ -41,7 +41,7 @@ export default function Home() {
     <>
       <div className="flex  h-full   overflow-y-auto overflow-x-hidden items-center justify-around sm:justify-between  flex-col gap-4 ">
         <div className="flex flex-col  items-center gap-8 z-10  ">
-          <div className='w-screen h-full relative   px-64'>
+          <div className='w-screen h-full relative   px-[10%]'>
             <AnimatedContent
               distance={0}
               direction="vertical"
