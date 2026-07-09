@@ -21,7 +21,7 @@ export default function Home() {
   const t = messages[locale] || messages.en;
   const { isDark } = useTheme();
   const { showBlurText } = useBlurText();
-  const minFontSize = useResponsiveFontSize(60, 300, 375, 1080);
+  const minFontSize = useResponsiveFontSize(60);
   const [mounted, setMounted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -41,7 +41,7 @@ export default function Home() {
     <>
       <div className="flex  h-full   overflow-y-auto overflow-x-hidden items-center justify-around sm:justify-between  flex-col gap-4 ">
         <div className="flex flex-col  items-center gap-8 z-10  ">
-          <div className='w-full h-full relative   '>
+          <div className='w-screen h-full relative   px-64'>
             <AnimatedContent
               distance={0}
               direction="vertical"
@@ -54,10 +54,13 @@ export default function Home() {
               threshold={0.1}
               delay={2}
             >
+
+
+
               <TextPressure
                 text={t.title}
                 flex={true}
-                alpha={false}
+                alpha={true}
                 stroke={false}
                 width={true}
                 weight={true}
@@ -67,6 +70,7 @@ export default function Home() {
                 minFontSize={minFontSize}
                 className='duration-[2000ms]'
               />
+
             </AnimatedContent>
           </div>
 
