@@ -1,6 +1,8 @@
 services:
   app:
-    image: ghcr.io/ismola/jw-hitster:main
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: jw-hitster-app
     expose:
       - "3000"
@@ -9,7 +11,9 @@ services:
     restart: unless-stopped
 
   nginx:
-    image: ghcr.io/ismola/jw-hitster-nginx:main
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
     container_name: jw-hitster-nginx
     ports:
       - "80:80"
