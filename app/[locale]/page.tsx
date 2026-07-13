@@ -60,9 +60,9 @@ export default function Home() {
               <TextPressure
                 text={t.title}
                 flex={true}
-                alpha={true}
+                alpha={false}
                 stroke={false}
-                width={true}
+                width={false}
                 weight={true}
                 italic={true}
                 textColor={mounted ? (isDark ? "#e9e5ff" : "#11224E") : "#11224E"}
