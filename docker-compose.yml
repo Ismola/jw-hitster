@@ -4,19 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: jw-hitster-app
-    expose:
-      - "3000"
-    environment:
-      - NODE_ENV=production
+    ports:
+      - "3000:3000"
     restart: unless-stopped
 
-  nginx:
-    build:
-      context: .
-      dockerfile: Dockerfile.nginx
-    container_name: jw-hitster-nginx
-    ports:
-      - "80:80"
-    depends_on:
-      - app
-    restart: unless-stopped
+

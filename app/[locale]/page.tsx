@@ -60,7 +60,7 @@ export default function Home() {
               <TextPressure
                 text={t.title}
                 flex={true}
-                alpha={false}
+                alpha={true}
                 stroke={false}
                 width={false}
                 weight={true}

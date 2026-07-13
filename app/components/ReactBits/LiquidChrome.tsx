@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Renderer, Program, Mesh, Triangle } from 'ogl';
 
 interface LiquidChromeProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -19,6 +19,7 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
     interactive = true,
     ...props
 }) => {
+    const [webglAvailable, setWebglAvailable] = useState(true);
     const containerRef = useRef<HTMLDivElement | null>(null);
     const programRef = useRef<Program | null>(null);
     const previousColorRef = useRef<[number, number, number]>(baseColor);
@@ -29,8 +30,53 @@ export const LiquidChrome: React.FC<LiquidChromeProps> = ({
         if (!containerRef.current) return;
 
         const container = containerRef.current;
-        const renderer = new Renderer({ antialias: true });
+        const canvas = document.createElement('canvas');
+
+        const contextOptions: WebGLContextAttributes = {
+            alpha: true,
+            antialias: true,
+            powerPreference: 'high-performance',
+        };
+
+        let webglVersion: 1 | 2 | null = null;
+
+        if (canvas.getContext('webgl2', contextOptions)) {
+            webglVersion = 2;
+        } else if (canvas.getContext('webgl', contextOptions)) {
+            webglVersion = 1;
+        }
+
+        if (webglVersion === null) {
+            console.warn('WebGL no está disponible. Se mostrará el fondo alternativo.');
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            setWebglAvailable(false);
+            return;
+        }
+
+        let renderer: Renderer;
+
+        try {
+            renderer = new Renderer({
+                canvas,
+                webgl: webglVersion,
+                antialias: true,
+                alpha: true,
+                powerPreference: 'high-performance',
+            });
+        } catch (error) {
+            console.error('No se pudo inicializar OGL:', error);
+            setWebglAvailable(false);
+            return;
+        }
+
         const gl = renderer.gl;
+
+        if (!gl) {
+            setWebglAvailable(false);
+            return;
+        }
+
+        
         gl.clearColor(1, 1, 1, 1);
 
         const vertexShader = `
