@@ -42,7 +42,7 @@ export default function Home() {
       <div className="flex  h-full   overflow-y-auto overflow-x-hidden items-center justify-around sm:justify-between  flex-col gap-4 ">
         <div className="flex flex-col  items-center gap-8 z-10  ">
           <div className='w-screen h-full relative   px-[10%]'>
-            <AnimatedContent
+                     <AnimatedContent
               distance={0}
               direction="vertical"
               reverse={false}
@@ -54,15 +54,12 @@ export default function Home() {
               threshold={0.1}
               delay={2}
             >
-
-
-
               <TextPressure
                 text={t.title}
                 flex={true}
-                alpha={true}
+                alpha={false}
                 stroke={false}
-                width={false}
+                width={true}
                 weight={true}
                 italic={true}
                 textColor={mounted ? (isDark ? "#e9e5ff" : "#11224E") : "#11224E"}
@@ -70,7 +67,6 @@ export default function Home() {
                 minFontSize={minFontSize}
                 className='duration-[2000ms]'
               />
-
             </AnimatedContent>
           </div>
 
