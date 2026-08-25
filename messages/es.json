@@ -48,7 +48,9 @@
         "result": "Resultado de la partida",
         "category": "Categoría",
         "downloaded": "Imagen guardada",
-        "error": "No se pudo crear la imagen"
+        "error": "No se pudo crear la imagen",
+        "victoryTitle": "¡Has ganado!",
+        "victoryDescription": "Completaste todas las cartas. Comparte tu resultado."
     },
     "bc": "a.e.c.",
     "ad": "e.c.",
