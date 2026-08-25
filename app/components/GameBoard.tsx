@@ -59,7 +59,7 @@ interface SavedGameState {
 }
 
 export default function GameBoard({ locale }: { locale: string }) {
-    const [savedGame, setSavedGame] = useLocalStorage<SavedGameState | null>('jw-hitster-game-state', null);
+    const [savedGame, setSavedGame, isSavedGameHydrated] = useLocalStorage<SavedGameState | null>('jw-hitster-game-state', null);
     const { triggerSuccess, triggerError } = useSuccess();
 
     // Track if component is mounted (client-side)
@@ -117,7 +117,7 @@ export default function GameBoard({ locale }: { locale: string }) {
 
     // Hydrate saved game state once after load
     useEffect(() => {
-        if (hasHydrated.current) return;
+        if (hasHydrated.current || !isSavedGameHydrated) return;
 
         if (savedGame?.gameState === 'playing') {
             setGameState(savedGame.gameState);
@@ -131,7 +131,7 @@ export default function GameBoard({ locale }: { locale: string }) {
         }
 
         hasHydrated.current = true;
-    }, [savedGame]);
+    }, [isSavedGameHydrated, savedGame]);
 
     // Save game state whenever it changes (only when playing and after mount)
     useEffect(() => {
