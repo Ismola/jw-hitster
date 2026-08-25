@@ -11,6 +11,7 @@
     "correct": "¡Correcto!",
     "won": "¡Has ganado!",
     "lose": "¡Has perdido!",
+    "lifeLost": "Has perdido una vida. ¡Sigue jugando!",
     "start": "Iniciar",
     "score": "Puntos",
     "placeCard": "Coloca esta tarjeta",
@@ -35,6 +36,12 @@
         "bibleBooks": "Libros bíblicos",
         "worldPowers": "Potencias"
     },
+    "lives": {
+        "choose": "Vidas por partida",
+        "remaining": "Vidas restantes",
+        "life": "vida",
+        "lives": "vidas"
+    },
     "bc": "a.e.c.",
     "ad": "e.c.",
     "instructions": {
@@ -43,7 +50,7 @@
         "step1": "2. Se te mostrará una carta con un evento bíblico",
         "step2": "3. Arrastra y suelta la carta en la posición correcta de la línea de tiempo",
         "step3": "4. Si la colocas correctamente, ganarás un punto y continuarás",
-        "step4": "5. Si te equivocas, el juego terminará",
+        "step4": "5. Si te equivocas, perderás una vida; la partida termina cuando no quede ninguna",
         "step5": "6. Lee cuidadosamente la fecha y el evento de cada carta",
         "step6": "7. Recuerda que a.e.c. (antes de la era común) va en orden descendente",
         "step7": "8. Las fechas d.e.c. (después de la era común) van en orden ascendente",
