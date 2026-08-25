@@ -7,7 +7,6 @@ import { messages } from '@/config/text';
 import Link from 'next/link';
 import TextPressure from '../components/ReactBits/TextPressure';
 import { useTheme } from '../components/ThemeProvider';
-import { useResponsiveFontSize } from '../hooks/useResponsiveFontSize';
 import CircularText from '../components/ReactBits/CircularText';
 import AnimatedContent from '../components/ReactBits/AnimatedContent';
 import { useState, useEffect } from 'react';
@@ -21,7 +20,6 @@ export default function Home() {
   const t = messages[locale] || messages.en;
   const { isDark } = useTheme();
   const { showBlurText } = useBlurText();
-  const minFontSize = useResponsiveFontSize(60);
   const [mounted, setMounted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -64,7 +62,7 @@ export default function Home() {
                 italic={true}
                 textColor={mounted ? (isDark ? "#e9e5ff" : "#11224E") : "#11224E"}
                 strokeColor="#ff0000"
-                minFontSize={minFontSize}
+                minFontSize={24}
                 className='duration-[2000ms]'
               />
             </AnimatedContent>
@@ -118,7 +116,35 @@ export default function Home() {
 
           <LanguageSwitcher />
 
-          <ThemeSwitcher />
+          <div className="flex items-center justify-center gap-2">
+            <ThemeSwitcher />
+            <AnimatedContent
+              distance={150}
+              direction="vertical"
+              reverse={false}
+              duration={.5}
+              ease="power3.out"
+              initialOpacity={0}
+              animateOpacity
+              scale={1.1}
+              threshold={0.1}
+              delay={1}
+              className="flex items-center justify-center"
+            >
+              <button
+                type="button"
+                onClick={handleModalToggle}
+                aria-label="Información"
+                className="cursor-pointer text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40 hover:scale-105 p-2 rounded-full w-9 h-9 transition-all duration-300"
+              >
+                <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 17V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  <circle cx="1" cy="1" r="1" transform="matrix(1 0 0 -1 11 9)" fill="currentColor" />
+                  <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </button>
+            </AnimatedContent>
+          </div>
 
         </div>
         <div className="w-full sm:h-96 h-72 min-h-100 overflow-visible sm:overflow-hidden relative ">
@@ -165,22 +191,6 @@ export default function Home() {
           </div>
         </div>
 
-      </div>
-
-      <div
-        onClick={handleModalToggle}
-        className='absolute md:bottom-5 md:top-auto right-5 
-        top-5 
-        transition-all
-        cursor-pointer
-        text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10 hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40
-        p-2 rounded-full text-xs w-10 h-10 z-50'>
-
-        <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-          <circle cx="1" cy="1" r="1" transform="matrix(1 0 0 -1 11 9)" fill="currentColor" />
-          <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        </svg>
       </div>
 
       {/* Modal de información */}
