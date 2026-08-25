@@ -26,6 +26,15 @@
         "background": "Dynamic background",
         "backgroundDescription": "Fluid effect that reacts to the game"
     },
+    "filters": {
+        "title": "Choose your cards",
+        "description": "Play the full timeline or practice a specific category.",
+        "all": "All",
+        "people": "People",
+        "kings": "Kings",
+        "bibleBooks": "Bible books",
+        "worldPowers": "World powers"
+    },
     "bc": "b.c.e.",
     "ad": "c.e.",
     "instructions": {
