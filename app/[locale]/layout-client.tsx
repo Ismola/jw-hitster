@@ -17,7 +17,7 @@ function Experience({ children, locale }: { children: React.ReactNode; locale: s
     const [fadeOut, setFadeOut] = useState(false);
     const [showBlurText, setShowBlurText] = useState(false);
     const [mounted, setMounted] = useState(false);
-    const [cookieConsent, setCookieConsent] = useLocalStorage('cookieConsent', '');
+    const [cookieConsent, setCookieConsent, isCookieConsentHydrated] = useLocalStorage('cookieConsent', '');
     const [isCookieModalOpen, setIsCookieModalOpen] = useState(false);
 
     const t = messages[(locale as keyof typeof messages)] || messages.en;
@@ -62,7 +62,7 @@ function Experience({ children, locale }: { children: React.ReactNode; locale: s
                         {children}
 
                     </main>
-                    {mounted && cookieConsent !== 'accepted' && (
+                    {mounted && isCookieConsentHydrated && cookieConsent !== 'accepted' && (
                         <div className="fixed left-1/2 -translate-x-1/2 bottom-4 z-110 w-full md:w-auto">
                             <div className="flex flex-col md:flex-row items-center justify-between gap-3 p-3 rounded-lg shadow-lg bg-(--text-light)/95 dark:bg-(--text-dark)/95 text-(--text-dark) dark:text-(--text-light)">
                                 <div className="text-sm">{t.cookies?.banner}</div>
