@@ -11,6 +11,7 @@
     "correct": "Correct!",
     "won": "You won!",
     "lose": "You lost!",
+    "lifeLost": "You lost a life. Keep playing!",
     "start": "Start",
     "score": "Score",
     "placeCard": "Place this card",
@@ -35,6 +36,12 @@
         "bibleBooks": "Bible books",
         "worldPowers": "World powers"
     },
+    "lives": {
+        "choose": "Lives per game",
+        "remaining": "Lives remaining",
+        "life": "life",
+        "lives": "lives"
+    },
     "bc": "b.c.e.",
     "ad": "c.e.",
     "instructions": {
@@ -43,7 +50,7 @@
         "step1": "2. You will be shown a card with a biblical event",
         "step2": "3. Drag and drop the card to the correct position on the timeline",
         "step3": "4. If you place it correctly, you'll earn a point and continue",
-        "step4": "5. If you make a mistake, the game will end",
+        "step4": "5. A mistake costs one life; the game ends when no lives remain",
         "step5": "6. Carefully read the date and event on each card",
         "step6": "7. Remember that BCE (Before Common Era) goes in descending order",
         "step7": "8. CE (Common Era) dates go in ascending order",

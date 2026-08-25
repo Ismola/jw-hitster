@@ -13,6 +13,7 @@ import Magnet from './ReactBits/Magnet';
 import ShinyText from './ReactBits/ShinyText';
 import { useTheme } from './ThemeProvider';
 import { GameCategory, matchesGameCategory } from '@/lib/gameCategories';
+import { Heart } from 'lucide-react';
 
 interface GameItem {
     date: string;
@@ -49,6 +50,8 @@ interface SavedGameState {
     score: number;
     shuffledDeck: BoardCard[];
     deckIndex: number;
+    livesRemaining?: number;
+    maxLives?: number;
 }
 
 export default function GameBoard({ locale }: { locale: string }) {
@@ -67,6 +70,9 @@ export default function GameBoard({ locale }: { locale: string }) {
     const [shuffledDeck, setShuffledDeck] = useState<BoardCard[]>([]);
     const [deckIndex, setDeckIndex] = useState(0);
     const [selectedCategory, setSelectedCategory] = useLocalStorage<GameCategory>('jw-hitster-game-category', 'all');
+    const [selectedLives, setSelectedLives] = useLocalStorage<number>('jw-hitster-game-lives', 3);
+    const [livesRemaining, setLivesRemaining] = useState(3);
+    const [maxLives, setMaxLives] = useState(3);
 
     const [message, setMessage] = useState<ActiveMessage | null>(null);
     const [draggedOver, setDraggedOver] = useState<number | null>(null);
@@ -114,6 +120,8 @@ export default function GameBoard({ locale }: { locale: string }) {
             setScore(savedGame.score);
             setShuffledDeck(savedGame.shuffledDeck);
             setDeckIndex(savedGame.deckIndex);
+            setLivesRemaining(savedGame.livesRemaining ?? 1);
+            setMaxLives(savedGame.maxLives ?? savedGame.livesRemaining ?? 1);
         }
 
         hasHydrated.current = true;
@@ -131,6 +139,8 @@ export default function GameBoard({ locale }: { locale: string }) {
                 score,
                 shuffledDeck,
                 deckIndex,
+                livesRemaining,
+                maxLives,
             };
             setSavedGame(newState);
         } else if (gameState === 'gameOver') {
@@ -138,7 +148,7 @@ export default function GameBoard({ locale }: { locale: string }) {
             setSavedGame(null);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [isMounted, gameState, boardCards, currentCard, score, shuffledDeck, deckIndex]);
+    }, [isMounted, gameState, boardCards, currentCard, score, shuffledDeck, deckIndex, livesRemaining, maxLives]);
 
     // Callback for when card placement animation completes
     const handleAnimationComplete = useCallback(() => {
@@ -169,6 +179,8 @@ export default function GameBoard({ locale }: { locale: string }) {
         setDeckIndex(2);
         setGameState('playing');
         setScore(0);
+        setLivesRemaining(selectedLives);
+        setMaxLives(selectedLives);
         clearMessage();
 
         // Reset drag states
@@ -214,10 +226,19 @@ export default function GameBoard({ locale }: { locale: string }) {
                 setGameState('gameOver');
             }
         } else {
-            showMessage(t.lose, 'error');
             triggerError(); // Activar el cambio de color rojo
             setFailedCard(currentCard);
-            setGameState('gameOver');
+
+            if (livesRemaining > 1 && deckIndex < shuffledDeck.length) {
+                showMessage(t.lifeLost, 'error');
+                setLivesRemaining((current) => current - 1);
+                setCurrentCard(shuffledDeck[deckIndex]);
+                setDeckIndex((current) => current + 1);
+            } else {
+                showMessage(t.lose, 'error');
+                setLivesRemaining(0);
+                setGameState('gameOver');
+            }
         }
     };
 
@@ -416,6 +437,27 @@ export default function GameBoard({ locale }: { locale: string }) {
                                 );
                             })}
                         </div>
+
+                        <div className="mt-10">
+                            <h3 className="text-lg font-bold">{t.lives.choose}</h3>
+                            <div className="mt-4 flex justify-center gap-3">
+                                {[1, 3, 5].map((amount) => (
+                                    <button
+                                        key={amount}
+                                        type="button"
+                                        aria-pressed={selectedLives === amount}
+                                        aria-label={`${amount} ${amount === 1 ? t.lives.life : t.lives.lives}`}
+                                        onClick={() => setSelectedLives(amount)}
+                                        className={`flex cursor-pointer items-center gap-2 rounded-full border px-5 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 ${selectedLives === amount
+                                            ? 'border-rose-300 bg-rose-500 text-white shadow-lg shadow-rose-500/20'
+                                            : 'border-(--text-light)/20 bg-(--text-light)/10 dark:border-(--text-dark)/20 dark:bg-(--text-dark)/10'
+                                            }`}
+                                    >
+                                        <Heart className="h-4 w-4" fill="currentColor" aria-hidden="true" /> {amount}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
                     </section>
 
                     {/* SPACE */}
@@ -522,8 +564,17 @@ export default function GameBoard({ locale }: { locale: string }) {
                     delay={.5}
                     className='flex justify-center items-center w-full md:w-auto'
                 >
-                    <div className="text-2xl font-bold flex justify-center items-center w-full">
-                        {t.score}: {score}
+                    <div className="flex w-full flex-wrap items-center justify-center gap-x-6 gap-y-2 text-2xl font-bold">
+                        <span>{t.score}: {score}</span>
+                        <span className="flex items-center gap-1" aria-label={`${t.lives.remaining}: ${livesRemaining}`}>
+                            {Array.from({ length: maxLives }, (_, index) => (
+                                <Heart
+                                    key={index}
+                                    aria-hidden="true"
+                                    className={`h-6 w-6 transition-all duration-300 ${index < livesRemaining ? 'fill-rose-500 text-rose-500' : 'fill-transparent opacity-30'}`}
+                                />
+                            ))}
+                        </span>
                     </div>
                 </AnimatedContent>
 
