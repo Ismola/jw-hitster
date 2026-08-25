@@ -48,7 +48,9 @@
         "result": "Game result",
         "category": "Category",
         "downloaded": "Image saved",
-        "error": "The image could not be created"
+        "error": "The image could not be created",
+        "victoryTitle": "You won!",
+        "victoryDescription": "You completed every card. Share your result."
     },
     "bc": "b.c.e.",
     "ad": "c.e.",

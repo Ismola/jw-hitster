@@ -15,6 +15,7 @@ import { useTheme } from './ThemeProvider';
 import { GameCategory, matchesGameCategory } from '@/lib/gameCategories';
 import { Heart, Share2 } from 'lucide-react';
 import { shareResultCard } from '@/lib/shareResult';
+import { insertFailedCard } from '@/lib/timeline';
 
 interface GameItem {
     date: string;
@@ -34,9 +35,11 @@ interface GameItem {
 
 interface BoardCard extends GameItem {
     id: number;
+    isFailed?: boolean;
 }
 
 type MessageTone = 'success' | 'error';
+type GameResult = 'won' | 'lost' | null;
 
 interface ActiveMessage {
     id: number;
@@ -76,6 +79,7 @@ export default function GameBoard({ locale }: { locale: string }) {
     const [maxLives, setMaxLives] = useState(3);
     const [gameEndedAt, setGameEndedAt] = useState<number | null>(null);
     const [isSharing, setIsSharing] = useState(false);
+    const [gameResult, setGameResult] = useState<GameResult>(null);
 
     const [message, setMessage] = useState<ActiveMessage | null>(null);
     const [draggedOver, setDraggedOver] = useState<number | null>(null);
@@ -84,7 +88,6 @@ export default function GameBoard({ locale }: { locale: string }) {
     const [touchStartPos, setTouchStartPos] = useState<{ x: number; y: number } | null>(null);
     const [dragOffset, setDragOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
     const [newlyPlacedCardId, setNewlyPlacedCardId] = useState<number | null>(null);
-    const [failedCard, setFailedCard] = useState<BoardCard | null>(null);
 
     // Ref para el contenedor scrollable
     const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -192,8 +195,8 @@ export default function GameBoard({ locale }: { locale: string }) {
         setDraggedOver(null);
         setTouchStartPos(null);
         setDragOffset({ x: 0, y: 0 });
-        setFailedCard(null);
         setGameEndedAt(null);
+        setGameResult(null);
     };
 
     const checkPosition = (position: number) => {
@@ -228,11 +231,13 @@ export default function GameBoard({ locale }: { locale: string }) {
             } else {
                 showMessage(t.won, 'success');
                 setGameEndedAt(Date.now());
+                setGameResult('won');
                 setGameState('gameOver');
             }
         } else {
             triggerError(); // Activar el cambio de color rojo
-            setFailedCard(currentCard);
+            setBoardCards(insertFailedCard(boardCards, currentCard));
+            setNewlyPlacedCardId(currentCard.id);
 
             if (livesRemaining > 1 && deckIndex < shuffledDeck.length) {
                 showMessage(t.lifeLost, 'error');
@@ -243,6 +248,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                 showMessage(t.lose, 'error');
                 setLivesRemaining(0);
                 setGameEndedAt(Date.now());
+                setGameResult('lost');
                 setGameState('gameOver');
             }
         }
@@ -609,26 +615,46 @@ export default function GameBoard({ locale }: { locale: string }) {
 
                 {/* Game Over Button */}
                 {gameState === 'gameOver' && (
-                    <div className="flex flex-wrap justify-center gap-3 w-full">
+                    <div className="flex w-full flex-col items-center gap-4 px-4">
+                        {gameResult === 'won' && (
+                            <AnimatedContent
+                                distance={36}
+                                direction="vertical"
+                                duration={0.65}
+                                ease="back.out(1.4)"
+                                className="w-full max-w-xl"
+                            >
+                                <div role="status" className="relative overflow-hidden rounded-3xl border border-emerald-300/40 bg-emerald-500/15 p-6 text-center shadow-2xl shadow-emerald-500/15 backdrop-blur-xl md:p-8">
+                                    <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-emerald-400/10 via-white/10 to-cyan-400/10" />
+                                    <div className="relative">
+                                        <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-3xl shadow-lg" aria-hidden="true">★</span>
+                                        <h2 className="mt-4 text-3xl font-black">{t.share.victoryTitle}</h2>
+                                        <p className="mt-2 opacity-75">{t.share.victoryDescription}</p>
+                                    </div>
+                                </div>
+                            </AnimatedContent>
+                        )}
 
-                        <button
-                            onClick={startGame}
-                            className="px-8 py-3  rounded-lg font-semibold cursor-pointer 
+                        <div className="flex flex-wrap justify-center gap-3">
+                            <button
+                                onClick={startGame}
+                                className="px-8 py-3 rounded-lg font-semibold cursor-pointer
                         text-(--text-light) dark:text-(--text-dark) backdrop-blur-xl  bg-(--text-light)/10 dark:bg-(--text-dark)/10
                          
                         hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40 transition"
-                        >
-                            {t.playAgain}
-                        </button>
-                        <button
-                            type="button"
-                            onClick={handleShareResult}
-                            disabled={isSharing}
-                            className="flex cursor-pointer items-center gap-2 rounded-lg bg-(--text-light) px-8 py-3 font-semibold text-(--text-dark) shadow-lg transition hover:-translate-y-1 disabled:cursor-wait disabled:opacity-60 dark:bg-(--text-dark) dark:text-(--text-light)"
-                        >
-                            <Share2 className="h-5 w-5" aria-hidden="true" />
-                            {isSharing ? t.share.generating : t.share.button}
-                        </button>
+                            >
+                                {t.playAgain}
+                            </button>
+                            <button
+                                type="button"
+                                onClick={handleShareResult}
+                                disabled={isSharing}
+                                className="flex cursor-pointer items-center gap-2 rounded-lg bg-(--text-light) px-8 py-3 font-semibold text-(--text-dark) shadow-lg transition hover:-translate-y-1 disabled:cursor-wait disabled:opacity-60 dark:bg-(--text-dark) dark:text-(--text-light)"
+                            >
+                                <Share2 className="h-5 w-5" aria-hidden="true" />
+                                {isSharing ? t.share.generating : t.share.button}
+                            </button>
+                        </div>
                     </div>
                 )}
 
@@ -737,6 +763,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                                         bibliography={card.bibliografy?.[lang]}
                                         isNewlyPlaced={card.id === newlyPlacedCardId}
                                         onAnimationComplete={handleAnimationComplete}
+                                        isFailedCard={card.isFailed}
                                     />
                                 </div>
 
@@ -773,24 +800,6 @@ export default function GameBoard({ locale }: { locale: string }) {
                             </div>
                         ))}
 
-                        {/* Failed Card - Show at the end when game is over */}
-                        {gameState === 'gameOver' && failedCard && (
-
-                            <div className="shrink-0">
-                                <CardBothSides
-                                    date={failedCard.date}
-                                    event={failedCard.event[lang]}
-                                    bibleReference={failedCard.bible_reference[lang]}
-                                    bcText={t.bc}
-                                    adText={t.ad}
-                                    bibliography={failedCard.bibliografy?.[lang]}
-                                    isNewlyPlaced={false}
-                                    onAnimationComplete={handleAnimationComplete}
-                                    isFailedCard={true}
-                                />
-                            </div>
-
-                        )}
                     </div>
 
 
