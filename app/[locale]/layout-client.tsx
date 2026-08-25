@@ -8,14 +8,11 @@ import { BlurTextProvider } from './BlurTextContext';
 import { SuccessProvider } from './SuccessContext';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { messages } from '@/config/text';
+import { PreferencesProvider, usePreferences } from '../components/PreferencesProvider';
 
-export function LayoutClient({
-    children,
-    locale,
-}: Readonly<{
-    children: React.ReactNode;
-    locale: string;
-}>) {
+function Experience({ children, locale }: { children: React.ReactNode; locale: string }) {
+    const { animationsEnabled } = usePreferences();
+
     const [showCounter, setShowCounter] = useState(true);
     const [fadeOut, setFadeOut] = useState(false);
     const [showBlurText, setShowBlurText] = useState(false);
@@ -26,13 +23,18 @@ export function LayoutClient({
     const t = messages[(locale as keyof typeof messages)] || messages.en;
 
     useEffect(() => {
+        if (!animationsEnabled) {
+            setShowCounter(false);
+            setShowBlurText(true);
+            return;
+        }
         if (!showCounter) {
             const timer = setTimeout(() => {
                 setShowBlurText(true);
             }, 3000); // 3 segundos
             return () => clearTimeout(timer);
         }
-    }, [showCounter]);
+    }, [animationsEnabled, showCounter]);
 
     useEffect(() => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -52,8 +54,7 @@ export function LayoutClient({
     };
 
     return (
-        <ThemeProvider>
-            <SuccessProvider>
+        <SuccessProvider>
                 <Background />
                 <BlurTextProvider showBlurText={showBlurText}>
                     <main className="relative  top-0 h-screen overflow-auto ">
@@ -119,7 +120,16 @@ export function LayoutClient({
                     )}
                 </BlurTextProvider>
                 <Counter show={showCounter} fadeOut={fadeOut} onEnd={handleCounterEnd} />
-            </SuccessProvider>
+        </SuccessProvider>
+    );
+}
+
+export function LayoutClient({ children, locale }: Readonly<{ children: React.ReactNode; locale: string }>) {
+    return (
+        <ThemeProvider>
+            <PreferencesProvider>
+                <Experience locale={locale}>{children}</Experience>
+            </PreferencesProvider>
         </ThemeProvider>
     );
 }

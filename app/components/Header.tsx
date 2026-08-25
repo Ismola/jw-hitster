@@ -4,6 +4,7 @@ import { messages } from "@/config/text";
 import ThemeSwitcher from "./ThemeSwitcher";
 import AnimatedContent from "./ReactBits/AnimatedContent";
 import InfoButton from "./InfoButton";
+import SettingsButton from "./SettingsButton";
 
 
 export default function Header() {
@@ -36,6 +37,7 @@ export default function Header() {
 
             <div className="flex items-center justify-center gap-2">
                 <ThemeSwitcher />
+                <SettingsButton locale={locale} />
                 <InfoButton locale={locale} />
             </div>
         </div>

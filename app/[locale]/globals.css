@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+html.animations-disabled *,
+html.animations-disabled *::before,
+html.animations-disabled *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+  transition-duration: 0.01ms !important;
+}
+
 @plugin "tailwindcss-animate";
 @custom-variant dark (&:where(.dark, .dark *));
 
