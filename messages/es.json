@@ -42,6 +42,14 @@
         "life": "vida",
         "lives": "vidas"
     },
+    "share": {
+        "button": "Compartir resultado",
+        "generating": "Creando imagen…",
+        "result": "Resultado de la partida",
+        "category": "Categoría",
+        "downloaded": "Imagen guardada",
+        "error": "No se pudo crear la imagen"
+    },
     "bc": "a.e.c.",
     "ad": "e.c.",
     "instructions": {

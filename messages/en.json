@@ -42,6 +42,14 @@
         "life": "life",
         "lives": "lives"
     },
+    "share": {
+        "button": "Share result",
+        "generating": "Creating image…",
+        "result": "Game result",
+        "category": "Category",
+        "downloaded": "Image saved",
+        "error": "The image could not be created"
+    },
     "bc": "b.c.e.",
     "ad": "c.e.",
     "instructions": {
