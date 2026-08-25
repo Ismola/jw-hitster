@@ -13,7 +13,8 @@ import Magnet from './ReactBits/Magnet';
 import ShinyText from './ReactBits/ShinyText';
 import { useTheme } from './ThemeProvider';
 import { GameCategory, matchesGameCategory } from '@/lib/gameCategories';
-import { Heart } from 'lucide-react';
+import { Heart, Share2 } from 'lucide-react';
+import { shareResultCard } from '@/lib/shareResult';
 
 interface GameItem {
     date: string;
@@ -73,6 +74,8 @@ export default function GameBoard({ locale }: { locale: string }) {
     const [selectedLives, setSelectedLives] = useLocalStorage<number>('jw-hitster-game-lives', 3);
     const [livesRemaining, setLivesRemaining] = useState(3);
     const [maxLives, setMaxLives] = useState(3);
+    const [gameEndedAt, setGameEndedAt] = useState<number | null>(null);
+    const [isSharing, setIsSharing] = useState(false);
 
     const [message, setMessage] = useState<ActiveMessage | null>(null);
     const [draggedOver, setDraggedOver] = useState<number | null>(null);
@@ -190,6 +193,7 @@ export default function GameBoard({ locale }: { locale: string }) {
         setTouchStartPos(null);
         setDragOffset({ x: 0, y: 0 });
         setFailedCard(null);
+        setGameEndedAt(null);
     };
 
     const checkPosition = (position: number) => {
@@ -223,6 +227,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                 setDeckIndex(deckIndex + 1);
             } else {
                 showMessage(t.won, 'success');
+                setGameEndedAt(Date.now());
                 setGameState('gameOver');
             }
         } else {
@@ -237,8 +242,31 @@ export default function GameBoard({ locale }: { locale: string }) {
             } else {
                 showMessage(t.lose, 'error');
                 setLivesRemaining(0);
+                setGameEndedAt(Date.now());
                 setGameState('gameOver');
             }
+        }
+    };
+
+    const handleShareResult = async () => {
+        if (isSharing) return;
+        setIsSharing(true);
+        try {
+            const outcome = await shareResultCard({
+                locale: lang,
+                title: t.title,
+                resultLabel: t.share.result,
+                score,
+                scoreLabel: t.score,
+                category: t.filters[selectedCategory],
+                categoryLabel: t.share.category,
+                date: new Date(gameEndedAt ?? Date.now()),
+            });
+            if (outcome === 'downloaded') showMessage(t.share.downloaded, 'success');
+        } catch {
+            showMessage(t.share.error, 'error');
+        } finally {
+            setIsSharing(false);
         }
     };
 
@@ -581,7 +609,7 @@ export default function GameBoard({ locale }: { locale: string }) {
 
                 {/* Game Over Button */}
                 {gameState === 'gameOver' && (
-                    <div className="flex justify-center w-full">
+                    <div className="flex flex-wrap justify-center gap-3 w-full">
 
                         <button
                             onClick={startGame}
@@ -591,6 +619,15 @@ export default function GameBoard({ locale }: { locale: string }) {
                         hover:bg-(--text-light)/40 dark:hover:bg-(--text-dark)/40 transition"
                         >
                             {t.playAgain}
+                        </button>
+                        <button
+                            type="button"
+                            onClick={handleShareResult}
+                            disabled={isSharing}
+                            className="flex cursor-pointer items-center gap-2 rounded-lg bg-(--text-light) px-8 py-3 font-semibold text-(--text-dark) shadow-lg transition hover:-translate-y-1 disabled:cursor-wait disabled:opacity-60 dark:bg-(--text-dark) dark:text-(--text-light)"
+                        >
+                            <Share2 className="h-5 w-5" aria-hidden="true" />
+                            {isSharing ? t.share.generating : t.share.button}
                         </button>
                     </div>
                 )}
