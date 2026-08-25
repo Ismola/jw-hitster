@@ -1,9 +1,9 @@
 import Link from "next/link";
-import LanguageSwitcher from "./LanguageSwitcher";
 import { usePathname } from "next/navigation";
 import { messages } from "@/config/text";
 import ThemeSwitcher from "./ThemeSwitcher";
 import AnimatedContent from "./ReactBits/AnimatedContent";
+import InfoButton from "./InfoButton";
 
 
 export default function Header() {
@@ -34,8 +34,10 @@ export default function Header() {
                 </Link>
             </AnimatedContent>
 
-            <ThemeSwitcher />
-            {/* <LanguageSwitcher /> */}
+            <div className="flex items-center justify-center gap-2">
+                <ThemeSwitcher />
+                <InfoButton locale={locale} />
+            </div>
         </div>
     )
 }
