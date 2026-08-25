@@ -26,6 +26,15 @@
         "background": "Fondo dinámico",
         "backgroundDescription": "Efecto fluido que reacciona a la partida"
     },
+    "filters": {
+        "title": "Elige las cartas",
+        "description": "Juega con toda la cronología o practica una categoría concreta.",
+        "all": "Todas",
+        "people": "Personajes",
+        "kings": "Reyes",
+        "bibleBooks": "Libros bíblicos",
+        "worldPowers": "Potencias"
+    },
     "bc": "a.e.c.",
     "ad": "e.c.",
     "instructions": {

@@ -1,7 +1,7 @@
 'use client';
 
 import { createPortal } from 'react-dom';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import CardBothSides from './CardBothSides';
 import CardDataOnly from './CardDataOnly';
 import gameData from '@/config/info.json';
@@ -12,6 +12,7 @@ import { useSuccess } from '../[locale]/SuccessContext';
 import Magnet from './ReactBits/Magnet';
 import ShinyText from './ReactBits/ShinyText';
 import { useTheme } from './ThemeProvider';
+import { GameCategory, matchesGameCategory } from '@/lib/gameCategories';
 
 interface GameItem {
     date: string;
@@ -65,6 +66,7 @@ export default function GameBoard({ locale }: { locale: string }) {
     const [score, setScore] = useState(0);
     const [shuffledDeck, setShuffledDeck] = useState<BoardCard[]>([]);
     const [deckIndex, setDeckIndex] = useState(0);
+    const [selectedCategory, setSelectedCategory] = useLocalStorage<GameCategory>('jw-hitster-game-category', 'all');
 
     const [message, setMessage] = useState<ActiveMessage | null>(null);
     const [draggedOver, setDraggedOver] = useState<number | null>(null);
@@ -81,6 +83,10 @@ export default function GameBoard({ locale }: { locale: string }) {
     const lang = (locale === 'es' || locale === 'en' ? locale : 'en') as keyof typeof messages;
     const t = messages[lang];
     const MESSAGE_VISIBILITY_SECONDS = 2.5;
+    const categoryOptions = useMemo(() => (['all', 'people', 'kings', 'bibleBooks', 'worldPowers'] as GameCategory[]).map((category) => ({
+        category,
+        count: (gameData as GameItem[]).filter((item) => matchesGameCategory(item, category)).length,
+    })), []);
 
     const showMessage = useCallback((text: string, tone: MessageTone) => {
         setMessage({
@@ -151,7 +157,7 @@ export default function GameBoard({ locale }: { locale: string }) {
 
     const startGame = () => {
         // Create a shuffled deck with unique IDs
-        const deck = (gameData as GameItem[]).map((item, index) => ({
+        const deck = (gameData as GameItem[]).filter((item) => matchesGameCategory(item, selectedCategory)).map((item, index) => ({
             id: index,
             ...item,
         }));
@@ -388,6 +394,30 @@ export default function GameBoard({ locale }: { locale: string }) {
                         ))}
                     </div>
 
+                    <section aria-labelledby="category-title" className="mx-auto mt-20 max-w-4xl text-center text-(--text-light) dark:text-(--text-dark)">
+                        <h2 id="category-title" className="text-2xl font-extrabold">{t.filters.title}</h2>
+                        <p className="mt-2 opacity-70">{t.filters.description}</p>
+                        <div className="mt-6 flex flex-wrap justify-center gap-3">
+                            {categoryOptions.map(({ category, count }) => {
+                                const isSelected = selectedCategory === category;
+                                return (
+                                    <button
+                                        key={category}
+                                        type="button"
+                                        aria-pressed={isSelected}
+                                        onClick={() => setSelectedCategory(category)}
+                                        className={`cursor-pointer rounded-full border px-5 py-3 text-sm font-semibold backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 ${isSelected
+                                            ? 'border-(--text-light) bg-(--text-light) text-(--text-dark) shadow-lg dark:border-(--text-dark) dark:bg-(--text-dark) dark:text-(--text-light)'
+                                            : 'border-(--text-light)/20 bg-(--text-light)/10 hover:bg-(--text-light)/25 dark:border-(--text-dark)/20 dark:bg-(--text-dark)/10 dark:hover:bg-(--text-dark)/25'
+                                            }`}
+                                    >
+                                        {t.filters[category]} <span className="ml-1 opacity-60">{count}</span>
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </section>
+
                     {/* SPACE */}
                     <div className=' h-[25vh] md:h-50 '></div>
 
@@ -397,7 +427,7 @@ export default function GameBoard({ locale }: { locale: string }) {
                         <Magnet padding={500} disabled={false} magnetStrength={9}>
                             <button
                                 onClick={startGame}
-                                aria-label={t.start}
+                                aria-label={`${t.start}: ${t.filters[selectedCategory]}`}
                                 className="group relative overflow-hidden cursor-pointer md:text-4xl text-2xl font-semibold px-8 w- py-8
                                     text-(--text-light) dark:text-(--text-dark) rounded-2xl
                                     bg-linear-to-r from-[rgba(255,255,255,0.06)] via-[rgba(255,255,255,0.03)] to-[rgba(0,0,0,0.03)]
