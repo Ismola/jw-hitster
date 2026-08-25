@@ -118,7 +118,7 @@
     {
         "date": "-3038",
         "event": {
-            "es": "Traslación de Enoc",
+      "es": "Dios se lleva a Enoc",
             "en": "Translation of Enoch"
         },
         "bible_reference": {
@@ -232,7 +232,7 @@
     {
         "date": "-2369",
         "event": {
-            "es": "Hechura del pacto después del diluvio",
+      "es": "Se establece el pacto después del Diluvio",
             "en": "Post-flood covenant established"
         },
         "bible_reference": {
@@ -787,7 +787,7 @@
     {
         "date": "-1473",
         "event": {
-            "es": "Los israelitas entran a Canaán",
+      "es": "Los israelitas entran en Canaán",
             "en": "Israelites enter Canaan"
         },
         "bible_reference": {
@@ -813,7 +813,10 @@
             "es": "Números 27:18",
             "en": "Numbers 27:18"
         },
-        "bibliografy": {}
+    "bibliografy": {
+      "es": [],
+      "en": []
+    }
     },
     {
         "date": "-1473",
@@ -951,7 +954,7 @@
     {
         "date": "-1137",
         "event": {
-            "es": "Arca mudada de Silo",
+      "es": "El Arca se traslada de Siló",
             "en": "Ark moved from Shiloh"
         },
         "bible_reference": {
@@ -1521,7 +1524,7 @@
     {
         "date": "-759",
         "event": {
-            "es": "Acaz toma el lugar de Joatam",
+      "es": "Acaz toma el lugar de Jotán",
             "en": "Ahaz succeeds Jotham"
         },
         "bible_reference": {
@@ -2718,7 +2721,7 @@
     {
         "date": "49",
         "event": {
-            "es": "Cuerpo gobernante rige contra la circuncisión de las gentes de las naciones",
+      "es": "El cuerpo gobernante decide que la gente de las naciones no tiene que circuncidarse",
             "en": "Governing body rules against circumcision of people of the nations"
         },
         "bible_reference": {
