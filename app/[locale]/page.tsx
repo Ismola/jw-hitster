@@ -12,6 +12,7 @@ import AnimatedContent from '../components/ReactBits/AnimatedContent';
 import { useState, useEffect } from 'react';
 import BlurText from '../components/ReactBits/BlurText';
 import { useBlurText } from './BlurTextContext';
+import SettingsButton from '../components/SettingsButton';
 
 
 export default function Home() {
@@ -118,6 +119,7 @@ export default function Home() {
 
           <div className="flex items-center justify-center gap-2">
             <ThemeSwitcher />
+            <SettingsButton locale={locale} />
             <AnimatedContent
               distance={150}
               direction="vertical"

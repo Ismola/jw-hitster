@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
+import { usePreferences } from './PreferencesProvider';
 
 // Animation configuration
 const ANIMATION_CONFIG = {
@@ -40,10 +41,15 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
         typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0)
     );
     const cardRef = useRef<HTMLDivElement>(null);
+    const { animationsEnabled } = usePreferences();
 
     // Animate when card is newly placed
     useEffect(() => {
         if (isNewlyPlaced && cardRef.current) {
+            if (!animationsEnabled) {
+                onAnimationComplete?.();
+                return;
+            }
             const card = cardRef.current;
 
             // Set initial state
@@ -61,7 +67,7 @@ export default function CardBothSides({ date, event, bibleReference, bcText, adT
                 }
             });
         }
-    }, [isNewlyPlaced, onAnimationComplete]);
+    }, [animationsEnabled, isNewlyPlaced, onAnimationComplete]);
 
     // Format date with BC/AD
     const formatDate = (dateStr: string) => {

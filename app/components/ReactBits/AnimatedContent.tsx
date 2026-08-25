@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { usePreferences } from '../PreferencesProvider';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,10 +47,21 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
     ...props
 }) => {
     const ref = useRef<HTMLDivElement>(null);
+    const { animationsEnabled } = usePreferences();
 
     useEffect(() => {
         const el = ref.current;
         if (!el) return;
+
+        if (!animationsEnabled) {
+            gsap.set(el, { clearProps: 'all', visibility: 'visible' });
+            onComplete?.();
+            if (disappearAfter > 0) {
+                const timeout = window.setTimeout(() => onDisappearanceComplete?.(), disappearAfter * 1000);
+                return () => window.clearTimeout(timeout);
+            }
+            return;
+        }
 
         let scrollerTarget: Element | string | null = container || document.getElementById('snap-main-container') || null;
 
@@ -123,11 +135,12 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
         disappearDuration,
         disappearEase,
         onComplete,
-        onDisappearanceComplete
+        onDisappearanceComplete,
+        animationsEnabled
     ]);
 
     return (
-        <div ref={ref} className={`invisible ${className}`} {...props}>
+        <div ref={ref} className={`${animationsEnabled ? 'invisible' : ''} ${className}`} {...props}>
             {children}
         </div>
     );

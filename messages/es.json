@@ -16,6 +16,16 @@
     "placeCard": "Coloca esta tarjeta",
     "placeHere": "Colocar aquí",
     "playAgain": "Jugar de nuevo",
+    "settings": {
+        "open": "Abrir configuración",
+        "close": "Cerrar configuración",
+        "title": "Configuración",
+        "description": "Personaliza la experiencia visual. Los cambios se guardan en este dispositivo.",
+        "animations": "Animaciones",
+        "animationsDescription": "Movimientos, entradas y efectos interactivos",
+        "background": "Fondo dinámico",
+        "backgroundDescription": "Efecto fluido que reacciona a la partida"
+    },
     "bc": "a.e.c.",
     "ad": "e.c.",
     "instructions": {

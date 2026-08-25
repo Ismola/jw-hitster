@@ -3,10 +3,12 @@ import LiquidChrome from "./ReactBits/LiquidChrome";
 import { useTheme } from "./ThemeProvider";
 import { useState, useEffect, useRef, useMemo } from "react";
 import { useSuccess } from "../[locale]/SuccessContext";
+import { usePreferences } from "./PreferencesProvider";
 
 export default function Backgtound() {
     const { isDark } = useTheme();
     const { isSuccess, isError } = useSuccess();
+    const { backgroundEnabled } = usePreferences();
     const isFirstLoadRef = useRef(true);
     const resetTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -91,6 +93,10 @@ export default function Backgtound() {
             }, 5000);
         }
     }, [isError, errorColor, targetColor]);
+
+    if (!backgroundEnabled) {
+        return <div className="absolute left-0 top-0 -z-100 h-screen w-full bg-[#e9e5ff] dark:bg-[#11224e]" />;
+    }
 
     return (
         <div className="w-full  top-0 h-screen absolute  left-0 -z-100">

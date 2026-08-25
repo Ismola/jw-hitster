@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, ReactNode, HTMLAttributes } from 'react';
+import { usePreferences } from '../PreferencesProvider';
 
 interface MagnetProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -22,12 +23,14 @@ const Magnet: React.FC<MagnetProps> = ({
   innerClassName = '',
   ...props
 }) => {
+  const { animationsEnabled } = usePreferences();
+  const isDisabled = disabled || !animationsEnabled;
   const [isActive, setIsActive] = useState<boolean>(false);
   const [position, setPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const magnetRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (disabled) {
+    if (isDisabled) {
       return;
     }
 
@@ -56,10 +59,10 @@ const Magnet: React.FC<MagnetProps> = ({
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, [padding, disabled, magnetStrength]);
+  }, [padding, isDisabled, magnetStrength]);
 
   const transitionStyle = isActive ? activeTransition : inactiveTransition;
-  const finalPosition = disabled ? { x: 0, y: 0 } : position;
+  const finalPosition = isDisabled ? { x: 0, y: 0 } : position;
 
   return (
     <div
